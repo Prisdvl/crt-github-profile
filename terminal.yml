@@ -89,11 +89,18 @@ blocks:
     config:
       command: cat ~/stack.bars
       lines:
-        - "[[fg:blue]]Java[[/fg]]        [[fg:cyan]]████████[[/fg]][[fg:comment]]░░[[/fg]]"
-        - "[[fg:blue]]TypeScript[[/fg]]  [[fg:cyan]]███████[[/fg]][[fg:comment]]░░░[[/fg]]"
-        - "[[fg:blue]]Rust[[/fg]]        [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]"
-        - "[[fg:blue]]Python[[/fg]]      [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]"
-        - "[[fg:blue]]Vue[[/fg]]         [[fg:cyan]]████[[/fg]][[fg:comment]]░░░░░░[[/fg]]"
+        - "[[fg:blue]]Java[[/fg]]          [[fg:cyan]]████████[[/fg]][[fg:comment]]░░[[/fg]]  [[fg:comment]]80%[[/fg]]"
+        - "[[fg:blue]]Spring Boot[[/fg]]   [[fg:cyan]]████████[[/fg]][[fg:comment]]░░[[/fg]]  [[fg:comment]]80%[[/fg]]"
+        - "[[fg:blue]]MySQL[[/fg]]         [[fg:cyan]]███████[[/fg]][[fg:comment]]░░░[[/fg]]  [[fg:comment]]70%[[/fg]]"
+        - "[[fg:blue]]Redis[[/fg]]         [[fg:cyan]]███████[[/fg]][[fg:comment]]░░░[[/fg]]  [[fg:comment]]70%[[/fg]]"
+        - "[[fg:blue]]Spring Cloud[[/fg]]  [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
+        - "[[fg:blue]]RabbitMQ[[/fg]]      [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
+        - "[[fg:blue]]Docker[[/fg]]        [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
+        - "[[fg:blue]]Spring AI[[/fg]]     [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
+        - "[[fg:blue]]RAG / AI Agent[[/fg]][[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
+        - "[[fg:blue]]TypeScript[[/fg]]    [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]  [[fg:comment]]50%[[/fg]]"
+        - "[[fg:blue]]React[[/fg]]         [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]  [[fg:comment]]50%[[/fg]]"
+        - "[[fg:blue]]Python[[/fg]]        [[fg:cyan]]███[[/fg]][[fg:comment]]░░░░░░░[[/fg]]  [[fg:comment]]30%[[/fg]]"
 
   - block: custom
     config:

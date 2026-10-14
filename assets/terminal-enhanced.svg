@@ -10,11 +10,18 @@ prisdvl@dev:~$ date
 tz      Asia/Shanghai
 uptime  building agents &amp; RAG backends
 prisdvl@dev:~$ cat ~/stack.bars
-Java        ████████░░
-TypeScript  ███████░░░
-Rust        █████░░░░░
-Python      █████░░░░░
-Vue         ████░░░░░░
+Java          ████████░░  80%
+Spring Boot   ████████░░  80%
+MySQL         ███████░░░  70%
+Redis         ███████░░░  70%
+Spring Cloud  ██████░░░░  60%
+RabbitMQ      ██████░░░░  60%
+Docker        ██████░░░░  60%
+Spring AI     ██████░░░░  60%
+RAG / AI Agent██████░░░░  60%
+TypeScript    █████░░░░░  50%
+React         █████░░░░░  50%
+Python        ███░░░░░░░  30%
 prisdvl@dev:~$ cat ~/card.yaml
 identity
 focus    Spring AI · RAG · Agent · Distributed Systems
@@ -182,114 +189,142 @@ prisdvl@dev:~$ head ~/highlights
     </g>
 
     <g transform="translate(0, 97.2)" class="fade-in" style="animation-delay: 8660ms">
-      <text class="tt"><tspan fill="#8AB4F8">Java</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">████████</tspan><tspan fill="#8e8e8e">░░</tspan></text>
+      <text class="tt"><tspan fill="#8AB4F8">Java</tspan><tspan fill="#ececec">          </tspan><tspan fill="#4dd0e1">████████</tspan><tspan fill="#8e8e8e">░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">80%</tspan></text>
     </g>
 
     <g transform="translate(0, 108)" class="fade-in" style="animation-delay: 8688ms">
-      <text class="tt"><tspan fill="#8AB4F8">TypeScript</tspan><tspan fill="#ececec">  </tspan><tspan fill="#4dd0e1">███████</tspan><tspan fill="#8e8e8e">░░░</tspan></text>
+      <text class="tt"><tspan fill="#8AB4F8">Spring Boot</tspan><tspan fill="#ececec">   </tspan><tspan fill="#4dd0e1">████████</tspan><tspan fill="#8e8e8e">░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">80%</tspan></text>
     </g>
 
     <g transform="translate(0, 118.8)" class="fade-in" style="animation-delay: 8716ms">
-      <text class="tt"><tspan fill="#8AB4F8">Rust</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan></text>
+      <text class="tt"><tspan fill="#8AB4F8">MySQL</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">███████</tspan><tspan fill="#8e8e8e">░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">70%</tspan></text>
     </g>
 
     <g transform="translate(0, 129.6)" class="fade-in" style="animation-delay: 8744ms">
-      <text class="tt"><tspan fill="#8AB4F8">Python</tspan><tspan fill="#ececec">      </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan></text>
+      <text class="tt"><tspan fill="#8AB4F8">Redis</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">███████</tspan><tspan fill="#8e8e8e">░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">70%</tspan></text>
     </g>
 
     <g transform="translate(0, 140.4)" class="fade-in" style="animation-delay: 8772ms">
-      <text class="tt"><tspan fill="#8AB4F8">Vue</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">████</tspan><tspan fill="#8e8e8e">░░░░░░</tspan></text>
+      <text class="tt"><tspan fill="#8AB4F8">Spring Cloud</tspan><tspan fill="#ececec">  </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
     </g>
 
-    <g transform="translate(0, 151.2)">
-      <defs><clipPath id="cmdrev-14"><rect x="90" y="-10" width="90" height="20"><set attributeName="width" to="0" begin="0s" end="9920ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="9920ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 9920ms" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="90" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-14)">cat ~/card.yaml</text>
+    <g transform="translate(0, 151.2)" class="fade-in" style="animation-delay: 8800ms">
+      <text class="tt"><tspan fill="#8AB4F8">RabbitMQ</tspan><tspan fill="#ececec">      </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 162)" class="fade-in" style="animation-delay: 8828ms">
+      <text class="tt"><tspan fill="#8AB4F8">Docker</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 172.8)" class="fade-in" style="animation-delay: 8856ms">
+      <text class="tt"><tspan fill="#8AB4F8">Spring AI</tspan><tspan fill="#ececec">     </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 183.6)" class="fade-in" style="animation-delay: 8884ms">
+      <text class="tt"><tspan fill="#8AB4F8">RAG / AI Agent</tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 194.4)" class="fade-in" style="animation-delay: 8912ms">
+      <text class="tt"><tspan fill="#8AB4F8">TypeScript</tspan><tspan fill="#ececec">    </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">50%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 205.2)" class="fade-in" style="animation-delay: 8940ms">
+      <text class="tt"><tspan fill="#8AB4F8">React</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">50%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 216)" class="fade-in" style="animation-delay: 8968ms">
+      <text class="tt"><tspan fill="#8AB4F8">Python</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">███</tspan><tspan fill="#8e8e8e">░░░░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">30%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 226.8)">
+      <defs><clipPath id="cmdrev-21"><rect x="90" y="-10" width="90" height="20"><set attributeName="width" to="0" begin="0s" end="10116ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="10116ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 10116ms" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-21)">cat ~/card.yaml</text>
       
     <rect x="90" y="-8" width="6" height="10" fill="#10A37F" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="9920ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="11120ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="9920ms" dur="1200ms" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="1" begin="10116ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="11316ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="10116ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 162)" class="fade-in" style="animation-delay: 11210ms">
+    <g transform="translate(0, 237.6)" class="fade-in" style="animation-delay: 11406ms">
       <text class="tt"><tspan fill="#8e8e8e">── identity ──────────────────────────────</tspan></text>
     </g>
 
-    <g transform="translate(0, 172.8)" class="fade-in" style="animation-delay: 11238ms">
+    <g transform="translate(0, 248.4)" class="fade-in" style="animation-delay: 11434ms">
       <text class="tt"><tspan fill="#8e8e8e">focus</tspan><tspan fill="#ececec">    </tspan><tspan fill="#E3B341">Spring AI</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">RAG</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">Agent</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">Distributed Systems</tspan></text>
     </g>
 
-    <g transform="translate(0, 183.6)" class="fade-in" style="animation-delay: 11266ms">
+    <g transform="translate(0, 259.2)" class="fade-in" style="animation-delay: 11462ms">
       <text class="tt"><tspan fill="#8e8e8e">runtime</tspan><tspan fill="#ececec">  Spring Boot · Spring AI · FastAPI · Tauri · Django</tspan></text>
     </g>
 
-    <g transform="translate(0, 194.4)" class="fade-in" style="animation-delay: 11294ms">
+    <g transform="translate(0, 270)" class="fade-in" style="animation-delay: 11490ms">
       <text class="tt"><tspan fill="#8e8e8e">async</tspan><tspan fill="#ececec">    Celery · message queues · tool-calling agents</tspan></text>
     </g>
 
-    <g transform="translate(0, 205.2)" class="fade-in" style="animation-delay: 11322ms">
+    <g transform="translate(0, 280.8)" class="fade-in" style="animation-delay: 11518ms">
       <text class="tt"><tspan fill="#8e8e8e">topics</tspan><tspan fill="#ececec">   hybrid retrieval · RAG eval · production agents</tspan></text>
     </g>
 
-    <g transform="translate(0, 216)" class="fade-in" style="animation-delay: 11350ms">
+    <g transform="translate(0, 291.6)" class="fade-in" style="animation-delay: 11546ms">
       <text class="tt"><tspan fill="#8e8e8e">now</tspan><tspan fill="#ececec">      agent platforms · retrieval eval · Tauri tooling</tspan></text>
     </g>
 
-    <g transform="translate(0, 226.8)" class="fade-in" style="animation-delay: 11378ms">
+    <g transform="translate(0, 302.4)" class="fade-in" style="animation-delay: 11574ms">
       <text class="tt"><tspan fill="#8e8e8e">status</tspan><tspan fill="#ececec">   </tspan><tspan fill="#10A37F">online</tspan><tspan fill="#ececec"> · open to collab on agents / RAG</tspan></text>
     </g>
 
-    <g transform="translate(0, 237.6)">
-      <defs><clipPath id="cmdrev-22"><rect x="90" y="-10" width="90" height="20"><set attributeName="width" to="0" begin="0s" end="12526ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="12526ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 12526ms" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="90" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-22)">cat ~/skills.md</text>
+    <g transform="translate(0, 313.2)">
+      <defs><clipPath id="cmdrev-29"><rect x="90" y="-10" width="90" height="20"><set attributeName="width" to="0" begin="0s" end="12722ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="12722ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 12722ms" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-29)">cat ~/skills.md</text>
       
     <rect x="90" y="-8" width="6" height="10" fill="#10A37F" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="12526ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="13726ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="12526ms" dur="1200ms" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="1" begin="12722ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="13922ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="12722ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 248.4)" class="fade-in" style="animation-delay: 13816ms">
+    <g transform="translate(0, 324)" class="fade-in" style="animation-delay: 14012ms">
       <text class="tt"><tspan fill="#AB68FF">backend</tspan><tspan fill="#ececec">  APIs · distributed services · Spring ecosystem</tspan></text>
     </g>
 
-    <g transform="translate(0, 259.2)" class="fade-in" style="animation-delay: 13844ms">
+    <g transform="translate(0, 334.8)" class="fade-in" style="animation-delay: 14040ms">
       <text class="tt"><tspan fill="#AB68FF">ai</tspan><tspan fill="#ececec">       RAG pipelines · agent loops · retrieval eval</tspan></text>
     </g>
 
-    <g transform="translate(0, 270)" class="fade-in" style="animation-delay: 13872ms">
+    <g transform="translate(0, 345.6)" class="fade-in" style="animation-delay: 14068ms">
       <text class="tt"><tspan fill="#AB68FF">data</tspan><tspan fill="#ececec">     OCR pipelines · async workers · MySQL</tspan></text>
     </g>
 
-    <g transform="translate(0, 280.8)" class="fade-in" style="animation-delay: 13900ms">
+    <g transform="translate(0, 356.4)" class="fade-in" style="animation-delay: 14096ms">
       <text class="tt"><tspan fill="#AB68FF">client</tspan><tspan fill="#ececec">   Vue · React · Tauri desktop</tspan></text>
     </g>
 
-    <g transform="translate(0, 291.6)">
-      <defs><clipPath id="cmdrev-27"><rect x="90" y="-10" width="102" height="20"><set attributeName="width" to="0" begin="0s" end="15048ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90;96;102" keyTimes="0.0000;0.0588;0.1176;0.1765;0.2353;0.2941;0.3529;0.4118;0.4706;0.5294;0.5882;0.6471;0.7059;0.7647;0.8235;0.8824;0.9412;1.0000" calcMode="discrete" begin="15048ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 15048ms" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="90" fill="#10A37F" textLength="102" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-27)">head ~/highlights</text>
+    <g transform="translate(0, 367.2)">
+      <defs><clipPath id="cmdrev-34"><rect x="90" y="-10" width="102" height="20"><set attributeName="width" to="0" begin="0s" end="15244ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90;96;102" keyTimes="0.0000;0.0588;0.1176;0.1765;0.2353;0.2941;0.3529;0.4118;0.4706;0.5294;0.5882;0.6471;0.7059;0.7647;0.8235;0.8824;0.9412;1.0000" calcMode="discrete" begin="15244ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 15244ms" fill="#10A37F" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#10A37F" textLength="102" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-34)">head ~/highlights</text>
       
     <rect x="90" y="-8" width="6" height="10" fill="#10A37F" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="15048ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="16248ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174;180;186" keyTimes="0.0000;0.0588;0.1176;0.1765;0.2353;0.2941;0.3529;0.4118;0.4706;0.5294;0.5882;0.6471;0.7059;0.7647;0.8235;0.8824;0.9412;1.0000" calcMode="discrete" begin="15048ms" dur="1200ms" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="1" begin="15244ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="16444ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174;180;186" keyTimes="0.0000;0.0588;0.1176;0.1765;0.2353;0.2941;0.3529;0.4118;0.4706;0.5294;0.5882;0.6471;0.7059;0.7647;0.8235;0.8824;0.9412;1.0000" calcMode="discrete" begin="15244ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 302.4)" class="fade-in" style="animation-delay: 16338ms">
+    <g transform="translate(0, 378)" class="fade-in" style="animation-delay: 16534ms">
       <text class="tt"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> Spring AI knowledge base + tool-calling agent platform</tspan></text>
     </g>
 
-    <g transform="translate(0, 313.2)" class="fade-in" style="animation-delay: 16366ms">
+    <g transform="translate(0, 388.8)" class="fade-in" style="animation-delay: 16562ms">
       <text class="tt"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> K-12 grading pipeline: OCR → queue · LLM scoring</tspan></text>
     </g>
 
-    <g transform="translate(0, 324)" class="fade-in" style="animation-delay: 16394ms">
+    <g transform="translate(0, 399.6)" class="fade-in" style="animation-delay: 16590ms">
       <text class="tt"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> Rust/Tauri focus timer with liquid-glass UI</tspan></text>
     </g>
       </g><g id="portraitPanel" transform="translate(480, 0)">
@@ -400,7 +435,7 @@ prisdvl@dev:~$ head ~/highlights
 <text x="0" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">online</tspan><tspan fill="#8e8e8e">  ·  open to collab on agents / RAG  ·  </tspan><tspan fill="#8AB4F8">github.com/Prisdvl</tspan></text></g>
       <g id="activitySection" transform="translate(0, 168)"><text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">── activity ────────────────────────────────────</tspan></text>
 <text x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">contrib --user Prisdvl</tspan></text>
-<text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#b4b4b4">352 contributions · last year</text>
+<text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#b4b4b4">353 contributions · last year</text>
 <text x="125" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Mon</text>
 <text x="125" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Wed</text>
 <text x="125" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Fri</text>
@@ -771,7 +806,7 @@ prisdvl@dev:~$ head ~/highlights
 <rect x="829" y="38" width="11" height="11" rx="2" fill="#2d5f7a"><title>14 on 2026-10-11</title></rect>
 <rect x="829" y="51" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2026-10-12</title></rect>
 <rect x="829" y="64" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2026-10-13</title></rect>
-<rect x="829" y="77" width="11" height="11" rx="2" fill="#2d5f7a"><title>10 on 2026-10-14</title></rect>
+<rect x="829" y="77" width="11" height="11" rx="2" fill="#2d5f7a"><title>11 on 2026-10-14</title></rect>
 <text x="125" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">less</text>
 <rect x="153" y="143" width="11" height="11" rx="2" fill="#2a2a2a"/>
 <rect x="168" y="143" width="11" height="11" rx="2" fill="#1a2f3d"/>

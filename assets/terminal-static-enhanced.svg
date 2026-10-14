@@ -10,11 +10,18 @@ prisdvl@dev:~$ date
 tz      Asia/Shanghai
 uptime  building agents &amp; RAG backends
 prisdvl@dev:~$ cat ~/stack.bars
-Java        ████████░░
-TypeScript  ███████░░░
-Rust        █████░░░░░
-Python      █████░░░░░
-Vue         ████░░░░░░
+Java          ████████░░  80%
+Spring Boot   ████████░░  80%
+MySQL         ███████░░░  70%
+Redis         ███████░░░  70%
+Spring Cloud  ██████░░░░  60%
+RabbitMQ      ██████░░░░  60%
+Docker        ██████░░░░  60%
+Spring AI     ██████░░░░  60%
+RAG / AI Agent██████░░░░  60%
+TypeScript    █████░░░░░  50%
+React         █████░░░░░  50%
+Python        ███░░░░░░░  30%
 prisdvl@dev:~$ cat ~/card.yaml
 identity
 focus    Spring AI · RAG · Agent · Distributed Systems
@@ -91,28 +98,35 @@ prisdvl@dev:~$ head ~/highlights
       <text class="tt" y="64.8"><tspan fill="#8e8e8e">tz</tspan><tspan fill="#ececec">      Asia/Shanghai</tspan></text>
       <text class="tt" y="75.6"><tspan fill="#8e8e8e">uptime</tspan><tspan fill="#ececec">  building agents &amp; RAG backends</tspan></text>
       <text class="tt" y="86.4" fill="#ececec">prisdvl@dev:~$ cat ~/stack.bars</text>
-      <text class="tt" y="97.2"><tspan fill="#8AB4F8">Java</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">████████</tspan><tspan fill="#8e8e8e">░░</tspan></text>
-      <text class="tt" y="108"><tspan fill="#8AB4F8">TypeScript</tspan><tspan fill="#ececec">  </tspan><tspan fill="#4dd0e1">███████</tspan><tspan fill="#8e8e8e">░░░</tspan></text>
-      <text class="tt" y="118.8"><tspan fill="#8AB4F8">Rust</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan></text>
-      <text class="tt" y="129.6"><tspan fill="#8AB4F8">Python</tspan><tspan fill="#ececec">      </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan></text>
-      <text class="tt" y="140.4"><tspan fill="#8AB4F8">Vue</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">████</tspan><tspan fill="#8e8e8e">░░░░░░</tspan></text>
-      <text class="tt" y="151.2" fill="#ececec">prisdvl@dev:~$ cat ~/card.yaml</text>
-      <text class="tt" y="162"><tspan fill="#8e8e8e">── identity ──────────────────────────────</tspan></text>
-      <text class="tt" y="172.8"><tspan fill="#8e8e8e">focus</tspan><tspan fill="#ececec">    </tspan><tspan fill="#E3B341">Spring AI</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">RAG</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">Agent</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">Distributed Systems</tspan></text>
-      <text class="tt" y="183.6"><tspan fill="#8e8e8e">runtime</tspan><tspan fill="#ececec">  Spring Boot · Spring AI · FastAPI · Tauri · Django</tspan></text>
-      <text class="tt" y="194.4"><tspan fill="#8e8e8e">async</tspan><tspan fill="#ececec">    Celery · message queues · tool-calling agents</tspan></text>
-      <text class="tt" y="205.2"><tspan fill="#8e8e8e">topics</tspan><tspan fill="#ececec">   hybrid retrieval · RAG eval · production agents</tspan></text>
-      <text class="tt" y="216"><tspan fill="#8e8e8e">now</tspan><tspan fill="#ececec">      agent platforms · retrieval eval · Tauri tooling</tspan></text>
-      <text class="tt" y="226.8"><tspan fill="#8e8e8e">status</tspan><tspan fill="#ececec">   </tspan><tspan fill="#10A37F">online</tspan><tspan fill="#ececec"> · open to collab on agents / RAG</tspan></text>
-      <text class="tt" y="237.6" fill="#ececec">prisdvl@dev:~$ cat ~/skills.md</text>
-      <text class="tt" y="248.4"><tspan fill="#AB68FF">backend</tspan><tspan fill="#ececec">  APIs · distributed services · Spring ecosystem</tspan></text>
-      <text class="tt" y="259.2"><tspan fill="#AB68FF">ai</tspan><tspan fill="#ececec">       RAG pipelines · agent loops · retrieval eval</tspan></text>
-      <text class="tt" y="270"><tspan fill="#AB68FF">data</tspan><tspan fill="#ececec">     OCR pipelines · async workers · MySQL</tspan></text>
-      <text class="tt" y="280.8"><tspan fill="#AB68FF">client</tspan><tspan fill="#ececec">   Vue · React · Tauri desktop</tspan></text>
-      <text class="tt" y="291.6" fill="#ececec">prisdvl@dev:~$ head ~/highlights</text>
-      <text class="tt" y="302.4"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> Spring AI knowledge base + tool-calling agent platform</tspan></text>
-      <text class="tt" y="313.2"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> K-12 grading pipeline: OCR → queue · LLM scoring</tspan></text>
-      <text class="tt" y="324"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> Rust/Tauri focus timer with liquid-glass UI</tspan></text>
+      <text class="tt" y="97.2"><tspan fill="#8AB4F8">Java</tspan><tspan fill="#ececec">          </tspan><tspan fill="#4dd0e1">████████</tspan><tspan fill="#8e8e8e">░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">80%</tspan></text>
+      <text class="tt" y="108"><tspan fill="#8AB4F8">Spring Boot</tspan><tspan fill="#ececec">   </tspan><tspan fill="#4dd0e1">████████</tspan><tspan fill="#8e8e8e">░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">80%</tspan></text>
+      <text class="tt" y="118.8"><tspan fill="#8AB4F8">MySQL</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">███████</tspan><tspan fill="#8e8e8e">░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">70%</tspan></text>
+      <text class="tt" y="129.6"><tspan fill="#8AB4F8">Redis</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">███████</tspan><tspan fill="#8e8e8e">░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">70%</tspan></text>
+      <text class="tt" y="140.4"><tspan fill="#8AB4F8">Spring Cloud</tspan><tspan fill="#ececec">  </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+      <text class="tt" y="151.2"><tspan fill="#8AB4F8">RabbitMQ</tspan><tspan fill="#ececec">      </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+      <text class="tt" y="162"><tspan fill="#8AB4F8">Docker</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+      <text class="tt" y="172.8"><tspan fill="#8AB4F8">Spring AI</tspan><tspan fill="#ececec">     </tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+      <text class="tt" y="183.6"><tspan fill="#8AB4F8">RAG / AI Agent</tspan><tspan fill="#4dd0e1">██████</tspan><tspan fill="#8e8e8e">░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">60%</tspan></text>
+      <text class="tt" y="194.4"><tspan fill="#8AB4F8">TypeScript</tspan><tspan fill="#ececec">    </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">50%</tspan></text>
+      <text class="tt" y="205.2"><tspan fill="#8AB4F8">React</tspan><tspan fill="#ececec">         </tspan><tspan fill="#4dd0e1">█████</tspan><tspan fill="#8e8e8e">░░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">50%</tspan></text>
+      <text class="tt" y="216"><tspan fill="#8AB4F8">Python</tspan><tspan fill="#ececec">        </tspan><tspan fill="#4dd0e1">███</tspan><tspan fill="#8e8e8e">░░░░░░░</tspan><tspan fill="#ececec">  </tspan><tspan fill="#8e8e8e">30%</tspan></text>
+      <text class="tt" y="226.8" fill="#ececec">prisdvl@dev:~$ cat ~/card.yaml</text>
+      <text class="tt" y="237.6"><tspan fill="#8e8e8e">── identity ──────────────────────────────</tspan></text>
+      <text class="tt" y="248.4"><tspan fill="#8e8e8e">focus</tspan><tspan fill="#ececec">    </tspan><tspan fill="#E3B341">Spring AI</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">RAG</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">Agent</tspan><tspan fill="#ececec"> · </tspan><tspan fill="#E3B341">Distributed Systems</tspan></text>
+      <text class="tt" y="259.2"><tspan fill="#8e8e8e">runtime</tspan><tspan fill="#ececec">  Spring Boot · Spring AI · FastAPI · Tauri · Django</tspan></text>
+      <text class="tt" y="270"><tspan fill="#8e8e8e">async</tspan><tspan fill="#ececec">    Celery · message queues · tool-calling agents</tspan></text>
+      <text class="tt" y="280.8"><tspan fill="#8e8e8e">topics</tspan><tspan fill="#ececec">   hybrid retrieval · RAG eval · production agents</tspan></text>
+      <text class="tt" y="291.6"><tspan fill="#8e8e8e">now</tspan><tspan fill="#ececec">      agent platforms · retrieval eval · Tauri tooling</tspan></text>
+      <text class="tt" y="302.4"><tspan fill="#8e8e8e">status</tspan><tspan fill="#ececec">   </tspan><tspan fill="#10A37F">online</tspan><tspan fill="#ececec"> · open to collab on agents / RAG</tspan></text>
+      <text class="tt" y="313.2" fill="#ececec">prisdvl@dev:~$ cat ~/skills.md</text>
+      <text class="tt" y="324"><tspan fill="#AB68FF">backend</tspan><tspan fill="#ececec">  APIs · distributed services · Spring ecosystem</tspan></text>
+      <text class="tt" y="334.8"><tspan fill="#AB68FF">ai</tspan><tspan fill="#ececec">       RAG pipelines · agent loops · retrieval eval</tspan></text>
+      <text class="tt" y="345.6"><tspan fill="#AB68FF">data</tspan><tspan fill="#ececec">     OCR pipelines · async workers · MySQL</tspan></text>
+      <text class="tt" y="356.4"><tspan fill="#AB68FF">client</tspan><tspan fill="#ececec">   Vue · React · Tauri desktop</tspan></text>
+      <text class="tt" y="367.2" fill="#ececec">prisdvl@dev:~$ head ~/highlights</text>
+      <text class="tt" y="378"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> Spring AI knowledge base + tool-calling agent platform</tspan></text>
+      <text class="tt" y="388.8"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> K-12 grading pipeline: OCR → queue · LLM scoring</tspan></text>
+      <text class="tt" y="399.6"><tspan fill="#8AB4F8">▸</tspan><tspan fill="#ececec"> Rust/Tauri focus timer with liquid-glass UI</tspan></text>
       </g><g id="portraitPanel" transform="translate(480, 0)">
     <g transform="translate(0, 0)">
       <text class="tt"><tspan fill="#ececec">                               </tspan><tspan fill="#4dd0e1">o&amp;%BB%Wh</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#ececec">      </tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">h#MM</tspan></text>
@@ -221,7 +235,7 @@ prisdvl@dev:~$ head ~/highlights
 <text x="0" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">online</tspan><tspan fill="#8e8e8e">  ·  open to collab on agents / RAG  ·  </tspan><tspan fill="#8AB4F8">github.com/Prisdvl</tspan></text></g>
       <g id="activitySection" transform="translate(0, 168)"><text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">── activity ────────────────────────────────────</tspan></text>
 <text x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">contrib --user Prisdvl</tspan></text>
-<text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#b4b4b4">352 contributions · last year</text>
+<text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#b4b4b4">353 contributions · last year</text>
 <text x="125" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Mon</text>
 <text x="125" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Wed</text>
 <text x="125" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Fri</text>
@@ -592,7 +606,7 @@ prisdvl@dev:~$ head ~/highlights
 <rect x="829" y="38" width="11" height="11" rx="2" fill="#2d5f7a"><title>14 on 2026-10-11</title></rect>
 <rect x="829" y="51" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2026-10-12</title></rect>
 <rect x="829" y="64" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2026-10-13</title></rect>
-<rect x="829" y="77" width="11" height="11" rx="2" fill="#2d5f7a"><title>10 on 2026-10-14</title></rect>
+<rect x="829" y="77" width="11" height="11" rx="2" fill="#2d5f7a"><title>11 on 2026-10-14</title></rect>
 <text x="125" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">less</text>
 <rect x="153" y="143" width="11" height="11" rx="2" fill="#2a2a2a"/>
 <rect x="168" y="143" width="11" height="11" rx="2" fill="#1a2f3d"/>
