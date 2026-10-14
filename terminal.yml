@@ -42,9 +42,9 @@ terminal:
   prompt: "prisdvl@dev:~$ "
   fontFamily: "JetBrains Mono, Fira Code, Ubuntu Mono, monospace"
   fontSize: 11
-  lineHeight: 1.25
-  padding: 12
-  paddingTop: 14
+  lineHeight: 1.12
+  padding: 8
+  paddingTop: 8
 
 effects:
   scanlines: true
@@ -59,35 +59,35 @@ blocks:
     config:
       command: cat portrait.ascii
       lines:
-        - "[[fg:cyan]]                                    o&%BB%Whq      dh#MM[[/fg]]"
-        - "[[fg:cyan]]                                Mh0CQLLLLL8cXvvc%8_tt///}]Y88[[/fg]]"
-        - "[[fg:cyan]]                            W@X}B8dOXczcYJ&!wJUUz8lxxrxxxxrft}f8#[[/fg]]"
-        - "[[fg:cyan]]                        *&@%>[?[{{0B#wzvvvU?zmQYXZf\\rrrftjtttfcnx@M[[/fg]]"
-        - "[[fg:cyan]]                   a&b0Lu%$I\\1{}}}}}1nd&hmCX|vwwmOO1frttttttvkojcXhB#[[/fg]]"
-        - "[[fg:cyan]]                 opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@[[/fg]]"
-        - "[[fg:cyan]]              #%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&ikZOOOLLQQ@@*[[/fg]]"
-        - "[[fg:cyan]]            M**kB(OwmwmQQQC)p#jffrjx\\1)}][&$Qjt/tft/|-ih$nkqmwwZOQL&)cvd8[[/fg]]"
-        - "[[fg:cyan]]           8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\\|\\_wopmppZOZa/QLQ0fBk[[/fg]]"
-        - "[[fg:cyan]]          W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\\jh$$BW*ad*hYZOQ0QLqB[[/fg]]"
-        - "[[fg:cyan]]        #%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%[[/fg]]"
-        - "[[fg:cyan]]       Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B[[/fg]]"
-        - "[[fg:cyan]]      #dbkwMt&**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*[[/fg]]"
-        - "[[fg:cyan]]     kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q[[/fg]]"
-        - "[[fg:cyan]]     Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&MQCqd&waB[[/fg]]"
-        - "[[fg:cyan]]     Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*[[/fg]]"
-        - "[[fg:cyan]]     WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&[[/fg]]"
-        - "[[fg:cyan]]      88ahoB8#ap&aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o[[/fg]]"
-        - "[[fg:cyan]]       8W#@*#M*pmWaahhhhhho@ChpqOQLCL<@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%[[/fg]]"
-        - "[[fg:cyan]]        M@k*###**\\B#hhhhao@Jaddpppppdbd0$$$$$@&obk**ookpppdhoh@%kkhk*$M[[/fg]]"
-        - "[[fg:cyan]]        W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W[[/fg]]"
-        - "[[fg:cyan]]        &8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&@M*********oaaaaak%$&[[/fg]]"
-        - "[[fg:cyan]]         BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&ahd0YU0b#8BBBB@@B%&%Bh[[/fg]]"
-        - "[[fg:cyan]]          %@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q[[/fg]]"
-        - "[[fg:cyan]]           #$Mq&bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M[[/fg]]"
-        - "[[fg:cyan]]             o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak[[/fg]]"
-        - "[[fg:cyan]]                 W@@@@8aLW$opoo*****MMLa@&hwZZZw%$W[[/fg]]"
-        - "[[fg:cyan]]                           *8@Bowwko#*obk*@BB%&M[[/fg]]"
-        - "[[fg:cyan]]                                 qaMMMbp[[/fg]]"
+        - "                                    [[fg:cyan]]o&%BB%Wh[[/fg]][[fg:bright_blue]]q[[/fg]]      [[fg:bright_blue]]d[[/fg]][[fg:cyan]]h#MM[[/fg]]"
+        - "                                [[fg:cyan]]Mh[[/fg]][[fg:bright_blue]]0CQLLLLL[[/fg]][[fg:cyan]]8[[/fg]][[fg:bright_cyan]]cXvvc[[/fg]][[fg:cyan]]%8[[/fg]][[fg:bright_white]]_[[/fg]][[fg:bright_cyan]]tt///[[/fg]][[fg:bright_white]]}][[/fg]][[fg:bright_cyan]]Y[[/fg]][[fg:cyan]]8[[/fg]][[fg:blue]]8[[/fg]]"
+        - "                            [[fg:bright_blue]]W@[[/fg]][[fg:bright_cyan]]X[[/fg]][[fg:bright_white]]}[[/fg]][[fg:cyan]]B8[[/fg]][[fg:bright_blue]]dO[[/fg]][[fg:bright_cyan]]XczcY[[/fg]][[fg:bright_blue]]J[[/fg]][[fg:cyan]]&[[/fg]][[fg:bright_white]]![[/fg]][[fg:bright_blue]]wJUU[[/fg]][[fg:bright_cyan]]z[[/fg]][[fg:cyan]]8[[/fg]][[fg:bright_white]]l[[/fg]][[fg:bright_cyan]]xxrxxxxrft[[/fg]][[fg:bright_white]]}[[/fg]][[fg:bright_blue]]f[[/fg]][[fg:blue]]8#[[/fg]]"
+        - "                        [[fg:bright_blue]]*&@%[[/fg]][[fg:bright_white]]>[?[{{[[/fg]][[fg:bright_blue]]0[[/fg]][[fg:cyan]]B#[[/fg]][[fg:bright_blue]]w[[/fg]][[fg:bright_cyan]]zvvv[[/fg]][[fg:bright_blue]]U[[/fg]][[fg:bright_white]]?[[/fg]][[fg:bright_cyan]]z[[/fg]][[fg:bright_blue]]mQ[[/fg]][[fg:bright_cyan]]YX[[/fg]][[fg:bright_blue]]Z[[/fg]][[fg:bright_cyan]]f\\rrrftjtttf[[/fg]][[fg:bright_blue]]cnx[[/fg]][[fg:blue]]@M[[/fg]]"
+        - "                   [[fg:bright_blue]]a&[[/fg]][[fg:bright_cyan]]b0L[[/fg]][[fg:bright_white]]u[[/fg]][[fg:bright_blue]]%$[[/fg]][[fg:bright_white]]I[[/fg]][[fg:bright_cyan]]\\[[/fg]][[fg:bright_white]]1{}}}}}1[[/fg]][[fg:bright_cyan]]n[[/fg]][[fg:bright_blue]]d[[/fg]][[fg:cyan]]&h[[/fg]][[fg:bright_blue]]mC[[/fg]][[fg:bright_cyan]]X[[/fg]][[fg:bright_white]]|[[/fg]][[fg:bright_cyan]]v[[/fg]][[fg:bright_blue]]wwmOO[[/fg]][[fg:bright_white]]1[[/fg]][[fg:bright_cyan]]frttttttv[[/fg]][[fg:blue]]ko[[/fg]][[fg:bright_blue]]jcX[[/fg]][[fg:blue]]hB#[[/fg]]"
+        - "                 [[fg:bright_blue]]o[[/fg]][[fg:bright_cyan]]pQ00ZmJ[[/fg]][[fg:bright_blue]]a[[/fg]][[fg:cyan]]$[[/fg]][[fg:bright_white]]l[[/fg]][[fg:bright_cyan]]jjrrfr[[/fg]][[fg:bright_white]]1{{}}}[([[/fg]][[fg:bright_cyan]]z[[/fg]][[fg:cyan]]$$M[[/fg]][[fg:bright_white]]|[[/fg]][[fg:bright_blue]]qqwZJ[[/fg]][[fg:cyan]]a[[/fg]][[fg:bright_cyan]]trjtt[[/fg]][[fg:bright_blue]]J[[/fg]][[fg:blue]]8[[/fg]][[fg:bright_white]],[[/fg]][[fg:cyan]]pU[[/fg]][[fg:bright_blue]]YXXX[[/fg]][[fg:cyan]]J[[/fg]][[fg:blue]]@[[/fg]]"
+        - "              [[fg:bright_blue]]#%*[[/fg]][[fg:bright_cyan]]mZZZmww[[/fg]][[fg:bright_blue]]m[[/fg]][[fg:bright_cyan]]u[[/fg]][[fg:bright_blue]]m[[/fg]][[fg:cyan]]W[[/fg]][[fg:bright_white]]|[[/fg]][[fg:bright_cyan]]ffxrftf[[/fg]][[fg:bright_white]]}}{}]{[][[/fg]][[fg:cyan]]%$$$$$$$$$[[/fg]][[fg:bright_blue]]d[[/fg]][[fg:bright_cyan]]nu[[/fg]][[fg:cyan]]&[[/fg]][[fg:bright_white]]i[[/fg]][[fg:blue]]k[[/fg]][[fg:cyan]]ZOOOLLQQ[[/fg]][[fg:blue]]@@*[[/fg]]"
+        - "            [[fg:bright_blue]]M**kB[[/fg]][[fg:bright_white]]([[/fg]][[fg:bright_cyan]]Owmwm[[/fg]][[fg:bright_blue]]QQQC[[/fg]][[fg:bright_white]])[[/fg]][[fg:bright_blue]]p[[/fg]][[fg:cyan]]#[[/fg]][[fg:bright_cyan]]jffrjx\\[[/fg]][[fg:bright_white]]1)}][[[/fg]][[fg:cyan]]&$[[/fg]][[fg:bright_blue]]Q[[/fg]][[fg:bright_cyan]]jt/tft/[[/fg]][[fg:bright_white]]|-i[[/fg]][[fg:cyan]]h$[[/fg]][[fg:bright_cyan]]n[[/fg]][[fg:cyan]]kqmwwZOQL[[/fg]][[fg:blue]]&[[/fg]][[fg:bright_cyan]])[[/fg]][[fg:bright_blue]]cv[[/fg]][[fg:cyan]]d[[/fg]][[fg:blue]]8[[/fg]]"
+        - "           [[fg:bright_blue]]8o**a[[/fg]][[fg:bright_cyan]]b[[/fg]][[fg:bright_blue]]%[[/fg]][[fg:bright_white]]{[[/fg]][[fg:bright_cyan]]mZ[[/fg]][[fg:bright_blue]]mOCCJ[[/fg]][[fg:bright_cyan]]Xcvc[[/fg]][[fg:bright_white]])[[/fg]][[fg:bright_blue]]C[[/fg]][[fg:cyan]]%[[/fg]][[fg:bright_blue]]b[[/fg]][[fg:bright_cyan]]nxccvf[[/fg]][[fg:cyan]]hh[[/fg]][[fg:bright_cyan]]uxnnuuuuuu/\\[[/fg]][[fg:bright_white]]|[[/fg]][[fg:bright_cyan]]\\[[/fg]][[fg:bright_white]]_[[/fg]][[fg:bright_blue]]w[[/fg]][[fg:blue]]o[[/fg]][[fg:cyan]]pmppZOZ[[/fg]][[fg:blue]]a[[/fg]][[fg:bright_blue]]/[[/fg]][[fg:cyan]]QLQ0[[/fg]][[fg:bright_blue]]f[[/fg]][[fg:blue]]Bk[[/fg]]"
+        - "          [[fg:bright_blue]]W%o***[[/fg]][[fg:bright_cyan]]bZ[[/fg]][[fg:bright_blue]]B[[/fg]][[fg:bright_cyan]]Yf[[/fg]][[fg:bright_blue]]wJJJJJ[[/fg]][[fg:bright_cyan]]Xuccvczuu[[/fg]][[fg:bright_blue]]p[[/fg]][[fg:cyan]]$$B[[/fg]][[fg:bright_blue]]U[[/fg]][[fg:bright_cyan]]znunuuuuuuutxj\\j[[/fg]][[fg:blue]]h$$BW*a[[/fg]][[fg:cyan]]d[[/fg]][[fg:blue]]*h[[/fg]][[fg:bright_blue]]Y[[/fg]][[fg:cyan]]ZOQ0QLq[[/fg]][[fg:blue]]B[[/fg]]"
+        - "        [[fg:bright_blue]]#%B8#**o*[[/fg]][[fg:cyan]]*[[/fg]][[fg:bright_blue]]dm[[/fg]][[fg:cyan]]@[[/fg]][[fg:bright_blue]]m[[/fg]][[fg:bright_white]]([[/fg]][[fg:bright_cyan]]/[[/fg]][[fg:bright_blue]]CUCCCC[[/fg]][[fg:bright_cyan]]Yxvz[[/fg]][[fg:bright_blue]]UUC[[/fg]][[fg:cyan]]B$h[[/fg]][[fg:bright_blue]]pqwO[[/fg]][[fg:bright_cyan]]Ynxnnuuuuuv[[/fg]][[fg:cyan]]0[[/fg]][[fg:bright_blue]]Y[[/fg]][[fg:blue]]B[[/fg]][[fg:cyan]]JJ[[/fg]][[fg:bright_blue]]unv[[/fg]][[fg:bright_cyan]]_[[/fg]][[fg:cyan]]0[[/fg]][[fg:blue]]$[[/fg]][[fg:cyan]]QOZZOO0wp[[/fg]][[fg:blue]]k%[[/fg]]"
+        - "       [[fg:bright_blue]]W[[/fg]][[fg:bright_cyan]]bwd[[/fg]][[fg:bright_blue]]h#**[[/fg]][[fg:cyan]]*o*o**k[[/fg]][[fg:bright_cyan]]t[[/fg]][[fg:bright_blue]]L[[/fg]][[fg:cyan]]$$W%%8%@$$$$$B[[/fg]][[fg:bright_blue]]CO0mdpd[[/fg]][[fg:cyan]]*W%o[[/fg]][[fg:bright_blue]]Z[[/fg]][[fg:bright_cyan]]Xcv[[/fg]][[fg:bright_blue]]v[[/fg]][[fg:cyan]]ZpQJ[[/fg]][[fg:bright_blue]]XYYzzzYr[[/fg]][[fg:cyan]]pOZZZZZqq[[/fg]][[fg:blue]]#B[[/fg]]"
+        - "      [[fg:bright_blue]]#[[/fg]][[fg:bright_cyan]]db[[/fg]][[fg:bright_blue]]k[[/fg]][[fg:bright_cyan]]w[[/fg]][[fg:bright_blue]]M[[/fg]][[fg:bright_white]]t[[/fg]][[fg:cyan]]&**ooM[[/fg]][[fg:bright_white]]|[[/fg]][[fg:bright_cyan]]f[[/fg]][[fg:cyan]]*$@[[/fg]][[fg:bright_blue]]b0U[[/fg]][[fg:bright_cyan]]Y[[/fg]][[fg:bright_blue]]UL00QQ0[[/fg]][[fg:cyan]]W$[[/fg]][[fg:bright_blue]]ddwwpd0Q[[/fg]][[fg:bright_cyan]]zczXj+[[/fg]][[fg:cyan]]L[[/fg]][[fg:blue]]8[[/fg]][[fg:cyan]]w[[/fg]][[fg:blue]]%[[/fg]][[fg:bright_cyan]]-[[/fg]][[fg:cyan]]dJ[[/fg]][[fg:bright_blue]]YXYYYYYt[[/fg]][[fg:blue]]#[[/fg]][[fg:cyan]]wZZOmpq[[/fg]][[fg:blue]]q$*[[/fg]]"
+        - "     [[fg:bright_blue]]kohaa[[/fg]][[fg:cyan]]aa[[/fg]][[fg:bright_cyan]]X[[/fg]][[fg:cyan]]M[[/fg]][[fg:bright_cyan]]f[[/fg]][[fg:cyan]]kk[[/fg]][[fg:bright_white]]][[/fg]][[fg:bright_blue]]C[[/fg]][[fg:cyan]]$%[[/fg]][[fg:bright_blue]]qqLUJOZ0L0O0[[/fg]][[fg:cyan]]h[[/fg]][[fg:bright_blue]]Zq[[/fg]][[fg:cyan]]M[[/fg]][[fg:bright_blue]]ZZmdddO[[/fg]][[fg:bright_cyan]]Xczz[[/fg]][[fg:bright_blue]]zzzc[[/fg]][[fg:cyan]]L[[/fg]][[fg:bright_cyan]]|[[[/fg]][[fg:blue]]Bk[[/fg]][[fg:cyan]]L[[/fg]][[fg:bright_blue]]YXXYXXX[[/fg]][[fg:blue]]*$$[[/fg]][[fg:cyan]]b[[/fg]][[fg:bright_cyan]]-[[/fg]][[fg:cyan]]w[[/fg]][[fg:blue]]pbb$Q[[/fg]]"
+        - "     [[fg:bright_blue]]Wha[[/fg]][[fg:cyan]]o#aaaa[[/fg]][[fg:bright_blue]]L[[/fg]][[fg:cyan]]aB$a[[/fg]][[fg:bright_blue]]mmwwwwOZ0mqwZb[[/fg]][[fg:bright_cyan]]uc[[/fg]][[fg:bright_blue]]Z[[/fg]][[fg:cyan]]k[[/fg]][[fg:bright_blue]]ZZZpdwL[[/fg]][[fg:cyan]]LCCU[[/fg]][[fg:bright_blue]]YzzzzzX[[/fg]][[fg:cyan]]Q[[/fg]][[fg:bright_blue]]n[[/fg]][[fg:cyan]]w[[/fg]][[fg:blue]]a[[/fg]][[fg:bright_blue]]vcczz[[/fg]][[fg:blue]]&M[[/fg]][[fg:cyan]]Q[[/fg]][[fg:blue]]Cqd&waB[[/fg]]"
+        - "     [[fg:bright_blue]]B[[/fg]][[fg:cyan]]ko*##oa*%$o[[/fg]][[fg:bright_blue]]bb[[/fg]][[fg:cyan]]k[[/fg]][[fg:bright_blue]]dwwwZOZZqp[[/fg]][[fg:cyan]]*[[/fg]][[fg:bright_white]]{[[/fg]][[fg:bright_blue]]O[[/fg]][[fg:bright_cyan]]zcj[[/fg]][[fg:cyan]]M[[/fg]][[fg:bright_blue]]ZZZmw[[/fg]][[fg:cyan]]wmCLQQQL[[/fg]][[fg:bright_blue]]zzzzYz[[/fg]][[fg:cyan]]U[[/fg]][[fg:bright_blue]]u[[/fg]][[fg:blue]]$$o[[/fg]][[fg:bright_blue]]XY[[/fg]][[fg:blue]]*kqbbbddk$*[[/fg]]"
+        - "     [[fg:cyan]]WBa##**W$%@aaaahkk[[/fg]][[fg:bright_blue]]dpqmwq[[/fg]][[fg:cyan]]M[[/fg]][[fg:bright_white]])[[/fg]][[fg:bright_blue]]L[[/fg]][[fg:bright_cyan]]X[[/fg]][[fg:bright_blue]]OO[[/fg]][[fg:bright_white]]-[[/fg]][[fg:cyan]]W[[/fg]][[fg:bright_blue]]qm[[/fg]][[fg:cyan]]ZmmwwwwQQQQQQQQL[[/fg]][[fg:bright_cyan]]][[/fg]][[fg:blue]]M[[/fg]][[fg:cyan]]pLLZ[[/fg]][[fg:blue]]8a8kbkbbqp#&[[/fg]]"
+        - "      [[fg:cyan]]88ahoB8#a[[/fg]][[fg:bright_blue]]p[[/fg]][[fg:cyan]]&aaahhkhhhh[[/fg]][[fg:bright_blue]]d[[/fg]][[fg:cyan]]W[[/fg]][[fg:bright_white]]|[[/fg]][[fg:bright_blue]]OLCQQL[[/fg]][[fg:bright_white]]_[[/fg]][[fg:blue]]@[[/fg]][[fg:cyan]]ZZmmmmwwqqwZ0O[[/fg]][[fg:bright_blue]]j[[/fg]][[fg:bright_cyan]]?[[/fg]][[fg:blue]]W[[/fg]][[fg:cyan]]wJZwq[[/fg]][[fg:blue]]qa$*hbbbbbp@o[[/fg]]"
+        - "       [[fg:cyan]]8W#@*#M*[[/fg]][[fg:bright_blue]]pm[[/fg]][[fg:cyan]]Waahhhhhho@[[/fg]][[fg:bright_blue]]C[[/fg]][[fg:cyan]]h[[/fg]][[fg:bright_blue]]pqOQL[[/fg]][[fg:cyan]]CL[[/fg]][[fg:bright_cyan]]<[[/fg]][[fg:blue]]@[[/fg]][[fg:bright_blue]]X[[/fg]][[fg:cyan]]C[[/fg]][[fg:blue]]kk[[/fg]][[fg:cyan]]pppbw[[/fg]][[fg:bright_blue]]r[[/fg]][[fg:bright_cyan]]{[[/fg]][[fg:cyan]]U[[/fg]][[fg:blue]]M*[[/fg]][[fg:cyan]]Lqpp[[/fg]][[fg:blue]]qqqqq@8kkbbbb$%[[/fg]]"
+        - "        [[fg:cyan]]M@k*###**[[/fg]][[fg:bright_cyan]]\\[[/fg]][[fg:cyan]]B#hhhhao@[[/fg]][[fg:bright_blue]]J[[/fg]][[fg:cyan]]a[[/fg]][[fg:bright_blue]]ddp[[/fg]][[fg:cyan]]ppppdbd0[[/fg]][[fg:blue]]$$$$$@&o[[/fg]][[fg:cyan]]b[[/fg]][[fg:blue]]k**ookpppdhoh@%kkhk*$M[[/fg]]"
+        - "        [[fg:cyan]]W#[[/fg]][[fg:bright_blue]]p[[/fg]][[fg:cyan]]ko*#*#o#[[/fg]][[fg:bright_cyan]]f[[/fg]][[fg:cyan]]WB#ak%h[[/fg]][[fg:bright_blue]]Ob[[/fg]][[fg:cyan]]dbdddbbbbbbd[[/fg]][[fg:blue]]W8oo****##*oaaoahaaoo$W*B@@W[[/fg]]"
+        - "        [[fg:cyan]]&8[[/fg]][[fg:bright_blue]]w[[/fg]][[fg:cyan]]kkha*[[/fg]][[fg:bright_blue]]m[[/fg]][[fg:cyan]]B[[/fg]][[fg:bright_blue]]0q[[/fg]][[fg:cyan]]WB%$$[[/fg]][[fg:blue]]$[[/fg]][[fg:cyan]]0[[/fg]][[fg:blue]]hkkkkk[[/fg]][[fg:cyan]]bbbbbbb[[/fg]][[fg:blue]]M@&@M*********oaaaaak%$&[[/fg]]"
+        - "         [[fg:cyan]]BM[[/fg]][[fg:bright_blue]]p[[/fg]][[fg:cyan]]kkk[[/fg]][[fg:bright_blue]]d[[/fg]][[fg:cyan]]a[[/fg]][[fg:bright_blue]]d[[/fg]][[fg:cyan]]k[[/fg]][[fg:bright_blue]]b[[/fg]][[fg:cyan]]hhhd[[/fg]][[fg:blue]]8B[[/fg]][[fg:cyan]]Q[[/fg]][[fg:blue]]ahkkkkk[[/fg]][[fg:cyan]]bbbb[[/fg]][[fg:blue]]M$&ahd0[[/fg]][[fg:cyan]]Y[[/fg]][[fg:blue]]U0b#8BBBB@@B%&%Bh[[/fg]]"
+        - "          [[fg:cyan]]%@[[/fg]][[fg:bright_blue]]d[[/fg]][[fg:cyan]]k[[/fg]][[fg:bright_blue]]q[[/fg]][[fg:cyan]]W[[/fg]][[fg:bright_blue]]wb[[/fg]][[fg:cyan]]khh[[/fg]][[fg:blue]]hh[[/fg]][[fg:cyan]]d[[/fg]][[fg:blue]]@8[[/fg]][[fg:cyan]]Z[[/fg]][[fg:blue]]@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q[[/fg]]"
+        - "           [[fg:cyan]]#$M[[/fg]][[fg:bright_blue]]q[[/fg]][[fg:cyan]]&[[/fg]][[fg:bright_blue]]bb[[/fg]][[fg:cyan]]bbb[[/fg]][[fg:blue]]ha[[/fg]][[fg:cyan]]p[[/fg]][[fg:blue]]@$8[[/fg]][[fg:cyan]]p[[/fg]][[fg:blue]]*#M#a[[/fg]][[fg:cyan]]0Z[[/fg]][[fg:blue]]@@obkkbhaaaaoaaooo#8@@M[[/fg]]"
+        - "             [[fg:cyan]]o8[[/fg]][[fg:blue]]@@[[/fg]][[fg:cyan]]bpbbbdb[[/fg]][[fg:blue]]%Boo*####MMkC@#qqdddddbbkb@$Bak[[/fg]]"
+        - "                 [[fg:blue]]W@@@@8a[[/fg]][[fg:cyan]]L[[/fg]][[fg:blue]]W$o[[/fg]][[fg:cyan]]p[[/fg]][[fg:blue]]oo*****MMLa@&hwZZZw%$W[[/fg]]"
+        - "                           [[fg:blue]]*8@Bowwko#*obk*@BB%&M[[/fg]]"
+        - "                                 [[fg:blue]]qaMMMbp[[/fg]]"
   # END ASCII ART
 
   - block: custom
@@ -95,10 +95,5 @@ blocks:
       command: echo "identity"
       lines:
         - "[[fg:green]][[bold]]Prisdvl[[/bold]][[/fg]] — Java Backend / AI Systems"
-        - ""
-        - "[[fg:comment]]Specialties:[[/fg]]"
-        - "[[fg:cyan]]- Spring AI / RAG / Agent Platform[[/fg]]"
-        - "[[fg:cyan]]- Distributed Systems / Open Source[[/fg]]"
-        - ""
-        - "[[fg:magenta]]Projects:[[/fg]]"
-        - "[[fg:yellow]]- prisdvl-nexus[[/fg]]"
+        - "[[fg:comment]]Specialties:[[/fg]] [[fg:cyan]]Spring AI / RAG / Agent[[/fg]] · [[fg:cyan]]Distributed Systems[[/fg]]"
+        - "[[fg:magenta]]Projects:[[/fg]] [[fg:yellow]]prisdvl-nexus[[/fg]] · [[fg:yellow]]homework-grading-system[[/fg]] · [[fg:yellow]]PrisTimer[[/fg]]"

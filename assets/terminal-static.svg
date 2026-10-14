@@ -1,6 +1,6 @@
-<svg width="1000" height="615" viewBox="0 0 1000 615" xmlns="http://www.w3.org/2000/svg"
-  role="img" aria-label="Static terminal showing 39 lines">
-  <title>Static terminal showing 39 lines</title>
+<svg width="1000" height="483" viewBox="0 0 1000 483" xmlns="http://www.w3.org/2000/svg"
+  role="img" aria-label="Static terminal showing 34 lines">
+  <title>Static terminal showing 34 lines</title>
   <desc>prisdvl@dev:~$ cat portrait.ascii
 o&amp;%BB%Whq      dh#MM
 Mh0CQLLLLL8cXvvc%8_tt///}]Y88
@@ -9,13 +9,13 @@ W@X}B8dOXczcYJ&amp;!wJUUz8lxxrxxxxrft}f8#
 a&amp;b0Lu%$I\1{}}}}}1nd&amp;hmCX|vwwmOO1frttttttvkojcXhB#
 opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@
 #%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&amp;ikZOOOLLQQ@@*
-M**kB(OwmwmQQQC)p#jffrjx\1)}][&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8
+M**kB(OwmwmQQQC)p#jffrjx\1)}]&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8
 8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\|\_wopmppZOZa/QLQ0fBk
 W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\jh$$BW*ad*hYZOQ0QLqB
 #%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%
 Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B
 #dbkwMt&amp;**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*
-kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q
+kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|BkLYXXYXXX*$$b-wpbb$Q
 Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&amp;MQCqd&amp;waB
 Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*
 WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&amp;
@@ -33,13 +33,8 @@ W@@@@8aLW$opoo*****MMLa@&amp;hwZZZw%$W
 qaMMMbp
 prisdvl@dev:~$ echo &quot;identity&quot;
 Prisdvl — Java Backend / AI Systems
-
-Specialties:
-- Spring AI / RAG / Agent Platform
-- Distributed Systems / Open Source
-
-Projects:
-- prisdvl-nexus</desc>
+Specialties: Spring AI / RAG / Agent · Distributed Systems
+Projects: prisdvl-nexus · homework-grading-system · PrisTimer</desc>
   <style>.tt { font-family: JetBrains Mono, Fira Code, Ubuntu Mono, monospace; font-size: 11px; white-space: pre; }</style>
   <defs>
     
@@ -62,13 +57,13 @@ Projects:
       </feMerge>
     </filter>
     <clipPath id="terminalViewport">
-      <rect x="0" y="40" width="1000" height="575"/>
+      <rect x="0" y="40" width="1000" height="443"/>
     </clipPath>
   </defs>
 
   <g>
     
-    <rect x="0" y="0" width="1000" height="615"
+    <rect x="0" y="0" width="1000" height="483"
           rx="12" ry="12"
           fill="#090B0E"/>
     
@@ -78,9 +73,9 @@ Projects:
     <rect x="0" y="16" width="1000" height="16"
           fill="#161B22"/>
     <g id="window-controls">
-      <circle cx="14" cy="16" r="6" fill="#ff5f56" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
-      <circle cx="34" cy="16" r="6" fill="#ffbd2e" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
-      <circle cx="54" cy="16" r="6" fill="#27c93f" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="10" cy="16" r="6" fill="#ff5f56" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="30" cy="16" r="6" fill="#ffbd2e" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="50" cy="16" r="6" fill="#27c93f" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
     </g>
     <text x="500" y="24.55"
           font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Helvetica, Arial, sans-serif" font-size="13"
@@ -88,52 +83,47 @@ Projects:
       prisdvl@terminal: ~
     </text>
     <rect x="0" y="40" width="1000"
-          height="575" fill="#090B0E"/>
+          height="443" fill="#090B0E"/>
     <g clip-path="url(#terminalViewport)">
-      <g transform="translate(12, 54)" filter="url(#textGlow)">
+      <g transform="translate(8, 48)" filter="url(#textGlow)">
         
       <text class="tt" y="0" fill="#C9D1D9">prisdvl@dev:~$ cat portrait.ascii</text>
-      <text class="tt" y="13.8"><tspan fill="#4dd0e1">                                    o&amp;%BB%Whq      dh#MM</tspan></text>
-      <text class="tt" y="27.5"><tspan fill="#4dd0e1">                                Mh0CQLLLLL8cXvvc%8_tt///}]Y88</tspan></text>
-      <text class="tt" y="41.3"><tspan fill="#4dd0e1">                            W@X}B8dOXczcYJ&amp;!wJUUz8lxxrxxxxrft}f8#</tspan></text>
-      <text class="tt" y="55"><tspan fill="#4dd0e1">                        *&amp;@%&gt;[?[{{0B#wzvvvU?zmQYXZf\rrrftjtttfcnx@M</tspan></text>
-      <text class="tt" y="68.8"><tspan fill="#4dd0e1">                   a&amp;b0Lu%$I\1{}}}}}1nd&amp;hmCX|vwwmOO1frttttttvkojcXhB#</tspan></text>
-      <text class="tt" y="82.5"><tspan fill="#4dd0e1">                 opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@</tspan></text>
-      <text class="tt" y="96.3"><tspan fill="#4dd0e1">              #%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&amp;ikZOOOLLQQ@@*</tspan></text>
-      <text class="tt" y="110"><tspan fill="#4dd0e1">            M**kB(OwmwmQQQC)p#jffrjx\1)}][&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8</tspan></text>
-      <text class="tt" y="123.8"><tspan fill="#4dd0e1">           8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\|\_wopmppZOZa/QLQ0fBk</tspan></text>
-      <text class="tt" y="137.5"><tspan fill="#4dd0e1">          W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\jh$$BW*ad*hYZOQ0QLqB</tspan></text>
-      <text class="tt" y="151.3"><tspan fill="#4dd0e1">        #%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%</tspan></text>
-      <text class="tt" y="165"><tspan fill="#4dd0e1">       Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B</tspan></text>
-      <text class="tt" y="178.8"><tspan fill="#4dd0e1">      #dbkwMt&amp;**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*</tspan></text>
-      <text class="tt" y="192.5"><tspan fill="#4dd0e1">     kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q</tspan></text>
-      <text class="tt" y="206.3"><tspan fill="#4dd0e1">     Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&amp;MQCqd&amp;waB</tspan></text>
-      <text class="tt" y="220"><tspan fill="#4dd0e1">     Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*</tspan></text>
-      <text class="tt" y="233.8"><tspan fill="#4dd0e1">     WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&amp;</tspan></text>
-      <text class="tt" y="247.5"><tspan fill="#4dd0e1">      88ahoB8#ap&amp;aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o</tspan></text>
-      <text class="tt" y="261.3"><tspan fill="#4dd0e1">       8W#@*#M*pmWaahhhhhho@ChpqOQLCL&lt;@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%</tspan></text>
-      <text class="tt" y="275"><tspan fill="#4dd0e1">        M@k*###**\B#hhhhao@Jaddpppppdbd0$$$$$@&amp;obk**ookpppdhoh@%kkhk*$M</tspan></text>
-      <text class="tt" y="288.8"><tspan fill="#4dd0e1">        W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W</tspan></text>
-      <text class="tt" y="302.5"><tspan fill="#4dd0e1">        &amp;8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&amp;@M*********oaaaaak%$&amp;</tspan></text>
-      <text class="tt" y="316.3"><tspan fill="#4dd0e1">         BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&amp;ahd0YU0b#8BBBB@@B%&amp;%Bh</tspan></text>
-      <text class="tt" y="330"><tspan fill="#4dd0e1">          %@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q</tspan></text>
-      <text class="tt" y="343.8"><tspan fill="#4dd0e1">           #$Mq&amp;bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M</tspan></text>
-      <text class="tt" y="357.5"><tspan fill="#4dd0e1">             o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak</tspan></text>
-      <text class="tt" y="371.3"><tspan fill="#4dd0e1">                 W@@@@8aLW$opoo*****MMLa@&amp;hwZZZw%$W</tspan></text>
-      <text class="tt" y="385"><tspan fill="#4dd0e1">                           *8@Bowwko#*obk*@BB%&amp;M</tspan></text>
-      <text class="tt" y="398.8"><tspan fill="#4dd0e1">                                 qaMMMbp</tspan></text>
-      <text class="tt" y="412.5" fill="#C9D1D9">prisdvl@dev:~$ echo &quot;identity&quot;</text>
-      <text class="tt" y="426.3"><tspan fill="#7EE787" font-weight="bold">Prisdvl</tspan><tspan fill="#C9D1D9"> — Java Backend / AI Systems</tspan></text>
-      <text class="tt" y="440" fill="#C9D1D9"></text>
-      <text class="tt" y="453.8"><tspan fill="#8B949E">Specialties:</tspan></text>
-      <text class="tt" y="467.5"><tspan fill="#4dd0e1">- Spring AI / RAG / Agent Platform</tspan></text>
-      <text class="tt" y="481.3"><tspan fill="#4dd0e1">- Distributed Systems / Open Source</tspan></text>
-      <text class="tt" y="495" fill="#C9D1D9"></text>
-      <text class="tt" y="508.8"><tspan fill="#d46aff">Projects:</tspan></text>
-      <text class="tt" y="522.5"><tspan fill="#f3c969">- prisdvl-nexus</tspan></text>
+      <text class="tt" y="12.3"><tspan fill="#C9D1D9">                                    </tspan><tspan fill="#4dd0e1">o&amp;%BB%Wh</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#C9D1D9">      </tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">h#MM</tspan></text>
+      <text class="tt" y="24.6"><tspan fill="#C9D1D9">                                </tspan><tspan fill="#4dd0e1">Mh</tspan><tspan fill="#9ed0ff">0CQLLLLL</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#bff6ff">cXvvc</tspan><tspan fill="#4dd0e1">%8</tspan><tspan fill="#ffffff">_</tspan><tspan fill="#bff6ff">tt///</tspan><tspan fill="#ffffff">}]</tspan><tspan fill="#bff6ff">Y</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#4ea1ff">8</tspan></text>
+      <text class="tt" y="37"><tspan fill="#C9D1D9">                            </tspan><tspan fill="#9ed0ff">W@</tspan><tspan fill="#bff6ff">X</tspan><tspan fill="#ffffff">}</tspan><tspan fill="#4dd0e1">B8</tspan><tspan fill="#9ed0ff">dO</tspan><tspan fill="#bff6ff">XczcY</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#4dd0e1">&amp;</tspan><tspan fill="#ffffff">!</tspan><tspan fill="#9ed0ff">wJUU</tspan><tspan fill="#bff6ff">z</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#ffffff">l</tspan><tspan fill="#bff6ff">xxrxxxxrft</tspan><tspan fill="#ffffff">}</tspan><tspan fill="#9ed0ff">f</tspan><tspan fill="#4ea1ff">8#</tspan></text>
+      <text class="tt" y="49.3"><tspan fill="#C9D1D9">                        </tspan><tspan fill="#9ed0ff">*&amp;@%</tspan><tspan fill="#ffffff">&gt;[?[{{</tspan><tspan fill="#9ed0ff">0</tspan><tspan fill="#4dd0e1">B#</tspan><tspan fill="#9ed0ff">w</tspan><tspan fill="#bff6ff">zvvv</tspan><tspan fill="#9ed0ff">U</tspan><tspan fill="#ffffff">?</tspan><tspan fill="#bff6ff">z</tspan><tspan fill="#9ed0ff">mQ</tspan><tspan fill="#bff6ff">YX</tspan><tspan fill="#9ed0ff">Z</tspan><tspan fill="#bff6ff">f\rrrftjtttf</tspan><tspan fill="#9ed0ff">cnx</tspan><tspan fill="#4ea1ff">@M</tspan></text>
+      <text class="tt" y="61.6"><tspan fill="#C9D1D9">                   </tspan><tspan fill="#9ed0ff">a&amp;</tspan><tspan fill="#bff6ff">b0L</tspan><tspan fill="#ffffff">u</tspan><tspan fill="#9ed0ff">%$</tspan><tspan fill="#ffffff">I</tspan><tspan fill="#bff6ff">\</tspan><tspan fill="#ffffff">1{}}}}}1</tspan><tspan fill="#bff6ff">n</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">&amp;h</tspan><tspan fill="#9ed0ff">mC</tspan><tspan fill="#bff6ff">X</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">v</tspan><tspan fill="#9ed0ff">wwmOO</tspan><tspan fill="#ffffff">1</tspan><tspan fill="#bff6ff">frttttttv</tspan><tspan fill="#4ea1ff">ko</tspan><tspan fill="#9ed0ff">jcX</tspan><tspan fill="#4ea1ff">hB#</tspan></text>
+      <text class="tt" y="73.9"><tspan fill="#C9D1D9">                 </tspan><tspan fill="#9ed0ff">o</tspan><tspan fill="#bff6ff">pQ00ZmJ</tspan><tspan fill="#9ed0ff">a</tspan><tspan fill="#4dd0e1">$</tspan><tspan fill="#ffffff">l</tspan><tspan fill="#bff6ff">jjrrfr</tspan><tspan fill="#ffffff">1{{}}}[(</tspan><tspan fill="#bff6ff">z</tspan><tspan fill="#4dd0e1">$$M</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#9ed0ff">qqwZJ</tspan><tspan fill="#4dd0e1">a</tspan><tspan fill="#bff6ff">trjtt</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#4ea1ff">8</tspan><tspan fill="#ffffff">,</tspan><tspan fill="#4dd0e1">pU</tspan><tspan fill="#9ed0ff">YXXX</tspan><tspan fill="#4dd0e1">J</tspan><tspan fill="#4ea1ff">@</tspan></text>
+      <text class="tt" y="86.2"><tspan fill="#C9D1D9">              </tspan><tspan fill="#9ed0ff">#%*</tspan><tspan fill="#bff6ff">mZZZmww</tspan><tspan fill="#9ed0ff">m</tspan><tspan fill="#bff6ff">u</tspan><tspan fill="#9ed0ff">m</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">ffxrftf</tspan><tspan fill="#ffffff">}}{}]{[]</tspan><tspan fill="#4dd0e1">%$$$$$$$$$</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#bff6ff">nu</tspan><tspan fill="#4dd0e1">&amp;</tspan><tspan fill="#ffffff">i</tspan><tspan fill="#4ea1ff">k</tspan><tspan fill="#4dd0e1">ZOOOLLQQ</tspan><tspan fill="#4ea1ff">@@*</tspan></text>
+      <text class="tt" y="98.6"><tspan fill="#C9D1D9">            </tspan><tspan fill="#9ed0ff">M**kB</tspan><tspan fill="#ffffff">(</tspan><tspan fill="#bff6ff">Owmwm</tspan><tspan fill="#9ed0ff">QQQC</tspan><tspan fill="#ffffff">)</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">#</tspan><tspan fill="#bff6ff">jffrjx\</tspan><tspan fill="#ffffff">1)}]</tspan><tspan fill="#4dd0e1">&amp;$</tspan><tspan fill="#9ed0ff">Q</tspan><tspan fill="#bff6ff">jt/tft/</tspan><tspan fill="#ffffff">|-i</tspan><tspan fill="#4dd0e1">h$</tspan><tspan fill="#bff6ff">n</tspan><tspan fill="#4dd0e1">kqmwwZOQL</tspan><tspan fill="#4ea1ff">&amp;</tspan><tspan fill="#bff6ff">)</tspan><tspan fill="#9ed0ff">cv</tspan><tspan fill="#4dd0e1">d</tspan><tspan fill="#4ea1ff">8</tspan></text>
+      <text class="tt" y="110.9"><tspan fill="#C9D1D9">           </tspan><tspan fill="#9ed0ff">8o**a</tspan><tspan fill="#bff6ff">b</tspan><tspan fill="#9ed0ff">%</tspan><tspan fill="#ffffff">{</tspan><tspan fill="#bff6ff">mZ</tspan><tspan fill="#9ed0ff">mOCCJ</tspan><tspan fill="#bff6ff">Xcvc</tspan><tspan fill="#ffffff">)</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#4dd0e1">%</tspan><tspan fill="#9ed0ff">b</tspan><tspan fill="#bff6ff">nxccvf</tspan><tspan fill="#4dd0e1">hh</tspan><tspan fill="#bff6ff">uxnnuuuuuu/\</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">\</tspan><tspan fill="#ffffff">_</tspan><tspan fill="#9ed0ff">w</tspan><tspan fill="#4ea1ff">o</tspan><tspan fill="#4dd0e1">pmppZOZ</tspan><tspan fill="#4ea1ff">a</tspan><tspan fill="#9ed0ff">/</tspan><tspan fill="#4dd0e1">QLQ0</tspan><tspan fill="#9ed0ff">f</tspan><tspan fill="#4ea1ff">Bk</tspan></text>
+      <text class="tt" y="123.2"><tspan fill="#C9D1D9">          </tspan><tspan fill="#9ed0ff">W%o***</tspan><tspan fill="#bff6ff">bZ</tspan><tspan fill="#9ed0ff">B</tspan><tspan fill="#bff6ff">Yf</tspan><tspan fill="#9ed0ff">wJJJJJ</tspan><tspan fill="#bff6ff">Xuccvczuu</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">$$B</tspan><tspan fill="#9ed0ff">U</tspan><tspan fill="#bff6ff">znunuuuuuuutxj\j</tspan><tspan fill="#4ea1ff">h$$BW*a</tspan><tspan fill="#4dd0e1">d</tspan><tspan fill="#4ea1ff">*h</tspan><tspan fill="#9ed0ff">Y</tspan><tspan fill="#4dd0e1">ZOQ0QLq</tspan><tspan fill="#4ea1ff">B</tspan></text>
+      <text class="tt" y="135.5"><tspan fill="#C9D1D9">        </tspan><tspan fill="#9ed0ff">#%B8#**o*</tspan><tspan fill="#4dd0e1">*</tspan><tspan fill="#9ed0ff">dm</tspan><tspan fill="#4dd0e1">@</tspan><tspan fill="#9ed0ff">m</tspan><tspan fill="#ffffff">(</tspan><tspan fill="#bff6ff">/</tspan><tspan fill="#9ed0ff">CUCCCC</tspan><tspan fill="#bff6ff">Yxvz</tspan><tspan fill="#9ed0ff">UUC</tspan><tspan fill="#4dd0e1">B$h</tspan><tspan fill="#9ed0ff">pqwO</tspan><tspan fill="#bff6ff">Ynxnnuuuuuv</tspan><tspan fill="#4dd0e1">0</tspan><tspan fill="#9ed0ff">Y</tspan><tspan fill="#4ea1ff">B</tspan><tspan fill="#4dd0e1">JJ</tspan><tspan fill="#9ed0ff">unv</tspan><tspan fill="#bff6ff">_</tspan><tspan fill="#4dd0e1">0</tspan><tspan fill="#4ea1ff">$</tspan><tspan fill="#4dd0e1">QOZZOO0wp</tspan><tspan fill="#4ea1ff">k%</tspan></text>
+      <text class="tt" y="147.8"><tspan fill="#C9D1D9">       </tspan><tspan fill="#9ed0ff">W</tspan><tspan fill="#bff6ff">bwd</tspan><tspan fill="#9ed0ff">h#**</tspan><tspan fill="#4dd0e1">*o*o**k</tspan><tspan fill="#bff6ff">t</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#4dd0e1">$$W%%8%@$$$$$B</tspan><tspan fill="#9ed0ff">CO0mdpd</tspan><tspan fill="#4dd0e1">*W%o</tspan><tspan fill="#9ed0ff">Z</tspan><tspan fill="#bff6ff">Xcv</tspan><tspan fill="#9ed0ff">v</tspan><tspan fill="#4dd0e1">ZpQJ</tspan><tspan fill="#9ed0ff">XYYzzzYr</tspan><tspan fill="#4dd0e1">pOZZZZZqq</tspan><tspan fill="#4ea1ff">#B</tspan></text>
+      <text class="tt" y="160.2"><tspan fill="#C9D1D9">      </tspan><tspan fill="#9ed0ff">#</tspan><tspan fill="#bff6ff">db</tspan><tspan fill="#9ed0ff">k</tspan><tspan fill="#bff6ff">w</tspan><tspan fill="#9ed0ff">M</tspan><tspan fill="#ffffff">t</tspan><tspan fill="#4dd0e1">&amp;**ooM</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">f</tspan><tspan fill="#4dd0e1">*$@</tspan><tspan fill="#9ed0ff">b0U</tspan><tspan fill="#bff6ff">Y</tspan><tspan fill="#9ed0ff">UL00QQ0</tspan><tspan fill="#4dd0e1">W$</tspan><tspan fill="#9ed0ff">ddwwpd0Q</tspan><tspan fill="#bff6ff">zczXj+</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#4ea1ff">8</tspan><tspan fill="#4dd0e1">w</tspan><tspan fill="#4ea1ff">%</tspan><tspan fill="#bff6ff">-</tspan><tspan fill="#4dd0e1">dJ</tspan><tspan fill="#9ed0ff">YXYYYYYt</tspan><tspan fill="#4ea1ff">#</tspan><tspan fill="#4dd0e1">wZZOmpq</tspan><tspan fill="#4ea1ff">q$*</tspan></text>
+      <text class="tt" y="172.5"><tspan fill="#C9D1D9">     </tspan><tspan fill="#9ed0ff">kohaa</tspan><tspan fill="#4dd0e1">aa</tspan><tspan fill="#bff6ff">X</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#bff6ff">f</tspan><tspan fill="#4dd0e1">kk</tspan><tspan fill="#ffffff">]</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#4dd0e1">$%</tspan><tspan fill="#9ed0ff">qqLUJOZ0L0O0</tspan><tspan fill="#4dd0e1">h</tspan><tspan fill="#9ed0ff">Zq</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#9ed0ff">ZZmdddO</tspan><tspan fill="#bff6ff">Xczz</tspan><tspan fill="#9ed0ff">zzzc</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#bff6ff">|</tspan><tspan fill="#4ea1ff">Bk</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#9ed0ff">YXXYXXX</tspan><tspan fill="#4ea1ff">*$$</tspan><tspan fill="#4dd0e1">b</tspan><tspan fill="#bff6ff">-</tspan><tspan fill="#4dd0e1">w</tspan><tspan fill="#4ea1ff">pbb$Q</tspan></text>
+      <text class="tt" y="184.8"><tspan fill="#C9D1D9">     </tspan><tspan fill="#9ed0ff">Wha</tspan><tspan fill="#4dd0e1">o#aaaa</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#4dd0e1">aB$a</tspan><tspan fill="#9ed0ff">mmwwwwOZ0mqwZb</tspan><tspan fill="#bff6ff">uc</tspan><tspan fill="#9ed0ff">Z</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">ZZZpdwL</tspan><tspan fill="#4dd0e1">LCCU</tspan><tspan fill="#9ed0ff">YzzzzzX</tspan><tspan fill="#4dd0e1">Q</tspan><tspan fill="#9ed0ff">n</tspan><tspan fill="#4dd0e1">w</tspan><tspan fill="#4ea1ff">a</tspan><tspan fill="#9ed0ff">vcczz</tspan><tspan fill="#4ea1ff">&amp;M</tspan><tspan fill="#4dd0e1">Q</tspan><tspan fill="#4ea1ff">Cqd&amp;waB</tspan></text>
+      <text class="tt" y="197.1"><tspan fill="#C9D1D9">     </tspan><tspan fill="#9ed0ff">B</tspan><tspan fill="#4dd0e1">ko*##oa*%$o</tspan><tspan fill="#9ed0ff">bb</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">dwwwZOZZqp</tspan><tspan fill="#4dd0e1">*</tspan><tspan fill="#ffffff">{</tspan><tspan fill="#9ed0ff">O</tspan><tspan fill="#bff6ff">zcj</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#9ed0ff">ZZZmw</tspan><tspan fill="#4dd0e1">wmCLQQQL</tspan><tspan fill="#9ed0ff">zzzzYz</tspan><tspan fill="#4dd0e1">U</tspan><tspan fill="#9ed0ff">u</tspan><tspan fill="#4ea1ff">$$o</tspan><tspan fill="#9ed0ff">XY</tspan><tspan fill="#4ea1ff">*kqbbbddk$*</tspan></text>
+      <text class="tt" y="209.4"><tspan fill="#C9D1D9">     </tspan><tspan fill="#4dd0e1">WBa##**W$%@aaaahkk</tspan><tspan fill="#9ed0ff">dpqmwq</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#ffffff">)</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#bff6ff">X</tspan><tspan fill="#9ed0ff">OO</tspan><tspan fill="#ffffff">-</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#9ed0ff">qm</tspan><tspan fill="#4dd0e1">ZmmwwwwQQQQQQQQL</tspan><tspan fill="#bff6ff">]</tspan><tspan fill="#4ea1ff">M</tspan><tspan fill="#4dd0e1">pLLZ</tspan><tspan fill="#4ea1ff">8a8kbkbbqp#&amp;</tspan></text>
+      <text class="tt" y="221.8"><tspan fill="#C9D1D9">      </tspan><tspan fill="#4dd0e1">88ahoB8#a</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">&amp;aaahhkhhhh</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#9ed0ff">OLCQQL</tspan><tspan fill="#ffffff">_</tspan><tspan fill="#4ea1ff">@</tspan><tspan fill="#4dd0e1">ZZmmmmwwqqwZ0O</tspan><tspan fill="#9ed0ff">j</tspan><tspan fill="#bff6ff">?</tspan><tspan fill="#4ea1ff">W</tspan><tspan fill="#4dd0e1">wJZwq</tspan><tspan fill="#4ea1ff">qa$*hbbbbbp@o</tspan></text>
+      <text class="tt" y="234.1"><tspan fill="#C9D1D9">       </tspan><tspan fill="#4dd0e1">8W#@*#M*</tspan><tspan fill="#9ed0ff">pm</tspan><tspan fill="#4dd0e1">Waahhhhhho@</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#4dd0e1">h</tspan><tspan fill="#9ed0ff">pqOQL</tspan><tspan fill="#4dd0e1">CL</tspan><tspan fill="#bff6ff">&lt;</tspan><tspan fill="#4ea1ff">@</tspan><tspan fill="#9ed0ff">X</tspan><tspan fill="#4dd0e1">C</tspan><tspan fill="#4ea1ff">kk</tspan><tspan fill="#4dd0e1">pppbw</tspan><tspan fill="#9ed0ff">r</tspan><tspan fill="#bff6ff">{</tspan><tspan fill="#4dd0e1">U</tspan><tspan fill="#4ea1ff">M*</tspan><tspan fill="#4dd0e1">Lqpp</tspan><tspan fill="#4ea1ff">qqqqq@8kkbbbb$%</tspan></text>
+      <text class="tt" y="246.4"><tspan fill="#C9D1D9">        </tspan><tspan fill="#4dd0e1">M@k*###**</tspan><tspan fill="#bff6ff">\</tspan><tspan fill="#4dd0e1">B#hhhhao@</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#4dd0e1">a</tspan><tspan fill="#9ed0ff">ddp</tspan><tspan fill="#4dd0e1">ppppdbd0</tspan><tspan fill="#4ea1ff">$$$$$@&amp;o</tspan><tspan fill="#4dd0e1">b</tspan><tspan fill="#4ea1ff">k**ookpppdhoh@%kkhk*$M</tspan></text>
+      <text class="tt" y="258.7"><tspan fill="#C9D1D9">        </tspan><tspan fill="#4dd0e1">W#</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">ko*#*#o#</tspan><tspan fill="#bff6ff">f</tspan><tspan fill="#4dd0e1">WB#ak%h</tspan><tspan fill="#9ed0ff">Ob</tspan><tspan fill="#4dd0e1">dbdddbbbbbbd</tspan><tspan fill="#4ea1ff">W8oo****##*oaaoahaaoo$W*B@@W</tspan></text>
+      <text class="tt" y="271"><tspan fill="#C9D1D9">        </tspan><tspan fill="#4dd0e1">&amp;8</tspan><tspan fill="#9ed0ff">w</tspan><tspan fill="#4dd0e1">kkha*</tspan><tspan fill="#9ed0ff">m</tspan><tspan fill="#4dd0e1">B</tspan><tspan fill="#9ed0ff">0q</tspan><tspan fill="#4dd0e1">WB%$$</tspan><tspan fill="#4ea1ff">$</tspan><tspan fill="#4dd0e1">0</tspan><tspan fill="#4ea1ff">hkkkkk</tspan><tspan fill="#4dd0e1">bbbbbbb</tspan><tspan fill="#4ea1ff">M@&amp;@M*********oaaaaak%$&amp;</tspan></text>
+      <text class="tt" y="283.4"><tspan fill="#C9D1D9">         </tspan><tspan fill="#4dd0e1">BM</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">kkk</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">a</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">b</tspan><tspan fill="#4dd0e1">hhhd</tspan><tspan fill="#4ea1ff">8B</tspan><tspan fill="#4dd0e1">Q</tspan><tspan fill="#4ea1ff">ahkkkkk</tspan><tspan fill="#4dd0e1">bbbb</tspan><tspan fill="#4ea1ff">M$&amp;ahd0</tspan><tspan fill="#4dd0e1">Y</tspan><tspan fill="#4ea1ff">U0b#8BBBB@@B%&amp;%Bh</tspan></text>
+      <text class="tt" y="295.7"><tspan fill="#C9D1D9">          </tspan><tspan fill="#4dd0e1">%@</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#9ed0ff">wb</tspan><tspan fill="#4dd0e1">khh</tspan><tspan fill="#4ea1ff">hh</tspan><tspan fill="#4dd0e1">d</tspan><tspan fill="#4ea1ff">@8</tspan><tspan fill="#4dd0e1">Z</tspan><tspan fill="#4ea1ff">@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q</tspan></text>
+      <text class="tt" y="308"><tspan fill="#C9D1D9">           </tspan><tspan fill="#4dd0e1">#$M</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#4dd0e1">&amp;</tspan><tspan fill="#9ed0ff">bb</tspan><tspan fill="#4dd0e1">bbb</tspan><tspan fill="#4ea1ff">ha</tspan><tspan fill="#4dd0e1">p</tspan><tspan fill="#4ea1ff">@$8</tspan><tspan fill="#4dd0e1">p</tspan><tspan fill="#4ea1ff">*#M#a</tspan><tspan fill="#4dd0e1">0Z</tspan><tspan fill="#4ea1ff">@@obkkbhaaaaoaaooo#8@@M</tspan></text>
+      <text class="tt" y="320.3"><tspan fill="#C9D1D9">             </tspan><tspan fill="#4dd0e1">o8</tspan><tspan fill="#4ea1ff">@@</tspan><tspan fill="#4dd0e1">bpbbbdb</tspan><tspan fill="#4ea1ff">%Boo*####MMkC@#qqdddddbbkb@$Bak</tspan></text>
+      <text class="tt" y="332.6"><tspan fill="#C9D1D9">                 </tspan><tspan fill="#4ea1ff">W@@@@8a</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#4ea1ff">W$o</tspan><tspan fill="#4dd0e1">p</tspan><tspan fill="#4ea1ff">oo*****MMLa@&amp;hwZZZw%$W</tspan></text>
+      <text class="tt" y="345"><tspan fill="#C9D1D9">                           </tspan><tspan fill="#4ea1ff">*8@Bowwko#*obk*@BB%&amp;M</tspan></text>
+      <text class="tt" y="357.3"><tspan fill="#C9D1D9">                                 </tspan><tspan fill="#4ea1ff">qaMMMbp</tspan></text>
+      <text class="tt" y="369.6" fill="#C9D1D9">prisdvl@dev:~$ echo &quot;identity&quot;</text>
+      <text class="tt" y="381.9"><tspan fill="#7EE787" font-weight="bold">Prisdvl</tspan><tspan fill="#C9D1D9"> — Java Backend / AI Systems</tspan></text>
+      <text class="tt" y="394.2"><tspan fill="#8B949E">Specialties:</tspan><tspan fill="#C9D1D9"> </tspan><tspan fill="#4dd0e1">Spring AI / RAG / Agent</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#4dd0e1">Distributed Systems</tspan></text>
+      <text class="tt" y="406.6"><tspan fill="#d46aff">Projects:</tspan><tspan fill="#C9D1D9"> </tspan><tspan fill="#f3c969">prisdvl-nexus</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#f3c969">homework-grading-system</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#f3c969">PrisTimer</tspan></text>
       </g>
     </g>
-    <rect x="0" y="40" width="1000" height="575" fill="url(#vignette)" pointer-events="none"/>
-    <rect x="0" y="40" width="1000" height="575" fill="url(#scanlines)" pointer-events="none" opacity="0.5"/>
+    <rect x="0" y="40" width="1000" height="443" fill="url(#vignette)" pointer-events="none"/>
+    <rect x="0" y="40" width="1000" height="443" fill="url(#scanlines)" pointer-events="none" opacity="0.5"/>
   </g>
 </svg>

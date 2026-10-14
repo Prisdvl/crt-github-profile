@@ -11,17 +11,13 @@
   <code>Java</code> · <code>Spring AI</code> · <code>RAG</code> · <code>Agent</code> · <code>Distributed Systems</code>
 </p>
 
----
-
 ## Identity
 
 ![ASCII terminal monogram for Prisdvl](assets/ascii-portrait.svg)
 
----
-
 ## Selected Projects
 
-Verified from public GitHub repositories (descriptions taken from each repo’s README or GitHub metadata). `sky-take-out` was **not** found as a public repo under this account and is omitted.
+Verified from public GitHub repositories (descriptions from each repo’s README or GitHub metadata). `sky-take-out` was **not** found as a public repo under this account and is omitted.
 
 | Project | Stack (from GitHub languages) | Notes |
 | --- | --- | --- |
@@ -30,28 +26,20 @@ Verified from public GitHub repositories (descriptions taken from each repo’s 
 | [PrisTimer](https://github.com/Prisdvl/PrisTimer) | Rust, Vue, TypeScript | Tauri 2 focus timer with an anchor-based engine (liquid-glass UI). |
 | [Kakuki](https://github.com/Prisdvl/Kakuki) | JavaScript, TypeScript, Python | Django + React + MySQL application. |
 
----
-
 ## Contribution activity
 
-Terminal-styled heatmap regenerated from the public contributions calendar (`github.com/users/Prisdvl/contributions`). No fabricated counts.
+Terminal-styled heatmap from the public contributions calendar (`github.com/users/Prisdvl/contributions`). No fabricated counts.
 
 ![GitHub contribution heatmap for Prisdvl](assets/contribution.svg)
 
----
-
 <details>
 <summary>Terminal pet</summary>
-
-<br>
 
 ![Terminal pet state derived from public contribution activity](assets/pet.svg)
 
 State rules (deterministic): recent activity → `happy`; 3–6 quiet days → `hungry`; 7+ quiet days or all-zero calendar → `sleeping`; missing data → `idle` (unknown, not zero).
 
 </details>
-
----
 
 ## Local build
 
