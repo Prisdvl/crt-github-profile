@@ -11,6 +11,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
 import { assertParseableSvg, writeSvgAtomic, fetchText } from "./lib/svg-util.mjs";
+import { applyRoundedWindowClip } from "./lib/theme.mjs";
 import {
   buildProjectsSection,
   buildActivitySection,
@@ -177,6 +178,9 @@ async function loadContributionDays(user) {
   );
   const titles = doc.getElementsByTagName("title");
   if (titles[0]) titles[0].textContent = "prisdvl@terminal: ~";
+
+  // Square body/vignette rects otherwise paint over bottom rx of the shell.
+  applyRoundedWindowClip(doc);
 
   let xml = new XMLSerializer().serializeToString(doc);
   if (!xml.startsWith("<?xml")) xml = '<?xml version="1.0" encoding="utf-8"?>\n' + xml;
