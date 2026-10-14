@@ -35,7 +35,7 @@ window:
   title: "prisdvl@terminal: ~"
   width: 1000
   autoHeight: true
-  maxHeight: 1200
+  maxHeight: 1400
   style: "macos"
 
 terminal:
@@ -67,16 +67,40 @@ blocks:
 
   - block: custom
     config:
+      command: cat ~/motd
+      lines:
+        - "[[fg:bright_cyan]][[bold]]Welcome to Prisd's terminal[[/bold]][[/fg]]"
+        - "[[fg:comment]]Java Backend / AI Systems · agents · RAG · distributed systems[[/fg]]"
+
+  - block: custom
+    config:
       command: whoami
       lines:
-        - "[[fg:orange]][[bold]]prisdvl[[/bold]][[/fg]]  Java Backend / AI Systems  [[fg:blue]]github.com/Prisdvl[[/fg]]"
+        - "[[fg:green]][[bold]]prisdvl[[/bold]][[/fg]]  ·  [[fg:blue]]github.com/Prisdvl[[/fg]]"
+
+  - block: custom
+    config:
+      command: date
+      lines:
+        - "[[fg:comment]]tz[[/fg]]      Asia/Shanghai"
+        - "[[fg:comment]]uptime[[/fg]]  building agents & RAG backends"
+
+  - block: custom
+    config:
+      command: cat ~/stack.bars
+      lines:
+        - "[[fg:blue]]Java[[/fg]]        [[fg:cyan]]████████[[/fg]][[fg:comment]]░░[[/fg]]"
+        - "[[fg:blue]]TypeScript[[/fg]]  [[fg:cyan]]███████[[/fg]][[fg:comment]]░░░[[/fg]]"
+        - "[[fg:blue]]Rust[[/fg]]        [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]"
+        - "[[fg:blue]]Python[[/fg]]      [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]"
+        - "[[fg:blue]]Vue[[/fg]]         [[fg:cyan]]████[[/fg]][[fg:comment]]░░░░░░[[/fg]]"
 
   - block: custom
     config:
       command: cat ~/card.yaml
       lines:
+        - "[[fg:comment]]── identity ──────────────────────────────[[/fg]]"
         - "[[fg:comment]]focus[[/fg]]    [[fg:yellow]]Spring AI[[/fg]] · [[fg:yellow]]RAG[[/fg]] · [[fg:yellow]]Agent[[/fg]] · [[fg:yellow]]Distributed Systems[[/fg]]"
-        - "[[fg:comment]]lang[[/fg]]     [[fg:blue]]Java[[/fg]] · [[fg:blue]]TypeScript[[/fg]] · [[fg:blue]]Rust[[/fg]] · [[fg:blue]]Python[[/fg]] · [[fg:blue]]Vue[[/fg]]"
         - "[[fg:comment]]runtime[[/fg]]  Spring Boot · Spring AI · FastAPI · Tauri · Django"
         - "[[fg:comment]]async[[/fg]]    Celery · message queues · tool-calling agents"
         - "[[fg:comment]]topics[[/fg]]   hybrid retrieval · RAG eval · production agents"

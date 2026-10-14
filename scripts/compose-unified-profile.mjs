@@ -111,6 +111,62 @@ async function loadContributionDays(user) {
   return [];
 }
 
+async function loadLatestCommit(user) {
+  const cachePath = path.join(root, "assets", "latest-commit.json");
+  try {
+    const url = `https://api.github.com/users/${encodeURIComponent(user)}/events/public?per_page=30`;
+    const raw = await fetchText(url, {
+      headers: { Accept: "application/vnd.github+json" },
+    });
+    const events = JSON.parse(raw);
+    for (const ev of events) {
+      if (ev?.type !== "PushEvent") continue;
+      const repo = ev.repo?.name?.split("/")?.[1] || ev.repo?.name || "repo";
+      const commit = ev.payload?.commits?.at?.(-1) || ev.payload?.commits?.[0];
+      const sha = (commit?.sha || "").slice(0, 7);
+      const msg = (commit?.message || "update").split("\n")[0].slice(0, 56);
+      if (!sha) continue;
+      const line = `${sha} ${repo}: ${msg}`;
+      await fs.writeFile(
+        cachePath,
+        JSON.stringify({ user, updatedAt: new Date().toISOString(), line }, null, 2) +
+          "\n",
+        "utf8"
+      );
+      return line;
+    }
+  } catch (err) {
+    console.error("latest commit fetch failed:", err.message || err);
+  }
+  try {
+    const cached = JSON.parse(await fs.readFile(cachePath, "utf8"));
+    if (cached.line) {
+      console.log("Using cached latest commit");
+      return cached.line;
+    }
+  } catch {
+    /* no cache */
+  }
+  return null;
+}
+
+function injectCursorBlinkCss(doc) {
+  const styles = doc.getElementsByTagName("style");
+  if (!styles.length) return;
+  const style = styles[0];
+  const css = style.textContent || "";
+  if (css.includes("cursor-blink")) return;
+  style.textContent =
+    css +
+    `
+    @keyframes cursorBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    .cursor-blink { animation: cursorBlink 1.1s step-end infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor-blink { animation: none !important; opacity: 1; }
+    }
+`;
+}
+
 (async function main() {
   const argv = process.argv.slice(2);
   if (!argv[0]) {
@@ -124,13 +180,15 @@ async function loadContributionDays(user) {
 
   const markupRaw = await fs.readFile(markupPath, "utf8");
   const { lines } = JSON.parse(markupRaw);
-  const portraitH = (lines?.length || 29) * LINE_PX + 24;
+  // Portrait art + Prisd caption underneath
+  const portraitH = (lines?.length || 29) * LINE_PX + 56;
   // Tail starts below the taller of left/right split panels
   const splitBottom = CONTENT_ORIGIN_Y + portraitH;
 
   const days = await loadContributionDays(user);
+  const latestCommit = await loadLatestCommit(user);
   const projects = buildProjectsSection();
-  const activity = buildActivitySection(user, days);
+  const activity = buildActivitySection(user, days, { latestCommit });
 
   const gap = 10;
   // Extra bottom pad so content clears the rounded corners
@@ -180,6 +238,7 @@ async function loadContributionDays(user) {
   const titles = doc.getElementsByTagName("title");
   if (titles[0]) titles[0].textContent = "prisdvl@terminal: ~";
 
+  injectCursorBlinkCss(doc);
   // Square body/vignette rects otherwise paint over bottom rx of the shell.
   applyRoundedWindowClip(doc);
 

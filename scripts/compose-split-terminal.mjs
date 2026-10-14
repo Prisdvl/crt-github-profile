@@ -95,6 +95,18 @@ function buildPortraitFragment(lines, { isStatic }) {
       `    </g>`
     );
   }
+  // Wordmark + spark under the blue/white portrait
+  const captionY = Number((lines.length * LINE_PX + 18).toFixed(1));
+  const fadeCap = isStatic
+    ? ""
+    : ` class="fade-in" style="animation-delay: ${PORTRAIT_FADE_START_MS + lines.length * PORTRAIT_LINE_STAGGER_MS}ms"`;
+  parts.push(
+    `    <g transform="translate(36, ${captionY})"${fadeCap}>`,
+    `      <text class="tt" font-size="16" font-weight="bold"><tspan fill="#9ed0ff">P</tspan><tspan fill="#4dd0e1">r</tspan><tspan fill="#4ea1ff">i</tspan><tspan fill="#9ed0ff">s</tspan><tspan fill="#bff6ff">d</tspan></text>`,
+    `      <text class="tt" y="14" fill="#8e8e8e">· welcome ·</text>`,
+    `      <text class="tt" y="28" fill="#4ea1ff">✦ ··· ✦ ··· ✦</text>`,
+    `    </g>`
+  );
   parts.push(`  </g>`);
   return parts.join("\n");
 }
@@ -143,7 +155,8 @@ function parseFragment(xml) {
   }
   if (!scroll) throw new Error("scrollContainer / content group not found");
 
-  const portraitH = lines.length * LINE_PX + PAD_TOP + 16;
+  // Extra space for Prisd wordmark caption under the art
+  const portraitH = lines.length * LINE_PX + PAD_TOP + 56;
   const neededH = Math.ceil(CONTENT_ORIGIN_Y + portraitH);
   const curH = Number(doc.documentElement.getAttribute("height") || "0");
   if (neededH > curH) setSvgHeight(doc, neededH);

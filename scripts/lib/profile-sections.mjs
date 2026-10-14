@@ -27,6 +27,13 @@ const PROJECTS = [
   },
 ];
 
+const FORTUNES = [
+  "Build agents that earn their keep.",
+  "Ship retrieval loops, not slide decks.",
+  "Prefer boring infra for wild ideas.",
+  "Measure RAG before you mythologize it.",
+];
+
 function pad(s, n) {
   const t = String(s);
   return t.length >= n ? t.slice(0, n) : t + " ".repeat(n - t.length);
@@ -41,14 +48,18 @@ function dow(dateStr) {
   return new Date(dateStr + "T12:00:00Z").getUTCDay();
 }
 
+function sectionLabel(label) {
+  const core = `── ${label} `;
+  return core + "─".repeat(Math.max(4, 48 - core.length));
+}
+
 /** @returns {{ markup: string, height: number }} */
 export function buildProjectsSection() {
   const { text, muted, accent, kraft, sky, olive } = THEME;
-  const lineH = 16;
   const rows = [];
   let y = 0;
 
-  const line = (parts, dy = lineH) => {
+  const line = (parts, dy = 16) => {
     const spans = parts
       .map(([fill, s]) => `<tspan fill="${fill}">${escapeXml(s)}</tspan>`)
       .join("");
@@ -58,7 +69,7 @@ export function buildProjectsSection() {
     y += dy;
   };
 
-  line([[muted, "────────────────────────────────────────────────────────"]], 14);
+  line([[muted, sectionLabel("projects")]], 14);
   line([
     [accent, "prisdvl@dev:~$ "],
     [text, "column -t ~/projects.tsv"],
@@ -92,26 +103,32 @@ export function buildProjectsSection() {
 /**
  * @param {string} user
  * @param {Array<{date:string,level:number,count?:number}>} days
+ * @param {{ latestCommit?: string|null }} [opts]
  * @returns {{ markup: string, height: number }}
  */
-export function buildActivitySection(user, days) {
-  const { text, muted, accent, cloud } = THEME;
+export function buildActivitySection(user, days, opts = {}) {
+  const { text, muted, accent, cloud, kraft } = THEME;
   const rows = [];
   let y = 0;
 
-  rows.push(
-    `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" fill="${muted}">────────────────────────────────────────────────────────</text>`
-  );
-  y += 14;
-  rows.push(
-    `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve"><tspan fill="${accent}">prisdvl@dev:~$ </tspan><tspan fill="${text}">contrib --user ${escapeXml(user)}</tspan></text>`
-  );
-  y += 16;
+  const line = (parts, dy = 16) => {
+    const spans = parts
+      .map(([fill, s]) => `<tspan fill="${fill}">${escapeXml(s)}</tspan>`)
+      .join("");
+    rows.push(
+      `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve">${spans}</text>`
+    );
+    y += dy;
+  };
+
+  line([[muted, sectionLabel("activity")]], 14);
+  line([
+    [accent, "prisdvl@dev:~$ "],
+    [text, `contrib --user ${user}`],
+  ]);
 
   if (!days.length) {
-    rows.push(
-      `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" fill="${muted}">[placeholder] contribution calendar unavailable</text>`
-    );
+    line([[muted, "[placeholder] contribution calendar unavailable"]]);
     return { markup: rows.join("\n"), height: y + 20 };
   }
 
@@ -183,11 +200,28 @@ export function buildActivitySection(user, days) {
     `<text x="${gridOffsetX + left + 5 * (cell + gap + 2) + 8}" y="${legendY + 9}" font-family="${FONT_MONO}" font-size="9" fill="${muted}">more</text>`
   );
 
-  y = legendY + cell + 12;
+  y = legendY + cell + 14;
+
+  line([[muted, sectionLabel("session")]], 14);
+  if (opts.latestCommit) {
+    line([
+      [accent, "prisdvl@dev:~$ "],
+      [text, "git log -1 --oneline"],
+    ]);
+    line([[cloud, opts.latestCommit]]);
+  }
+
+  const fortune = FORTUNES[Math.floor(Date.now() / 86400000) % FORTUNES.length];
+  line([
+    [accent, "prisdvl@dev:~$ "],
+    [text, "fortune"],
+  ]);
+  line([[kraft, `"${fortune}"`]]);
+
   rows.push(
-    `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve"><tspan fill="${accent}">prisdvl@dev:~$ </tspan><tspan fill="${text}">█</tspan></text>`
+    `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve"><tspan fill="${accent}">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="${text}">█</tspan></text>`
   );
-  y += 16;
+  y += 18;
 
   return { markup: rows.join("\n"), height: y + 8 };
 }
