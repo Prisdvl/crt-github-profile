@@ -133,7 +133,8 @@ async function loadContributionDays(user) {
   const activity = buildActivitySection(user, days);
 
   const gap = 10;
-  const tailInnerH = projects.height + gap + activity.height + 20;
+  // Extra bottom pad so content clears the rounded corners
+  const tailInnerH = projects.height + gap + activity.height + 28;
   const neededH = Math.ceil(splitBottom + tailInnerH);
 
   const raw = await fs.readFile(svgPath, "utf8");

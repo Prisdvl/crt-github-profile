@@ -4,7 +4,7 @@ theme:
     text: "#ececec"
     comment: "#8e8e8e"
     background: "#212121"
-    titleBarBackground: "#2f2f2f"
+    titleBarBackground: "#2a2a2a"
     titleBarText: "#ececec"
     prompt: "#10A37F"
     cursor: "#10A37F"
