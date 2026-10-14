@@ -226,9 +226,24 @@ function injectCursorBlinkCss(doc) {
 
   setSvgHeight(doc, Math.max(neededH, Number(doc.documentElement.getAttribute("height") || 0)));
 
-  // Place tail in absolute coords (title-bar space), full width — outside left clip
+  // Place tail inside #scrollContainer so it inherits the same textGlow as identity
+  const scroll = findById(doc, "g", "scrollContainer");
+  let originY = CONTENT_ORIGIN_Y;
+  let originX = 8;
+  if (scroll) {
+    const tm = /translate\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)/.exec(
+      scroll.getAttribute("transform") || ""
+    );
+    if (tm) {
+      originX = Number(tm[1]);
+      originY = Number(tm[2]);
+    }
+  }
+  const localX = 16 - originX;
+  const localY = Math.ceil(splitBottom - originY);
+
   const tailXml = `
-    <g id="unifiedTail" transform="translate(16, ${Math.ceil(splitBottom)})">
+    <g id="unifiedTail" transform="translate(${localX}, ${localY})">
       <g id="projectsSection">${projects.markup}</g>
       <g id="activitySection" transform="translate(0, ${projects.height + gap})">${activity.markup}</g>
     </g>
@@ -237,20 +252,19 @@ function injectCursorBlinkCss(doc) {
   const frag = parseFragment(tailXml);
   const imported = doc.importNode(frag, true);
 
-  // Prefer appending next to the viewport clip group (sibling of scroll content)
-  const clipHost = (() => {
-    const clips = doc.getElementsByTagName("g");
-    for (let i = 0; i < clips.length; i++) {
-      const cp = clips[i].getAttribute("clip-path") || "";
-      if (cp.includes("terminalViewport")) return clips[i];
-    }
-    return null;
-  })();
-
-  if (clipHost) {
-    clipHost.appendChild(imported);
+  if (scroll) {
+    scroll.appendChild(imported);
   } else {
-    doc.documentElement.appendChild(imported);
+    const clipHost = (() => {
+      const clips = doc.getElementsByTagName("g");
+      for (let i = 0; i < clips.length; i++) {
+        const cp = clips[i].getAttribute("clip-path") || "";
+        if (cp.includes("terminalViewport")) return clips[i];
+      }
+      return null;
+    })();
+    if (clipHost) clipHost.appendChild(imported);
+    else doc.documentElement.appendChild(imported);
   }
 
   const svg = doc.documentElement;

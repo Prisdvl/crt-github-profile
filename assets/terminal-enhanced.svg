@@ -420,27 +420,24 @@ prisdvl@dev:~$ head ~/highlights
       <text class="tt" y="14" fill="#8e8e8e">· welcome ·</text>
       <text class="tt" y="28" fill="#4ea1ff">✦ ··· ✦ ··· ✦</text>
     </g>
-  </g></g>
-    <g>
-    
   </g><g>
-    <g id="unifiedTail" transform="translate(16, 480)">
-      <g id="projectsSection"><text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">── projects ────────────────────────────────────</tspan></text>
-<text x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">column -t ~/projects.tsv</tspan></text>
-<text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">repo                        </tspan><tspan fill="#8e8e8e">stack         </tspan><tspan fill="#8e8e8e">about</tspan></text>
-<text x="0" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#E3B341">prisdvl-nexus               </tspan><tspan fill="#8AB4F8">Java/TS/Vue   </tspan><tspan fill="#ececec">KB · Spring AI agents · RAG · hybrid retrieval</tspan></text>
-<text x="0" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#E3B341">homework-grading-system     </tspan><tspan fill="#8AB4F8">Python/Vue    </tspan><tspan fill="#ececec">K-12 grading · OCR · Celery · DeepSeek</tspan></text>
-<text x="0" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#E3B341">PrisTimer                   </tspan><tspan fill="#8AB4F8">Rust/Vue/TS   </tspan><tspan fill="#ececec">Tauri 2 focus timer · anchor engine</tspan></text>
-<text x="0" y="94" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#E3B341">Kakuki                      </tspan><tspan fill="#8AB4F8">JS/TS/Python  </tspan><tspan fill="#ececec">Django · React · MySQL application</tspan></text>
-<text x="0" y="110" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e"/></text>
-<text x="0" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">echo $STATUS</tspan></text>
-<text x="0" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">online</tspan><tspan fill="#8e8e8e">  ·  open to collab on agents / RAG  ·  </tspan><tspan fill="#8AB4F8">github.com/Prisdvl</tspan></text></g>
-      <g id="activitySection" transform="translate(0, 168)"><text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">── activity ────────────────────────────────────</tspan></text>
-<text x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">contrib --user Prisdvl</tspan></text>
-<text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#b4b4b4">353 contributions · last year</text>
-<text x="125" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Mon</text>
-<text x="125" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Wed</text>
-<text x="125" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">Fri</text>
+    <g id="unifiedTail" transform="translate(8, 434)">
+      <g id="projectsSection"><text class="tt" x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#8e8e8e">── projects ────────────────────────────────────</tspan></text>
+<text class="tt" x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">column -t ~/projects.tsv</tspan></text>
+<text class="tt" x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#8e8e8e">repo                        </tspan><tspan fill="#8e8e8e">stack         </tspan><tspan fill="#8e8e8e">about</tspan></text>
+<text class="tt" x="0" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#E3B341">prisdvl-nexus               </tspan><tspan fill="#8AB4F8">Java/TS/Vue   </tspan><tspan fill="#ececec">KB · Spring AI agents · RAG · hybrid retrieval</tspan></text>
+<text class="tt" x="0" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#E3B341">homework-grading-system     </tspan><tspan fill="#8AB4F8">Python/Vue    </tspan><tspan fill="#ececec">K-12 grading · OCR · Celery · DeepSeek</tspan></text>
+<text class="tt" x="0" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#E3B341">PrisTimer                   </tspan><tspan fill="#8AB4F8">Rust/Vue/TS   </tspan><tspan fill="#ececec">Tauri 2 focus timer · anchor engine</tspan></text>
+<text class="tt" x="0" y="94" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#E3B341">Kakuki                      </tspan><tspan fill="#8AB4F8">JS/TS/Python  </tspan><tspan fill="#ececec">Django · React · MySQL application</tspan></text>
+<text class="tt" x="0" y="110" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#8e8e8e"/></text>
+<text class="tt" x="0" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">echo $STATUS</tspan></text>
+<text class="tt" x="0" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">online</tspan><tspan fill="#8e8e8e">  ·  open to collab on agents / RAG  ·  </tspan><tspan fill="#8AB4F8">github.com/Prisdvl</tspan></text></g>
+      <g id="activitySection" transform="translate(0, 168)"><text class="tt" x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#8e8e8e">── activity ────────────────────────────────────</tspan></text>
+<text class="tt" x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">contrib --user Prisdvl</tspan></text>
+<text class="tt" x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#b4b4b4">355 contributions · last year</text>
+<text class="tt" x="125" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8e8e8e">Mon</text>
+<text class="tt" x="125" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8e8e8e">Wed</text>
+<text class="tt" x="125" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8e8e8e">Fri</text>
 <rect x="153" y="38" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2025-10-12</title></rect>
 <rect x="153" y="51" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2025-10-13</title></rect>
 <rect x="153" y="64" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2025-10-14</title></rect>
@@ -808,22 +805,23 @@ prisdvl@dev:~$ head ~/highlights
 <rect x="829" y="38" width="11" height="11" rx="2" fill="#2d5f7a"><title>14 on 2026-10-11</title></rect>
 <rect x="829" y="51" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2026-10-12</title></rect>
 <rect x="829" y="64" width="11" height="11" rx="2" fill="#2a2a2a"><title>0 on 2026-10-13</title></rect>
-<rect x="829" y="77" width="11" height="11" rx="2" fill="#2d5f7a"><title>11 on 2026-10-14</title></rect>
-<text x="125" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">less</text>
+<rect x="829" y="77" width="11" height="11" rx="2" fill="#2d5f7a"><title>13 on 2026-10-14</title></rect>
+<text class="tt" x="125" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8e8e8e">less</text>
 <rect x="153" y="143" width="11" height="11" rx="2" fill="#2a2a2a"/>
 <rect x="168" y="143" width="11" height="11" rx="2" fill="#1a2f3d"/>
 <rect x="183" y="143" width="11" height="11" rx="2" fill="#2d5f7a"/>
 <rect x="198" y="143" width="11" height="11" rx="2" fill="#4ea1ff"/>
 <rect x="213" y="143" width="11" height="11" rx="2" fill="#9ed0ff"/>
-<text x="236" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="9" fill="#8e8e8e">more</text>
-<text x="0" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">── session ─────────────────────────────────────</tspan></text>
-<text x="0" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">git log -1 --oneline</tspan></text>
-<text x="0" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#b4b4b4">eeaf979 Prisdvl: Fix terminal corners with a rounded mask</tspan></text>
-<text x="0" y="214" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">fortune</tspan></text>
-<text x="0" y="230" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#E3B341">"Build agents that earn their keep."</tspan></text>
-<text x="0" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="#ececec">█</tspan></text></g>
+<text class="tt" x="236" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" fill="#8e8e8e">more</text>
+<text class="tt" x="0" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#8e8e8e">── session ─────────────────────────────────────</tspan></text>
+<text class="tt" x="0" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">git log -1 --oneline</tspan></text>
+<text class="tt" x="0" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#b4b4b4">eeaf979 Prisdvl: Fix terminal corners with a rounded mask</tspan></text>
+<text class="tt" x="0" y="214" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">fortune</tspan></text>
+<text class="tt" x="0" y="230" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#E3B341">"Build agents that earn their keep."</tspan></text>
+<text class="tt" x="0" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="10" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="#ececec">█</tspan></text></g>
     </g>
   </g></g>
+    </g>
     <rect x="0" y="40" width="1000" height="894" fill="url(#vignette)" pointer-events="none"/>
     <rect x="0" y="40" width="1000" height="894" fill="url(#scanlines)" pointer-events="none" opacity="0.5" class="scanline-overlay"/>
   <rect id="windowFrameStroke" x="0.5" y="0.5" width="999" height="947" rx="14" ry="14" fill="none" stroke="#3f3f3f" stroke-width="1" pointer-events="none"/></g>

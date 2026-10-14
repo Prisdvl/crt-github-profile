@@ -64,7 +64,7 @@ export function buildProjectsSection() {
       .map(([fill, s]) => `<tspan fill="${fill}">${escapeXml(s)}</tspan>`)
       .join("");
     rows.push(
-      `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve">${spans}</text>`
+      `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" xml:space="preserve">${spans}</text>`
     );
     y += dy;
   };
@@ -116,7 +116,7 @@ export function buildActivitySection(user, days, opts = {}) {
       .map(([fill, s]) => `<tspan fill="${fill}">${escapeXml(s)}</tspan>`)
       .join("");
     rows.push(
-      `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve">${spans}</text>`
+      `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" xml:space="preserve">${spans}</text>`
     );
     y += dy;
   };
@@ -155,7 +155,7 @@ export function buildActivitySection(user, days, opts = {}) {
       : `${activeDays} active days · last year`;
 
   rows.push(
-    `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" fill="${cloud}">${escapeXml(countNote)}</text>`
+    `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" fill="${cloud}">${escapeXml(countNote)}</text>`
   );
 
   const bodyInner = 1000 - 32;
@@ -167,7 +167,7 @@ export function buildActivitySection(user, days, opts = {}) {
     if (!dowLabels[i]) continue;
     const ly = top + i * (cell + gap) + cell - 2;
     rows.push(
-      `<text x="${gridOffsetX}" y="${ly}" font-family="${FONT_MONO}" font-size="9" fill="${muted}">${dowLabels[i]}</text>`
+      `<text class="tt" x="${gridOffsetX}" y="${ly}" font-family="${FONT_MONO}" font-size="10" fill="${muted}">${dowLabels[i]}</text>`
     );
   }
 
@@ -188,7 +188,7 @@ export function buildActivitySection(user, days, opts = {}) {
 
   const legendY = top + gridH + 14;
   rows.push(
-    `<text x="${gridOffsetX + left - 28}" y="${legendY + 9}" font-family="${FONT_MONO}" font-size="9" fill="${muted}">less</text>`
+    `<text class="tt" x="${gridOffsetX + left - 28}" y="${legendY + 9}" font-family="${FONT_MONO}" font-size="10" fill="${muted}">less</text>`
   );
   HEATMAP_LEVELS.forEach((fill, i) => {
     const x = gridOffsetX + left + i * (cell + gap + 2);
@@ -197,7 +197,7 @@ export function buildActivitySection(user, days, opts = {}) {
     );
   });
   rows.push(
-    `<text x="${gridOffsetX + left + 5 * (cell + gap + 2) + 8}" y="${legendY + 9}" font-family="${FONT_MONO}" font-size="9" fill="${muted}">more</text>`
+    `<text class="tt" x="${gridOffsetX + left + 5 * (cell + gap + 2) + 8}" y="${legendY + 9}" font-family="${FONT_MONO}" font-size="10" fill="${muted}">more</text>`
   );
 
   y = legendY + cell + 14;
@@ -219,7 +219,7 @@ export function buildActivitySection(user, days, opts = {}) {
   line([[kraft, `"${fortune}"`]]);
 
   rows.push(
-    `<text x="0" y="${y}" font-family="${FONT_MONO}" font-size="11" xml:space="preserve"><tspan fill="${accent}">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="${text}">█</tspan></text>`
+    `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" xml:space="preserve"><tspan fill="${accent}">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="${text}">█</tspan></text>`
   );
   y += 18;
 
