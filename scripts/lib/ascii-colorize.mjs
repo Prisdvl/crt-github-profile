@@ -14,7 +14,7 @@ export const TONE_HEX = {
   bright_blue: "#9ed0ff",
   bright_cyan: "#bff6ff",
   bright_white: "#ffffff",
-  text: "#FAF9F5",
+  text: "#ececec",
 };
 
 /** Visual weight high → low (dense chars are darker / deeper blue). */

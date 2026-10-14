@@ -1,27 +1,27 @@
 /**
- * Shared Claude / Anthropic–inspired terminal palette.
- * Warm slate + Clay accent — not Matrix green-on-black.
+ * Shared ChatGPT-like terminal palette.
+ * Cool charcoal + teal accent (#10A37F). ASCII portrait stays blue/white.
  */
 export const THEME = {
-  bg: "#141413",
-  surface: "#1C1B19",
-  titleBar: "#1C1B19",
-  border: "#3D3D3A",
-  text: "#FAF9F5",
-  muted: "#87867F",
-  cloud: "#B0AEA5",
-  accent: "#D97757", // Clay
-  accentDeep: "#C6613F",
-  kraft: "#D4A27F",
-  oat: "#E3DACC",
-  manilla: "#EBDBBC",
-  sky: "#6A9BCC",
-  olive: "#788C5D",
-  fig: "#C46686",
-  ivory: "#FAF9F5",
-  buttonClose: "#C6613F",
-  buttonMin: "#D4A27F",
-  buttonMax: "#788C5D",
+  bg: "#212121",
+  surface: "#2f2f2f",
+  titleBar: "#171717",
+  border: "#444444",
+  text: "#ececec",
+  muted: "#8e8e8e",
+  cloud: "#b4b4b4",
+  accent: "#10A37F", // ChatGPT teal
+  accentDeep: "#0D8C6D",
+  kraft: "#E3B341",
+  oat: "#d9d9e3",
+  manilla: "#ececec",
+  sky: "#8AB4F8",
+  olive: "#10A37F",
+  fig: "#AB68FF",
+  ivory: "#ececec",
+  buttonClose: "#FF5F57",
+  buttonMin: "#FEBC2E",
+  buttonMax: "#28C840",
 };
 
 /** Contribution heatmap intensity → blue/cyan (matches ASCII portrait) */
