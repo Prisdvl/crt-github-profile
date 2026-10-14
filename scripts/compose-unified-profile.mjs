@@ -35,6 +35,26 @@ function findById(doc, tag, id) {
   return null;
 }
 
+/** Approximate content height of #leftColumn from nested translate/y. */
+function measureLeftColumnHeight(doc) {
+  const left = findById(doc, "g", "leftColumn");
+  if (!left) return 0;
+  let max = 0;
+  const walk = (node, accY) => {
+    if (!node || node.nodeType !== 1) return;
+    const t = node.getAttribute("transform") || "";
+    const m = /translate\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)/.exec(t);
+    let y = accY;
+    if (m) y = accY + Number(m[2]);
+    const attrY = node.getAttribute("y");
+    if (attrY != null && attrY !== "") max = Math.max(max, y + Number(attrY));
+    else max = Math.max(max, y);
+    for (let c = node.firstChild; c; c = c.nextSibling) walk(c, y);
+  };
+  walk(left, 0);
+  return max + 20;
+}
+
 function setSvgHeight(doc, newH) {
   const svg = doc.documentElement;
   const w = svg.getAttribute("width") || "1000";
@@ -182,21 +202,24 @@ function injectCursorBlinkCss(doc) {
   const { lines } = JSON.parse(markupRaw);
   // Portrait art + Prisd caption underneath
   const portraitH = (lines?.length || 29) * LINE_PX + 56;
-  // Tail starts below the taller of left/right split panels
-  const splitBottom = CONTENT_ORIGIN_Y + portraitH;
 
   const days = await loadContributionDays(user);
   const latestCommit = await loadLatestCommit(user);
   const projects = buildProjectsSection();
   const activity = buildActivitySection(user, days, { latestCommit });
 
+  const raw = await fs.readFile(svgPath, "utf8");
+  const doc = assertParseableSvg(raw);
+
+  // Tail starts below whichever column is taller (skills can exceed portrait)
+  const leftH = measureLeftColumnHeight(doc);
+  const splitBottom =
+    CONTENT_ORIGIN_Y + Math.max(portraitH, leftH) + 12;
+
   const gap = 10;
   // Extra bottom pad so content clears the rounded corners
   const tailInnerH = projects.height + gap + activity.height + 28;
   const neededH = Math.ceil(splitBottom + tailInnerH);
-
-  const raw = await fs.readFile(svgPath, "utf8");
-  const doc = assertParseableSvg(raw);
 
   const existing = findById(doc, "g", "unifiedTail");
   if (existing?.parentNode) existing.parentNode.removeChild(existing);

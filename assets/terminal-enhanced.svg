@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="1000" height="886" viewBox="0 0 1000 886" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prisdvl terminal profile: identity, projects, and contribution activity">
+<svg width="1000" height="948" viewBox="0 0 1000 948" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prisdvl terminal profile: identity, projects, and contribution activity">
   <title>prisdvl@terminal: ~</title>
   <desc>prisdvl@dev:~$ cat ~/motd
 Welcome to Prisd's terminal
@@ -96,13 +96,13 @@ prisdvl@dev:~$ head ~/highlights
       </feMerge>
     </filter>
     <clipPath id="terminalViewport">
-      <rect x="0" y="40" width="1000" height="832"/>
+      <rect x="0" y="40" width="1000" height="894"/>
     </clipPath>
-  <clipPath id="leftColumnClip"><rect x="0" y="-20" width="468" height="2000"/></clipPath><mask id="windowMask" maskUnits="userSpaceOnUse"><rect id="windowMaskRect" x="0" y="0" width="1000" height="886" rx="14" ry="14" fill="#ffffff"/></mask><clipPath id="windowRound" clipPathUnits="userSpaceOnUse"><rect id="windowRoundRect" x="0" y="0" width="1000" height="886" rx="14" ry="14"/></clipPath></defs>
+  <clipPath id="leftColumnClip"><rect x="0" y="-20" width="468" height="2000"/></clipPath><mask id="windowMask" maskUnits="userSpaceOnUse"><rect id="windowMaskRect" x="0" y="0" width="1000" height="948" rx="14" ry="14" fill="#ffffff"/></mask><clipPath id="windowRound" clipPathUnits="userSpaceOnUse"><rect id="windowRoundRect" x="0" y="0" width="1000" height="948" rx="14" ry="14"/></clipPath></defs>
 
   <g id="windowRoot" mask="url(#windowMask)" clip-path="url(#windowRound)">
     
-    <rect x="0" y="0" width="1000" height="886" rx="14" ry="14" fill="#212121"/>
+    <rect x="0" y="0" width="1000" height="948" rx="14" ry="14" fill="#212121"/>
     
     <rect x="0" y="0" width="1000" height="40" fill="#2a2a2a"/>
     <rect x="0" y="16" width="1000" height="16" fill="#2a2a2a"/>
@@ -115,7 +115,7 @@ prisdvl@dev:~$ head ~/highlights
       prisdvl@terminal: ~
     </text>
     
-    <rect x="0" y="40" width="1000" height="832" fill="#212121"/>
+    <rect x="0" y="40" width="1000" height="894" fill="#212121"/>
     <g clip-path="url(#terminalViewport)">
       <g id="scrollContainer" transform="translate(8, 46)" filter="url(#textGlow)"><g id="leftColumn" clip-path="url(#leftColumnClip)">
         
@@ -422,7 +422,9 @@ prisdvl@dev:~$ head ~/highlights
     </g>
   </g></g>
     <g>
-    <g id="unifiedTail" transform="translate(16, 418)">
+    
+  </g><g>
+    <g id="unifiedTail" transform="translate(16, 480)">
       <g id="projectsSection"><text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">── projects ────────────────────────────────────</tspan></text>
 <text x="0" y="14" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">column -t ~/projects.tsv</tspan></text>
 <text x="0" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#8e8e8e">repo                        </tspan><tspan fill="#8e8e8e">stack         </tspan><tspan fill="#8e8e8e">about</tspan></text>
@@ -822,7 +824,7 @@ prisdvl@dev:~$ head ~/highlights
 <text x="0" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="11" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="#ececec">█</tspan></text></g>
     </g>
   </g></g>
-    <rect x="0" y="40" width="1000" height="832" fill="url(#vignette)" pointer-events="none"/>
-    <rect x="0" y="40" width="1000" height="832" fill="url(#scanlines)" pointer-events="none" opacity="0.5" class="scanline-overlay"/>
-  <rect id="windowFrameStroke" x="0.5" y="0.5" width="999" height="885" rx="14" ry="14" fill="none" stroke="#3f3f3f" stroke-width="1" pointer-events="none"/></g>
+    <rect x="0" y="40" width="1000" height="894" fill="url(#vignette)" pointer-events="none"/>
+    <rect x="0" y="40" width="1000" height="894" fill="url(#scanlines)" pointer-events="none" opacity="0.5" class="scanline-overlay"/>
+  <rect id="windowFrameStroke" x="0.5" y="0.5" width="999" height="947" rx="14" ry="14" fill="none" stroke="#3f3f3f" stroke-width="1" pointer-events="none"/></g>
 </svg>
