@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1000" height="615" viewBox="0 0 1000 615" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Static terminal showing 39 lines">
+  <title>Static terminal showing 39 lines</title>
+  <desc>prisdvl@dev:~$ cat portrait.ascii
+o&amp;%BB%Whq      dh#MM
+Mh0CQLLLLL8cXvvc%8_tt///}]Y88
+W@X}B8dOXczcYJ&amp;!wJUUz8lxxrxxxxrft}f8#
+*&amp;@%&gt;[?[{{0B#wzvvvU?zmQYXZf\rrrftjtttfcnx@M
+a&amp;b0Lu%$I\1{}}}}}1nd&amp;hmCX|vwwmOO1frttttttvkojcXhB#
+opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@
+#%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&amp;ikZOOOLLQQ@@*
+M**kB(OwmwmQQQC)p#jffrjx\1)}][&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8
+8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\|\_wopmppZOZa/QLQ0fBk
+W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\jh$$BW*ad*hYZOQ0QLqB
+#%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%
+Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B
+#dbkwMt&amp;**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*
+kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q
+Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&amp;MQCqd&amp;waB
+Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*
+WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&amp;
+88ahoB8#ap&amp;aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o
+8W#@*#M*pmWaahhhhhho@ChpqOQLCL&lt;@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%
+M@k*###**\B#hhhhao@Jaddpppppdbd0$$$$$@&amp;obk**ookpppdhoh@%kkhk*$M
+W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W
+&amp;8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&amp;@M*********oaaaaak%$&amp;
+BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&amp;ahd0YU0b#8BBBB@@B%&amp;%Bh
+%@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q
+#$Mq&amp;bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M
+o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak
+W@@@@8aLW$opoo*****MMLa@&amp;hwZZZw%$W
+*8@Bowwko#*obk*@BB%&amp;M
+qaMMMbp
+prisdvl@dev:~$ echo "identity"
+Prisdvl — Java Backend / AI Systems
+
+Specialties:
+- Spring AI / RAG / Agent Platform
+- Distributed Systems / Open Source
+
+Projects:
+- prisdvl-nexus</desc>
+  <style>.tt { font-family: JetBrains Mono, Fira Code, Ubuntu Mono, monospace; font-size: 11px; white-space: pre; }</style>
+  <defs>
+    
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="1" height="3">
+      <rect width="1" height="1" fill="transparent"/>
+      <rect y="1" width="1" height="1" fill="#ffffff" fill-opacity="0.05"/>
+    </pattern>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="black" stop-opacity="0"/>
+      <stop offset="60%" stop-color="black" stop-opacity="0"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.35"/>
+    </radialGradient>
+    
+    <filter id="textGlow" x="-12%" y="-12%" width="124%" height="124%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.82" result="halo"/>
+      <feMerge>
+        <feMergeNode in="halo"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="terminalViewport">
+      <rect x="0" y="40" width="1000" height="575"/>
+    </clipPath>
+  </defs>
+
+  <g>
+    
+    <rect x="0" y="0" width="1000" height="615" rx="12" ry="12" fill="#090B0E"/>
+    
+    <rect x="0" y="0" width="1000" height="40" rx="12" ry="12" fill="#161B22"/>
+    <rect x="0" y="16" width="1000" height="16" fill="#161B22"/>
+    <g id="window-controls">
+      <circle cx="14" cy="16" r="6" fill="#ff5f56" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="34" cy="16" r="6" fill="#ffbd2e" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="54" cy="16" r="6" fill="#27c93f" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+    </g>
+    <text x="500" y="24.55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9" text-anchor="middle">
+      prisdvl@terminal: ~
+    </text>
+    <rect x="0" y="40" width="1000" height="575" fill="#090B0E"/>
+    <g clip-path="url(#terminalViewport)">
+      <g transform="translate(12, 54)" filter="url(#textGlow)">
+        
+      <text class="tt" y="0" fill="#C9D1D9">prisdvl@dev:~$ cat portrait.ascii</text>
+      <text class="tt" y="13.8"><tspan fill="#4dd0e1">                                    o&amp;%BB%Whq      dh#MM</tspan></text>
+      <text class="tt" y="27.5"><tspan fill="#4dd0e1">                                Mh0CQLLLLL8cXvvc%8_tt///}]Y88</tspan></text>
+      <text class="tt" y="41.3"><tspan fill="#4dd0e1">                            W@X}B8dOXczcYJ&amp;!wJUUz8lxxrxxxxrft}f8#</tspan></text>
+      <text class="tt" y="55"><tspan fill="#4dd0e1">                        *&amp;@%&gt;[?[{{0B#wzvvvU?zmQYXZf\rrrftjtttfcnx@M</tspan></text>
+      <text class="tt" y="68.8"><tspan fill="#4dd0e1">                   a&amp;b0Lu%$I\1{}}}}}1nd&amp;hmCX|vwwmOO1frttttttvkojcXhB#</tspan></text>
+      <text class="tt" y="82.5"><tspan fill="#4dd0e1">                 opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@</tspan></text>
+      <text class="tt" y="96.3"><tspan fill="#4dd0e1">              #%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&amp;ikZOOOLLQQ@@*</tspan></text>
+      <text class="tt" y="110"><tspan fill="#4dd0e1">            M**kB(OwmwmQQQC)p#jffrjx\1)}][&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8</tspan></text>
+      <text class="tt" y="123.8"><tspan fill="#4dd0e1">           8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\|\_wopmppZOZa/QLQ0fBk</tspan></text>
+      <text class="tt" y="137.5"><tspan fill="#4dd0e1">          W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\jh$$BW*ad*hYZOQ0QLqB</tspan></text>
+      <text class="tt" y="151.3"><tspan fill="#4dd0e1">        #%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%</tspan></text>
+      <text class="tt" y="165"><tspan fill="#4dd0e1">       Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B</tspan></text>
+      <text class="tt" y="178.8"><tspan fill="#4dd0e1">      #dbkwMt&amp;**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*</tspan></text>
+      <text class="tt" y="192.5"><tspan fill="#4dd0e1">     kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q</tspan></text>
+      <text class="tt" y="206.3"><tspan fill="#4dd0e1">     Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&amp;MQCqd&amp;waB</tspan></text>
+      <text class="tt" y="220"><tspan fill="#4dd0e1">     Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*</tspan></text>
+      <text class="tt" y="233.8"><tspan fill="#4dd0e1">     WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&amp;</tspan></text>
+      <text class="tt" y="247.5"><tspan fill="#4dd0e1">      88ahoB8#ap&amp;aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o</tspan></text>
+      <text class="tt" y="261.3"><tspan fill="#4dd0e1">       8W#@*#M*pmWaahhhhhho@ChpqOQLCL&lt;@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%</tspan></text>
+      <text class="tt" y="275"><tspan fill="#4dd0e1">        M@k*###**\B#hhhhao@Jaddpppppdbd0$$$$$@&amp;obk**ookpppdhoh@%kkhk*$M</tspan></text>
+      <text class="tt" y="288.8"><tspan fill="#4dd0e1">        W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W</tspan></text>
+      <text class="tt" y="302.5"><tspan fill="#4dd0e1">        &amp;8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&amp;@M*********oaaaaak%$&amp;</tspan></text>
+      <text class="tt" y="316.3"><tspan fill="#4dd0e1">         BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&amp;ahd0YU0b#8BBBB@@B%&amp;%Bh</tspan></text>
+      <text class="tt" y="330"><tspan fill="#4dd0e1">          %@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q</tspan></text>
+      <text class="tt" y="343.8"><tspan fill="#4dd0e1">           #$Mq&amp;bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M</tspan></text>
+      <text class="tt" y="357.5"><tspan fill="#4dd0e1">             o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak</tspan></text>
+      <text class="tt" y="371.3"><tspan fill="#4dd0e1">                 W@@@@8aLW$opoo*****MMLa@&amp;hwZZZw%$W</tspan></text>
+      <text class="tt" y="385"><tspan fill="#4dd0e1">                           *8@Bowwko#*obk*@BB%&amp;M</tspan></text>
+      <text class="tt" y="398.8"><tspan fill="#4dd0e1">                                 qaMMMbp</tspan></text>
+      <text class="tt" y="412.5" fill="#C9D1D9">prisdvl@dev:~$ echo "identity"</text>
+      <text class="tt" y="426.3"><tspan fill="#7EE787" font-weight="bold">Prisdvl</tspan><tspan fill="#C9D1D9"> — Java Backend / AI Systems</tspan></text>
+      <text class="tt" y="440" fill="#C9D1D9"/>
+      <text class="tt" y="453.8"><tspan fill="#8B949E">Specialties:</tspan></text>
+      <text class="tt" y="467.5"><tspan fill="#4dd0e1">- Spring AI / RAG / Agent Platform</tspan></text>
+      <text class="tt" y="481.3"><tspan fill="#4dd0e1">- Distributed Systems / Open Source</tspan></text>
+      <text class="tt" y="495" fill="#C9D1D9"/>
+      <text class="tt" y="508.8"><tspan fill="#d46aff">Projects:</tspan></text>
+      <text class="tt" y="522.5"><tspan fill="#f3c969">- prisdvl-nexus</tspan></text>
+      </g>
+    </g>
+    <rect x="0" y="40" width="1000" height="575" fill="url(#vignette)" pointer-events="none"/>
+    <rect x="0" y="40" width="1000" height="575" fill="url(#scanlines)" pointer-events="none" opacity="0.5"/>
+  </g>
+</svg>

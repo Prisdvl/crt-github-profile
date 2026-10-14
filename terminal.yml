@@ -1,0 +1,104 @@
+theme:
+  name: "prisdvl-terminal"
+  colors:
+    text: "#C9D1D9"
+    comment: "#8B949E"
+    background: "#090B0E"
+    titleBarBackground: "#161B22"
+    titleBarText: "#C9D1D9"
+    prompt: "#7EE787"
+    cursor: "#7EE787"
+    red: "#ff6b6b"
+    green: "#7EE787"
+    yellow: "#f3c969"
+    blue: "#4ea1ff"
+    magenta: "#d46aff"
+    cyan: "#4dd0e1"
+    white: "#ffffff"
+    orange: "#ff9f1c"
+    purple: "#8a63d2"
+    pink: "#ff79c6"
+    brightRed: "#ff8787"
+    brightGreen: "#b2ffb2"
+    brightYellow: "#fff1a8"
+    brightBlue: "#9ed0ff"
+    brightMagenta: "#f2c0ff"
+    brightCyan: "#bff6ff"
+    brightWhite: "#ffffff"
+    brightBlack: "#6b7280"
+  buttons:
+    close: "#ff5f56"
+    minimize: "#ffbd2e"
+    maximize: "#27c93f"
+
+window:
+  title: "prisdvl@terminal: ~"
+  width: 1000
+  autoHeight: true
+  maxHeight: 1200
+  style: "macos"
+
+terminal:
+  prompt: "prisdvl@dev:~$ "
+  fontFamily: "JetBrains Mono, Fira Code, Ubuntu Mono, monospace"
+  fontSize: 11
+  lineHeight: 1.25
+  padding: 12
+  paddingTop: 14
+
+effects:
+  scanlines: true
+  textGlow: true
+  vignette: true
+  shadow: false
+
+blocks:
+  # BEGIN ASCII ART
+  - block: custom
+    typing: instant
+    config:
+      command: cat portrait.ascii
+      lines:
+        - "[[fg:cyan]]                                    o&%BB%Whq      dh#MM[[/fg]]"
+        - "[[fg:cyan]]                                Mh0CQLLLLL8cXvvc%8_tt///}]Y88[[/fg]]"
+        - "[[fg:cyan]]                            W@X}B8dOXczcYJ&!wJUUz8lxxrxxxxrft}f8#[[/fg]]"
+        - "[[fg:cyan]]                        *&@%>[?[{{0B#wzvvvU?zmQYXZf\\rrrftjtttfcnx@M[[/fg]]"
+        - "[[fg:cyan]]                   a&b0Lu%$I\\1{}}}}}1nd&hmCX|vwwmOO1frttttttvkojcXhB#[[/fg]]"
+        - "[[fg:cyan]]                 opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@[[/fg]]"
+        - "[[fg:cyan]]              #%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&ikZOOOLLQQ@@*[[/fg]]"
+        - "[[fg:cyan]]            M**kB(OwmwmQQQC)p#jffrjx\\1)}][&$Qjt/tft/|-ih$nkqmwwZOQL&)cvd8[[/fg]]"
+        - "[[fg:cyan]]           8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\\|\\_wopmppZOZa/QLQ0fBk[[/fg]]"
+        - "[[fg:cyan]]          W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\\jh$$BW*ad*hYZOQ0QLqB[[/fg]]"
+        - "[[fg:cyan]]        #%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%[[/fg]]"
+        - "[[fg:cyan]]       Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B[[/fg]]"
+        - "[[fg:cyan]]      #dbkwMt&**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*[[/fg]]"
+        - "[[fg:cyan]]     kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q[[/fg]]"
+        - "[[fg:cyan]]     Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&MQCqd&waB[[/fg]]"
+        - "[[fg:cyan]]     Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*[[/fg]]"
+        - "[[fg:cyan]]     WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&[[/fg]]"
+        - "[[fg:cyan]]      88ahoB8#ap&aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o[[/fg]]"
+        - "[[fg:cyan]]       8W#@*#M*pmWaahhhhhho@ChpqOQLCL<@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%[[/fg]]"
+        - "[[fg:cyan]]        M@k*###**\\B#hhhhao@Jaddpppppdbd0$$$$$@&obk**ookpppdhoh@%kkhk*$M[[/fg]]"
+        - "[[fg:cyan]]        W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W[[/fg]]"
+        - "[[fg:cyan]]        &8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&@M*********oaaaaak%$&[[/fg]]"
+        - "[[fg:cyan]]         BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&ahd0YU0b#8BBBB@@B%&%Bh[[/fg]]"
+        - "[[fg:cyan]]          %@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q[[/fg]]"
+        - "[[fg:cyan]]           #$Mq&bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M[[/fg]]"
+        - "[[fg:cyan]]             o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak[[/fg]]"
+        - "[[fg:cyan]]                 W@@@@8aLW$opoo*****MMLa@&hwZZZw%$W[[/fg]]"
+        - "[[fg:cyan]]                           *8@Bowwko#*obk*@BB%&M[[/fg]]"
+        - "[[fg:cyan]]                                 qaMMMbp[[/fg]]"
+  # END ASCII ART
+
+  - block: custom
+    config:
+      command: echo "identity"
+      lines:
+        - "[[fg:green]][[bold]]Prisdvl[[/bold]][[/fg]] — Java Backend / AI Systems"
+        - ""
+        - "[[fg:comment]]Specialties:[[/fg]]"
+        - "[[fg:cyan]]- Spring AI / RAG / Agent Platform[[/fg]]"
+        - "[[fg:cyan]]- Distributed Systems / Open Source[[/fg]]"
+        - ""
+        - "[[fg:magenta]]Projects:[[/fg]]"
+        - "[[fg:yellow]]- prisdvl-nexus[[/fg]]"

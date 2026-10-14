@@ -1,0 +1,98 @@
+name: Refresh profile assets
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly Monday 03:17 UTC
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    # Avoid infinite loops from bot commits
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate into staging directory
+        env:
+          # Optional: set repository secret GITHUB_TOKEN is automatic; prefer GH_TOKEN only if needed.
+          # Do not echo tokens. Public contributions HTML works without auth.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          STAGE=".tmp-ci-assets"
+          rm -rf "$STAGE"
+          mkdir -p "$STAGE"
+
+          # CRT terminal (official CLI) → stage, keep previous assets on failure
+          npm exec --yes -- svg-terminal generate --config terminal.yml --output "$STAGE/terminal.svg"
+          npm exec --yes -- svg-terminal generate --config terminal.yml --output "$STAGE/terminal-static.svg" --static
+          node scripts/enhance-crt.mjs "$STAGE/terminal.svg" "$STAGE/terminal-enhanced.svg" \
+            --linespace 3 --line-opacity 0.05 --glow 1.3 --vignette 0.35
+          node scripts/enhance-crt.mjs "$STAGE/terminal-static.svg" "$STAGE/terminal-static-enhanced.svg" \
+            --linespace 3 --line-opacity 0.05 --glow 1.3 --vignette 0.35 --static
+
+          node scripts/generate-ascii.mjs "$STAGE/ascii-portrait.svg"
+          node scripts/generate-contribution.mjs --user Prisdvl --out "$STAGE/contribution.svg"
+          node scripts/generate-pet.mjs --user Prisdvl --out "$STAGE/pet.svg"
+
+          # Structural checks
+          node --input-type=module -e "
+          import fs from 'fs';
+          import { DOMParser } from '@xmldom/xmldom';
+          const files = [
+            'terminal-enhanced.svg','terminal-static-enhanced.svg',
+            'ascii-portrait.svg','contribution.svg','pet.svg'
+          ];
+          for (const f of files) {
+            const raw = fs.readFileSync('.tmp-ci-assets/' + f, 'utf8');
+            const doc = new DOMParser().parseFromString(raw, 'application/xml');
+            if (!doc.documentElement || doc.getElementsByTagName('parsererror').length) {
+              throw new Error('XML parse failed: ' + f);
+            }
+          }
+          const staticRaw = fs.readFileSync('.tmp-ci-assets/terminal-static-enhanced.svg','utf8');
+          if (staticRaw.includes('scanline-overlay')) {
+            throw new Error('static enhanced still has scanline-overlay');
+          }
+          console.log('staging validation ok');
+          "
+
+          mkdir -p assets
+          for f in terminal.svg terminal-static.svg terminal-enhanced.svg terminal-static-enhanced.svg \
+                   ascii-portrait.svg contribution.svg pet.svg; do
+            cp "$STAGE/$f" "assets/$f"
+          done
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/*.svg
+          if git diff --cached --quiet; then
+            echo "No asset changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh profile SVG assets [skip ci]"
+          git push

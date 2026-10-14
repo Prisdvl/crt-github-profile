@@ -1,0 +1,304 @@
+<svg width="1000" height="615" viewBox="0 0 1000 615" xmlns="http://www.w3.org/2000/svg"
+  role="img" aria-label="Animated terminal showing: cat portrait.ascii, echo &quot;identity&quot;">
+  <title>Animated terminal showing: cat portrait.ascii, echo &quot;identity&quot;</title>
+  <desc>prisdvl@dev:~$ cat portrait.ascii
+o&amp;%BB%Whq      dh#MM
+Mh0CQLLLLL8cXvvc%8_tt///}]Y88
+W@X}B8dOXczcYJ&amp;!wJUUz8lxxrxxxxrft}f8#
+*&amp;@%&gt;[?[{{0B#wzvvvU?zmQYXZf\rrrftjtttfcnx@M
+a&amp;b0Lu%$I\1{}}}}}1nd&amp;hmCX|vwwmOO1frttttttvkojcXhB#
+opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@
+#%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&amp;ikZOOOLLQQ@@*
+M**kB(OwmwmQQQC)p#jffrjx\1)}][&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8
+8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\|\_wopmppZOZa/QLQ0fBk
+W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\jh$$BW*ad*hYZOQ0QLqB
+#%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%
+Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B
+#dbkwMt&amp;**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*
+kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q
+Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&amp;MQCqd&amp;waB
+Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*
+WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&amp;
+88ahoB8#ap&amp;aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o
+8W#@*#M*pmWaahhhhhho@ChpqOQLCL&lt;@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%
+M@k*###**\B#hhhhao@Jaddpppppdbd0$$$$$@&amp;obk**ookpppdhoh@%kkhk*$M
+W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W
+&amp;8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&amp;@M*********oaaaaak%$&amp;
+BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&amp;ahd0YU0b#8BBBB@@B%&amp;%Bh
+%@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q
+#$Mq&amp;bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M
+o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak
+W@@@@8aLW$opoo*****MMLa@&amp;hwZZZw%$W
+*8@Bowwko#*obk*@BB%&amp;M
+qaMMMbp
+prisdvl@dev:~$ echo &quot;identity&quot;
+Prisdvl — Java Backend / AI Systems
+
+Specialties:
+- Spring AI / RAG / Agent Platform
+- Distributed Systems / Open Source
+
+Projects:
+- prisdvl-nexus</desc>
+  <style>
+    .tt { font-family: JetBrains Mono, Fira Code, Ubuntu Mono, monospace; font-size: 11px; white-space: pre; }
+    @keyframes scanlineScroll {
+      from { transform: translateY(0); }
+      to { transform: translateY(4px); }
+    }
+    .scanline-overlay { animation: scanlineScroll 1.2s linear infinite; }
+    /* fadeIn drives all opacity fade-ins (prompt + output lines + animated frame
+       wrappers). Lives in CSS rather than SMIL so the @media block below kills
+       it under prefers-reduced-motion. fill-mode: backwards keeps the element
+       at opacity 0 during the animation-delay window so it doesn't pop in
+       before its scheduled time. */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .fade-in { animation: fadeIn 10ms linear backwards; }
+    /* frame-cycle-N (closes #69): one rule per unique frame count across the
+       animated blocks in this render. Each frame text element carries the
+       class + an inline animation-delay = i*frameDur. The static opacity
+       attribute (frame 0 = 1, others = 0) is the SMIL-stripped AND
+       reduced-motion fallback — frame 0 visible, rest invisible. Under
+       prefers-reduced-motion the @media block kills animation-duration so
+       the underlying opacity attribute applies. */
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  <defs>
+    
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="1" height="2">
+      <rect width="1" height="1" fill="transparent"/>
+      <rect y="1" width="1" height="1" fill="rgba(255,255,255,0.02)"/>
+    </pattern>
+
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="black" stop-opacity="0"/>
+      <stop offset="60%" stop-color="black" stop-opacity="0"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.25"/>
+    </radialGradient>
+    
+    <filter id="textGlow" x="-12%" y="-12%" width="124%" height="124%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="halo"/>
+      <feMerge>
+        <feMergeNode in="halo"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="terminalViewport">
+      <rect x="0" y="40" width="1000" height="575"/>
+    </clipPath>
+  </defs>
+
+  <g>
+    
+    <rect x="0" y="0" width="1000" height="615"
+          rx="12" ry="12"
+          fill="#090B0E"/>
+    
+    <rect x="0" y="0" width="1000" height="40"
+          rx="12" ry="12"
+          fill="#161B22"/>
+    <rect x="0" y="16" width="1000" height="16"
+          fill="#161B22"/>
+    <g id="window-controls">
+      <circle cx="14" cy="16" r="6" fill="#ff5f56" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="34" cy="16" r="6" fill="#ffbd2e" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="54" cy="16" r="6" fill="#27c93f" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+    </g>
+    <text x="500" y="24.55"
+          font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Helvetica, Arial, sans-serif" font-size="13"
+          fill="#C9D1D9" text-anchor="middle">
+      prisdvl@terminal: ~
+    </text>
+    
+    <rect x="0" y="40" width="1000"
+          height="575" fill="#090B0E"/>
+    <g clip-path="url(#terminalViewport)">
+      <g id="scrollContainer" transform="translate(12, 54)" filter="url(#textGlow)">
+        
+        
+    <g transform="translate(0, 0)">
+      <defs><clipPath id="cmdrev-0"><rect x="99" y="-11" width="126" height="22"><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84;91;98;105;112;119;126" keyTimes="0.0000;0.0556;0.1111;0.1667;0.2222;0.2778;0.3333;0.3889;0.4444;0.5000;0.5556;0.6111;0.6667;0.7222;0.7778;0.8333;0.8889;0.9444;1.0000" calcMode="discrete" begin="0ms" dur="400ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 0ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="99" fill="#7EE787" textLength="126" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-0)">cat portrait.ascii</text>
+      
+    <rect x="99" y="-9" width="7" height="11"
+          fill="#7EE787" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="400ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176;183;190;197;204;211;218" keyTimes="0.0000;0.0556;0.1111;0.1667;0.2222;0.2778;0.3333;0.3889;0.4444;0.5000;0.5556;0.6111;0.6667;0.7222;0.7778;0.8333;0.8889;0.9444;1.0000" calcMode="discrete" begin="0ms" dur="400ms" fill="freeze"/>
+    </rect>
+    </g>
+
+    <g transform="translate(0, 13.8)" class="fade-in" style="animation-delay: 700ms">
+      <text class="tt"><tspan fill="#4dd0e1">                                    o&amp;%BB%Whq      dh#MM</tspan></text>
+    </g>
+
+    <g transform="translate(0, 27.5)" class="fade-in" style="animation-delay: 750ms">
+      <text class="tt"><tspan fill="#4dd0e1">                                Mh0CQLLLLL8cXvvc%8_tt///}]Y88</tspan></text>
+    </g>
+
+    <g transform="translate(0, 41.3)" class="fade-in" style="animation-delay: 800ms">
+      <text class="tt"><tspan fill="#4dd0e1">                            W@X}B8dOXczcYJ&amp;!wJUUz8lxxrxxxxrft}f8#</tspan></text>
+    </g>
+
+    <g transform="translate(0, 55)" class="fade-in" style="animation-delay: 850ms">
+      <text class="tt"><tspan fill="#4dd0e1">                        *&amp;@%&gt;[?[{{0B#wzvvvU?zmQYXZf\rrrftjtttfcnx@M</tspan></text>
+    </g>
+
+    <g transform="translate(0, 68.8)" class="fade-in" style="animation-delay: 900ms">
+      <text class="tt"><tspan fill="#4dd0e1">                   a&amp;b0Lu%$I\1{}}}}}1nd&amp;hmCX|vwwmOO1frttttttvkojcXhB#</tspan></text>
+    </g>
+
+    <g transform="translate(0, 82.5)" class="fade-in" style="animation-delay: 950ms">
+      <text class="tt"><tspan fill="#4dd0e1">                 opQ00ZmJa$ljjrrfr1{{}}}[(z$$M|qqwZJatrjttJ8,pUYXXXJ@</tspan></text>
+    </g>
+
+    <g transform="translate(0, 96.3)" class="fade-in" style="animation-delay: 1000ms">
+      <text class="tt"><tspan fill="#4dd0e1">              #%*mZZZmwwmumW|ffxrftf}}{}]{[]%$$$$$$$$$dnu&amp;ikZOOOLLQQ@@*</tspan></text>
+    </g>
+
+    <g transform="translate(0, 110)" class="fade-in" style="animation-delay: 1050ms">
+      <text class="tt"><tspan fill="#4dd0e1">            M**kB(OwmwmQQQC)p#jffrjx\1)}][&amp;$Qjt/tft/|-ih$nkqmwwZOQL&amp;)cvd8</tspan></text>
+    </g>
+
+    <g transform="translate(0, 123.8)" class="fade-in" style="animation-delay: 1100ms">
+      <text class="tt"><tspan fill="#4dd0e1">           8o**ab%{mZmOCCJXcvc)C%bnxccvfhhuxnnuuuuuu/\|\_wopmppZOZa/QLQ0fBk</tspan></text>
+    </g>
+
+    <g transform="translate(0, 137.5)" class="fade-in" style="animation-delay: 1150ms">
+      <text class="tt"><tspan fill="#4dd0e1">          W%o***bZBYfwJJJJJXuccvczuup$$BUznunuuuuuuutxj\jh$$BW*ad*hYZOQ0QLqB</tspan></text>
+    </g>
+
+    <g transform="translate(0, 151.3)" class="fade-in" style="animation-delay: 1200ms">
+      <text class="tt"><tspan fill="#4dd0e1">        #%B8#**o**dm@m(/CUCCCCYxvzUUCB$hpqwOYnxnnuuuuuv0YBJJunv_0$QOZZOO0wpk%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 165)" class="fade-in" style="animation-delay: 1250ms">
+      <text class="tt"><tspan fill="#4dd0e1">       Wbwdh#***o*o**ktL$$W%%8%@$$$$$BCO0mdpd*W%oZXcvvZpQJXYYzzzYrpOZZZZZqq#B</tspan></text>
+    </g>
+
+    <g transform="translate(0, 178.8)" class="fade-in" style="animation-delay: 1300ms">
+      <text class="tt"><tspan fill="#4dd0e1">      #dbkwMt&amp;**ooM|f*$@b0UYUL00QQ0W$ddwwpd0QzczXj+L8w%-dJYXYYYYYt#wZZOmpqq$*</tspan></text>
+    </g>
+
+    <g transform="translate(0, 192.5)" class="fade-in" style="animation-delay: 1350ms">
+      <text class="tt"><tspan fill="#4dd0e1">     kohaaaaXMfkk]C$%qqLUJOZ0L0O0hZqMZZmdddOXczzzzzcL|[BkLYXXYXXX*$$b-wpbb$Q</tspan></text>
+    </g>
+
+    <g transform="translate(0, 206.3)" class="fade-in" style="animation-delay: 1400ms">
+      <text class="tt"><tspan fill="#4dd0e1">     Whao#aaaaLaB$ammwwwwOZ0mqwZbucZkZZZpdwLLCCUYzzzzzXQnwavcczz&amp;MQCqd&amp;waB</tspan></text>
+    </g>
+
+    <g transform="translate(0, 220)" class="fade-in" style="animation-delay: 1450ms">
+      <text class="tt"><tspan fill="#4dd0e1">     Bko*##oa*%$obbkdwwwZOZZqp*{OzcjMZZZmwwmCLQQQLzzzzYzUu$$oXY*kqbbbddk$*</tspan></text>
+    </g>
+
+    <g transform="translate(0, 233.8)" class="fade-in" style="animation-delay: 1500ms">
+      <text class="tt"><tspan fill="#4dd0e1">     WBa##**W$%@aaaahkkdpqmwqM)LXOO-WqmZmmwwwwQQQQQQQQL]MpLLZ8a8kbkbbqp#&amp;</tspan></text>
+    </g>
+
+    <g transform="translate(0, 247.5)" class="fade-in" style="animation-delay: 1550ms">
+      <text class="tt"><tspan fill="#4dd0e1">      88ahoB8#ap&amp;aaahhkhhhhdW|OLCQQL_@ZZmmmmwwqqwZ0Oj?WwJZwqqa$*hbbbbbp@o</tspan></text>
+    </g>
+
+    <g transform="translate(0, 261.3)" class="fade-in" style="animation-delay: 1600ms">
+      <text class="tt"><tspan fill="#4dd0e1">       8W#@*#M*pmWaahhhhhho@ChpqOQLCL&lt;@XCkkpppbwr{UM*Lqppqqqqq@8kkbbbb$%</tspan></text>
+    </g>
+
+    <g transform="translate(0, 275)" class="fade-in" style="animation-delay: 1650ms">
+      <text class="tt"><tspan fill="#4dd0e1">        M@k*###**\B#hhhhao@Jaddpppppdbd0$$$$$@&amp;obk**ookpppdhoh@%kkhk*$M</tspan></text>
+    </g>
+
+    <g transform="translate(0, 288.8)" class="fade-in" style="animation-delay: 1700ms">
+      <text class="tt"><tspan fill="#4dd0e1">        W#pko*#*#o#fWB#ak%hObdbdddbbbbbbdW8oo****##*oaaoahaaoo$W*B@@W</tspan></text>
+    </g>
+
+    <g transform="translate(0, 302.5)" class="fade-in" style="animation-delay: 1750ms">
+      <text class="tt"><tspan fill="#4dd0e1">        &amp;8wkkha*mB0qWB%$$$0hkkkkkbbbbbbbM@&amp;@M*********oaaaaak%$&amp;</tspan></text>
+    </g>
+
+    <g transform="translate(0, 316.3)" class="fade-in" style="animation-delay: 1800ms">
+      <text class="tt"><tspan fill="#4dd0e1">         BMpkkkdadkbhhhd8BQahkkkkkbbbbM$&amp;ahd0YU0b#8BBBB@@B%&amp;%Bh</tspan></text>
+    </g>
+
+    <g transform="translate(0, 330)" class="fade-in" style="animation-delay: 1850ms">
+      <text class="tt"><tspan fill="#4dd0e1">          %@dkqWwbkhhhhd@8Z@$$$$$$$$$$oMbbaaoaaaaooooo*ooo8$q</tspan></text>
+    </g>
+
+    <g transform="translate(0, 343.8)" class="fade-in" style="animation-delay: 1900ms">
+      <text class="tt"><tspan fill="#4dd0e1">           #$Mq&amp;bbbbbhap@$8p*#M#a0Z@@obkkbhaaaaoaaooo#8@@M</tspan></text>
+    </g>
+
+    <g transform="translate(0, 357.5)" class="fade-in" style="animation-delay: 1950ms">
+      <text class="tt"><tspan fill="#4dd0e1">             o8@@bpbbbdb%Boo*####MMkC@#qqdddddbbkb@$Bak</tspan></text>
+    </g>
+
+    <g transform="translate(0, 371.3)" class="fade-in" style="animation-delay: 2000ms">
+      <text class="tt"><tspan fill="#4dd0e1">                 W@@@@8aLW$opoo*****MMLa@&amp;hwZZZw%$W</tspan></text>
+    </g>
+
+    <g transform="translate(0, 385)" class="fade-in" style="animation-delay: 2050ms">
+      <text class="tt"><tspan fill="#4dd0e1">                           *8@Bowwko#*obk*@BB%&amp;M</tspan></text>
+    </g>
+
+    <g transform="translate(0, 398.8)" class="fade-in" style="animation-delay: 2100ms">
+      <text class="tt"><tspan fill="#4dd0e1">                                 qaMMMbp</tspan></text>
+    </g>
+
+    <g transform="translate(0, 412.5)">
+      <defs><clipPath id="cmdrev-30"><rect x="99" y="-11" width="105" height="22"><set attributeName="width" to="0" begin="0s" end="3350ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84;91;98;105" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="3350ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 3350ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="99" fill="#7EE787" textLength="105" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-30)">echo &quot;identity&quot;</text>
+      
+    <rect x="99" y="-9" width="7" height="11"
+          fill="#7EE787" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="3350ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="4550ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176;183;190;197" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="3350ms" dur="1200ms" fill="freeze"/>
+    </rect>
+    </g>
+
+    <g transform="translate(0, 426.3)" class="fade-in" style="animation-delay: 4850ms">
+      <text class="tt"><tspan fill="#7EE787" font-weight="bold">Prisdvl</tspan><tspan fill="#C9D1D9"> — Java Backend / AI Systems</tspan></text>
+    </g>
+
+    <g transform="translate(0, 440)" class="fade-in" style="animation-delay: 4900ms">
+      <text class="tt" fill="#C9D1D9"></text>
+    </g>
+
+    <g transform="translate(0, 453.8)" class="fade-in" style="animation-delay: 4950ms">
+      <text class="tt"><tspan fill="#8B949E">Specialties:</tspan></text>
+    </g>
+
+    <g transform="translate(0, 467.5)" class="fade-in" style="animation-delay: 5000ms">
+      <text class="tt"><tspan fill="#4dd0e1">- Spring AI / RAG / Agent Platform</tspan></text>
+    </g>
+
+    <g transform="translate(0, 481.3)" class="fade-in" style="animation-delay: 5050ms">
+      <text class="tt"><tspan fill="#4dd0e1">- Distributed Systems / Open Source</tspan></text>
+    </g>
+
+    <g transform="translate(0, 495)" class="fade-in" style="animation-delay: 5100ms">
+      <text class="tt" fill="#C9D1D9"></text>
+    </g>
+
+    <g transform="translate(0, 508.8)" class="fade-in" style="animation-delay: 5150ms">
+      <text class="tt"><tspan fill="#d46aff">Projects:</tspan></text>
+    </g>
+
+    <g transform="translate(0, 522.5)" class="fade-in" style="animation-delay: 5200ms">
+      <text class="tt"><tspan fill="#f3c969">- prisdvl-nexus</tspan></text>
+    </g>
+      </g>
+    </g>
+    <rect x="0" y="40" width="1000" height="575" fill="url(#vignette)" pointer-events="none"/>
+    <rect x="0" y="40" width="1000" height="575" fill="url(#scanlines)" pointer-events="none" opacity="0.5" class="scanline-overlay"/>
+  </g>
+</svg>

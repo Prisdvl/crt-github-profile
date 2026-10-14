@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="168" viewBox="0 0 360 168" role="img" aria-label="Terminal pet state hungry">
+  <title>Terminal pet · hungry</title>
+  <desc>ASCII pet for Prisdvl. State=hungry. Rules use public contribution levels only — no XP or fabricated CI.</desc>
+  <rect width="100%" height="100%" fill="#090B0E"/>
+  <rect x="1" y="1" width="358" height="166" fill="none" stroke="#30363D" stroke-width="1"/>
+  <text x="16" y="28" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="12" fill="#7EE787">$ pet status --user Prisdvl</text>
+  <text x="16" y="46" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="11" fill="#f3c969">state: hungry</text>
+  <text x="24" y="64" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="14" fill="#C9D1D9" xml:space="preserve">  /\_/\  </text>
+  <text x="24" y="80" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="14" fill="#C9D1D9" xml:space="preserve"> ( &gt;.&lt; ) </text>
+  <text x="24" y="96" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="14" fill="#C9D1D9" xml:space="preserve">  &gt; ^ &lt;  </text>
+  <text x="16" y="140" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="10" fill="#8B949E">data: public calendar · last_active=2026-10-11</text>
+  <text x="16" y="156" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="10" fill="#30363D">as_of 2026-10-14 · no emoji · CRT palette</text>
+</svg>

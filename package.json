@@ -1,0 +1,26 @@
+﻿{
+  "name": "prisdvl-github-profile-crt",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Local CRT-style GitHub profile assets for Prisdvl (svg-terminal + postprocess + activity SVGs)",
+  "scripts": {
+    "inject:ascii": "node scripts/inject-ascii-into-terminal.mjs",
+    "generate:terminal": "npm run inject:ascii && npm exec --yes -- svg-terminal generate --config terminal.yml --output assets/terminal.svg",
+    "generate:terminal:static": "npm exec --yes -- svg-terminal generate --config terminal.yml --output assets/terminal-static.svg --static",
+    "postprocess:anim": "node scripts/enhance-crt.mjs assets/terminal.svg assets/terminal-enhanced.svg --linespace 3 --line-opacity 0.05 --glow 1.3 --vignette 0.35",
+    "postprocess:static": "node scripts/enhance-crt.mjs assets/terminal-static.svg assets/terminal-static-enhanced.svg --linespace 3 --line-opacity 0.05 --glow 1.3 --vignette 0.35 --static",
+    "generate:ascii": "node scripts/generate-ascii.mjs assets/ascii-portrait.svg",
+    "generate:contribution": "node scripts/generate-contribution.mjs --user Prisdvl --out assets/contribution.svg",
+    "generate:pet": "node scripts/generate-pet.mjs --user Prisdvl --out assets/pet.svg",
+    "build:crt": "npm run generate:terminal && npm run generate:terminal:static && npm run postprocess:anim && npm run postprocess:static",
+    "build:profile": "npm run generate:ascii && npm run generate:contribution && npm run generate:pet",
+    "build:all": "npm run build:crt && npm run build:profile"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "0.9.8"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
