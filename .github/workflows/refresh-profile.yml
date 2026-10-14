@@ -44,9 +44,12 @@ jobs:
           rm -rf "$STAGE"
           mkdir -p "$STAGE"
 
-          # CRT terminal (official CLI) → stage, keep previous assets on failure
+          # CRT terminal: inject → generate → split compose → enhance
+          node scripts/inject-ascii-into-terminal.mjs
           npm exec --yes -- svg-terminal generate --config terminal.yml --output "$STAGE/terminal.svg"
           npm exec --yes -- svg-terminal generate --config terminal.yml --output "$STAGE/terminal-static.svg" --static
+          node scripts/compose-split-terminal.mjs "$STAGE/terminal.svg"
+          node scripts/compose-split-terminal.mjs "$STAGE/terminal-static.svg" --static
           node scripts/enhance-crt.mjs "$STAGE/terminal.svg" "$STAGE/terminal-enhanced.svg" \
             --linespace 3 --line-opacity 0.05 --glow 1.3 --vignette 0.35
           node scripts/enhance-crt.mjs "$STAGE/terminal-static.svg" "$STAGE/terminal-static-enhanced.svg" \
@@ -54,7 +57,6 @@ jobs:
 
           node scripts/generate-ascii.mjs "$STAGE/ascii-portrait.svg"
           node scripts/generate-contribution.mjs --user Prisdvl --out "$STAGE/contribution.svg"
-          node scripts/generate-pet.mjs --user Prisdvl --out "$STAGE/pet.svg"
 
           # Structural checks
           node --input-type=module -e "
@@ -62,7 +64,7 @@ jobs:
           import { DOMParser } from '@xmldom/xmldom';
           const files = [
             'terminal-enhanced.svg','terminal-static-enhanced.svg',
-            'ascii-portrait.svg','contribution.svg','pet.svg'
+            'ascii-portrait.svg','contribution.svg'
           ];
           for (const f of files) {
             const raw = fs.readFileSync('.tmp-ci-assets/' + f, 'utf8');
@@ -70,6 +72,10 @@ jobs:
             if (!doc.documentElement || doc.getElementsByTagName('parsererror').length) {
               throw new Error('XML parse failed: ' + f);
             }
+          }
+          const animRaw = fs.readFileSync('.tmp-ci-assets/terminal-enhanced.svg','utf8');
+          if (!animRaw.includes('portraitPanel') || !animRaw.includes('leftColumn')) {
+            throw new Error('split layout missing portraitPanel/leftColumn');
           }
           const staticRaw = fs.readFileSync('.tmp-ci-assets/terminal-static-enhanced.svg','utf8');
           if (staticRaw.includes('scanline-overlay')) {
@@ -80,7 +86,7 @@ jobs:
 
           mkdir -p assets
           for f in terminal.svg terminal-static.svg terminal-enhanced.svg terminal-static-enhanced.svg \
-                   ascii-portrait.svg contribution.svg pet.svg; do
+                   ascii-portrait.svg contribution.svg; do
             cp "$STAGE/$f" "assets/$f"
           done
 

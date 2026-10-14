@@ -4,3 +4,4 @@ node_modules/
 *.tmp
 preview-crt.html
 .DS_Store
+assets/ascii-art.markup.json
