@@ -11,12 +11,6 @@ async    Celery · message queues · tool-calling agents
 topics   hybrid retrieval · RAG eval · production agents
 now      agent platforms · retrieval eval · Tauri tooling
 status   online · open to collab on agents / RAG
-prisdvl@dev:~$ column -t ~/projects.tsv
-repo                      stack       highlight
-prisdvl-nexus             Java/TS/Vue  RAG · hybrid retrieval · agents
-homework-grading-system   Python/Vue   OCR · Celery · DeepSeek scoring
-PrisTimer                 Rust/Vue/TS  Tauri 2 · anchor focus engine
-Kakuki                    JS/TS/Py     Django · React · MySQL app
 prisdvl@dev:~$ cat ~/skills.md
 backend  APIs · distributed services · Spring ecosystem
 ai       RAG pipelines · agent loops · retrieval eval
@@ -80,21 +74,15 @@ prisdvl@dev:~$ head ~/highlights
       <text class="tt" y="75.6"><tspan fill="#87867F">topics</tspan><tspan fill="#FAF9F5">   hybrid retrieval · RAG eval · production agents</tspan></text>
       <text class="tt" y="86.4"><tspan fill="#87867F">now</tspan><tspan fill="#FAF9F5">      agent platforms · retrieval eval · Tauri tooling</tspan></text>
       <text class="tt" y="97.2"><tspan fill="#87867F">status</tspan><tspan fill="#FAF9F5">   </tspan><tspan fill="#788C5D">online</tspan><tspan fill="#FAF9F5"> · open to collab on agents / RAG</tspan></text>
-      <text class="tt" y="108" fill="#FAF9F5">prisdvl@dev:~$ column -t ~/projects.tsv</text>
-      <text class="tt" y="118.8"><tspan fill="#87867F">repo</tspan><tspan fill="#FAF9F5">                      </tspan><tspan fill="#87867F">stack</tspan><tspan fill="#FAF9F5">       </tspan><tspan fill="#87867F">highlight</tspan></text>
-      <text class="tt" y="129.6"><tspan fill="#D4A27F">prisdvl-nexus</tspan><tspan fill="#FAF9F5">             Java/TS/Vue  RAG · hybrid retrieval · agents</tspan></text>
-      <text class="tt" y="140.4"><tspan fill="#D4A27F">homework-grading-system</tspan><tspan fill="#FAF9F5">   Python/Vue   OCR · Celery · DeepSeek scoring</tspan></text>
-      <text class="tt" y="151.2"><tspan fill="#D4A27F">PrisTimer</tspan><tspan fill="#FAF9F5">                 Rust/Vue/TS  Tauri 2 · anchor focus engine</tspan></text>
-      <text class="tt" y="162"><tspan fill="#D4A27F">Kakuki</tspan><tspan fill="#FAF9F5">                    JS/TS/Py     Django · React · MySQL app</tspan></text>
-      <text class="tt" y="172.8" fill="#FAF9F5">prisdvl@dev:~$ cat ~/skills.md</text>
-      <text class="tt" y="183.6"><tspan fill="#C46686">backend</tspan><tspan fill="#FAF9F5">  APIs · distributed services · Spring ecosystem</tspan></text>
-      <text class="tt" y="194.4"><tspan fill="#C46686">ai</tspan><tspan fill="#FAF9F5">       RAG pipelines · agent loops · retrieval eval</tspan></text>
-      <text class="tt" y="205.2"><tspan fill="#C46686">data</tspan><tspan fill="#FAF9F5">     OCR pipelines · async workers · MySQL</tspan></text>
-      <text class="tt" y="216"><tspan fill="#C46686">client</tspan><tspan fill="#FAF9F5">   Vue · React · Tauri desktop</tspan></text>
-      <text class="tt" y="226.8" fill="#FAF9F5">prisdvl@dev:~$ head ~/highlights</text>
-      <text class="tt" y="237.6"><tspan fill="#C6613F">▸</tspan><tspan fill="#FAF9F5"> Spring AI knowledge base + tool-calling agent platform</tspan></text>
-      <text class="tt" y="248.4"><tspan fill="#C6613F">▸</tspan><tspan fill="#FAF9F5"> K-12 grading pipeline: OCR → queue · LLM scoring</tspan></text>
-      <text class="tt" y="259.2"><tspan fill="#C6613F">▸</tspan><tspan fill="#FAF9F5"> Rust/Tauri focus timer with liquid-glass UI</tspan></text>
+      <text class="tt" y="108" fill="#FAF9F5">prisdvl@dev:~$ cat ~/skills.md</text>
+      <text class="tt" y="118.8"><tspan fill="#C46686">backend</tspan><tspan fill="#FAF9F5">  APIs · distributed services · Spring ecosystem</tspan></text>
+      <text class="tt" y="129.6"><tspan fill="#C46686">ai</tspan><tspan fill="#FAF9F5">       RAG pipelines · agent loops · retrieval eval</tspan></text>
+      <text class="tt" y="140.4"><tspan fill="#C46686">data</tspan><tspan fill="#FAF9F5">     OCR pipelines · async workers · MySQL</tspan></text>
+      <text class="tt" y="151.2"><tspan fill="#C46686">client</tspan><tspan fill="#FAF9F5">   Vue · React · Tauri desktop</tspan></text>
+      <text class="tt" y="162" fill="#FAF9F5">prisdvl@dev:~$ head ~/highlights</text>
+      <text class="tt" y="172.8"><tspan fill="#6A9BCC">▸</tspan><tspan fill="#FAF9F5"> Spring AI knowledge base + tool-calling agent platform</tspan></text>
+      <text class="tt" y="183.6"><tspan fill="#6A9BCC">▸</tspan><tspan fill="#FAF9F5"> K-12 grading pipeline: OCR → queue · LLM scoring</tspan></text>
+      <text class="tt" y="194.4"><tspan fill="#6A9BCC">▸</tspan><tspan fill="#FAF9F5"> Rust/Tauri focus timer with liquid-glass UI</tspan></text>
       </g><g id="portraitPanel" transform="translate(480, 0)">
     <g transform="translate(0, 0)">
       <text class="tt"><tspan fill="#FAF9F5">                               </tspan><tspan fill="#4dd0e1">o&amp;%BB%Wh</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#FAF9F5">      </tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">h#MM</tspan></text>

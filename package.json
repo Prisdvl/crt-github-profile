@@ -11,10 +11,11 @@
     "compose:split": "node scripts/compose-split-terminal.mjs assets/terminal.svg && node scripts/compose-split-terminal.mjs assets/terminal-static.svg --static",
     "postprocess:anim": "node scripts/enhance-crt.mjs assets/terminal.svg assets/terminal-enhanced.svg --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22",
     "postprocess:static": "node scripts/enhance-crt.mjs assets/terminal-static.svg assets/terminal-static-enhanced.svg --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22 --static",
+    "compose:unified": "node scripts/compose-unified-profile.mjs assets/terminal-enhanced.svg --user Prisdvl && node scripts/compose-unified-profile.mjs assets/terminal-static-enhanced.svg --user Prisdvl",
     "generate:ascii": "node scripts/generate-ascii.mjs assets/ascii-portrait.svg",
     "generate:projects": "node scripts/generate-projects.mjs --out assets/projects.svg",
     "generate:contribution": "node scripts/generate-contribution.mjs --user Prisdvl --out assets/contribution.svg",
-    "build:crt": "npm run generate:terminal && npm run generate:terminal:static && npm run compose:split && npm run postprocess:anim && npm run postprocess:static",
+    "build:crt": "npm run generate:terminal && npm run generate:terminal:static && npm run compose:split && npm run postprocess:anim && npm run postprocess:static && npm run compose:unified",
     "build:profile": "npm run generate:ascii && npm run generate:projects && npm run generate:contribution",
     "build:all": "npm run build:crt && npm run build:profile"
   },

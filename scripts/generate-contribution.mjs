@@ -6,6 +6,7 @@
  * Usage:
  *   node scripts/generate-contribution.mjs [--user Prisdvl] [--out assets/contribution.svg] [--placeholder]
  */
+import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { escapeXml, writeSvgAtomic, fetchText } from "./lib/svg-util.mjs";
@@ -194,6 +195,27 @@ async function fetchDays(user) {
   return days;
 }
 
+async function loadCachedDays(user) {
+  const cachePath = path.resolve(root, "assets", "contribution-days.json");
+  try {
+    const cached = JSON.parse(await fs.readFile(cachePath, "utf8"));
+    if (Array.isArray(cached.days) && cached.days.length) return cached.days;
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
+async function saveCachedDays(user, days) {
+  const cachePath = path.resolve(root, "assets", "contribution-days.json");
+  await fs.writeFile(
+    cachePath,
+    JSON.stringify({ user, updatedAt: new Date().toISOString(), days }, null, 2) +
+      "\n",
+    "utf8"
+  );
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const outPath = path.resolve(root, args.out);
@@ -206,13 +228,21 @@ async function main() {
   } else {
     try {
       const days = await fetchDays(args.user);
+      await saveCachedDays(args.user, days);
       svg = buildHeatmapSvg(args.user, days);
       console.log(`Parsed ${days.length} days for ${args.user}`);
     } catch (err) {
       console.error("Contribution fetch/parse failed:", err.message || err);
-      console.error("Writing marked PLACEHOLDER SVG.");
-      svg = buildPlaceholderSvg(args.user);
-      mode = "placeholder-fallback";
+      const cached = await loadCachedDays(args.user);
+      if (cached) {
+        svg = buildHeatmapSvg(args.user, cached);
+        mode = "cache-fallback";
+        console.log(`Using cached contribution days (${cached.length})`);
+      } else {
+        console.error("Writing marked PLACEHOLDER SVG.");
+        svg = buildPlaceholderSvg(args.user);
+        mode = "placeholder-fallback";
+      }
     }
   }
 

@@ -85,16 +85,6 @@ blocks:
 
   - block: custom
     config:
-      command: column -t ~/projects.tsv
-      lines:
-        - "[[fg:comment]]repo[[/fg]]                      [[fg:comment]]stack[[/fg]]       [[fg:comment]]highlight[[/fg]]"
-        - "[[fg:yellow]]prisdvl-nexus[[/fg]]             Java/TS/Vue  RAG · hybrid retrieval · agents"
-        - "[[fg:yellow]]homework-grading-system[[/fg]]   Python/Vue   OCR · Celery · DeepSeek scoring"
-        - "[[fg:yellow]]PrisTimer[[/fg]]                 Rust/Vue/TS  Tauri 2 · anchor focus engine"
-        - "[[fg:yellow]]Kakuki[[/fg]]                    JS/TS/Py     Django · React · MySQL app"
-
-  - block: custom
-    config:
       command: cat ~/skills.md
       lines:
         - "[[fg:magenta]]backend[[/fg]]  APIs · distributed services · Spring ecosystem"
@@ -106,6 +96,6 @@ blocks:
     config:
       command: head ~/highlights
       lines:
-        - "[[fg:orange]]▸[[/fg]] Spring AI knowledge base + tool-calling agent platform"
-        - "[[fg:orange]]▸[[/fg]] K-12 grading pipeline: OCR → queue · LLM scoring"
-        - "[[fg:orange]]▸[[/fg]] Rust/Tauri focus timer with liquid-glass UI"
+        - "[[fg:blue]]▸[[/fg]] Spring AI knowledge base + tool-calling agent platform"
+        - "[[fg:blue]]▸[[/fg]] K-12 grading pipeline: OCR → queue · LLM scoring"
+        - "[[fg:blue]]▸[[/fg]] Rust/Tauri focus timer with liquid-glass UI"

@@ -54,6 +54,8 @@ jobs:
             --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22
           node scripts/enhance-crt.mjs "$STAGE/terminal-static.svg" "$STAGE/terminal-static-enhanced.svg" \
             --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22 --static
+          node scripts/compose-unified-profile.mjs "$STAGE/terminal-enhanced.svg" --user Prisdvl
+          node scripts/compose-unified-profile.mjs "$STAGE/terminal-static-enhanced.svg" --user Prisdvl
 
           node scripts/generate-ascii.mjs "$STAGE/ascii-portrait.svg"
           node scripts/generate-projects.mjs --out "$STAGE/projects.svg"
@@ -67,6 +69,10 @@ jobs:
             'terminal-enhanced.svg','terminal-static-enhanced.svg',
             'ascii-portrait.svg','projects.svg','contribution.svg'
           ];
+          const unified = fs.readFileSync('.tmp-ci-assets/terminal-enhanced.svg','utf8');
+          if (!unified.includes('unifiedTail') || !unified.includes('#4ea1ff')) {
+            throw new Error('unified profile missing tail or blue portrait tones');
+          }
           for (const f of files) {
             const raw = fs.readFileSync('.tmp-ci-assets/' + f, 'utf8');
             const doc = new DOMParser().parseFromString(raw, 'application/xml');
@@ -90,6 +96,9 @@ jobs:
                    ascii-portrait.svg projects.svg contribution.svg; do
             cp "$STAGE/$f" "assets/$f"
           done
+          if [ -f assets/contribution-days.json ]; then
+            git add assets/contribution-days.json || true
+          fi
 
       - name: Commit if changed
         run: |

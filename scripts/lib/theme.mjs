@@ -24,13 +24,13 @@ export const THEME = {
   buttonMax: "#788C5D",
 };
 
-/** Contribution heatmap intensity → Clay scale */
+/** Contribution heatmap intensity → blue/cyan (matches ASCII portrait) */
 export const HEATMAP_LEVELS = [
   THEME.surface,
-  "#3D2A24",
-  "#8B523C",
-  THEME.accentDeep,
-  THEME.accent,
+  "#1a2f3d",
+  "#2d5f7a",
+  "#4ea1ff",
+  "#9ed0ff",
 ];
 
 export const FONT_MONO =

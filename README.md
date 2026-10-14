@@ -6,11 +6,3 @@
     <img src="assets/terminal-enhanced.svg" alt="Prisdvl — Java Backend / AI Systems" width="1000">
   </picture>
 </p>
-
-<p align="center">
-  <img src="assets/projects.svg" alt="Selected projects" width="1000">
-</p>
-
-<p align="center">
-  <img src="assets/contribution.svg" alt="Contribution activity" width="1000">
-</p>
