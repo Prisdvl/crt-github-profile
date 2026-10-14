@@ -18,13 +18,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const markupPath = path.join(root, "assets", "ascii-art.markup.json");
 
-const FONT_SIZE = 11;
-const LINE_HEIGHT = 1.12;
-const LINE_PX = FONT_SIZE * LINE_HEIGHT; // 12.32 ≈ svg-terminal's 12.3
+// Keep in sync with terminal.yml (left column); portrait uses same metrics.
+const FONT_SIZE = 10;
+const LINE_HEIGHT = 1.08;
+const LINE_PX = FONT_SIZE * LINE_HEIGHT; // 10.8
 const TITLE_BAR = 40;
-const PAD_TOP = 8;
+const PAD_TOP = 6;
 const CONTENT_ORIGIN_Y = TITLE_BAR + PAD_TOP; // scrollContainer y
-const RIGHT_X = 500; // within scrollContainer (after left padding)
+const RIGHT_X = 480; // leave more width for denser left column
 const PORTRAIT_FADE_START_MS = 350;
 const PORTRAIT_LINE_STAGGER_MS = 45;
 
@@ -132,7 +133,8 @@ function parseFragment(xml) {
     const groups = doc.getElementsByTagName("g");
     for (let i = 0; i < groups.length; i++) {
       const t = groups[i].getAttribute("transform") || "";
-      if (/translate\(\s*8\s*,\s*48\s*\)/.test(t)) {
+      // svg-terminal: translate(padding, titleBar + paddingTop)
+      if (/translate\(\s*8\s*,\s*\d+(?:\.\d+)?\s*\)/.test(t)) {
         scroll = groups[i];
         scroll.setAttribute("id", "scrollContainer");
         break;

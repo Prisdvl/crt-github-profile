@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="1000" height="430" viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated terminal: typing identity commands on the left, ASCII portrait on the right">
+<svg width="1000" height="382" viewBox="0 0 1000 382" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated terminal: typing identity commands on the left, ASCII portrait on the right">
   <title>Animated terminal: typing identity commands on the left, ASCII portrait on the right</title>
   <desc>prisdvl@dev:~$ whoami
-prisdvl
-prisdvl@dev:~$ pwd
-/home/prisdvl
-prisdvl@dev:~$ cat ~/.role
-Java Backend / AI Systems
-prisdvl@dev:~$ cat specialties.txt
-Spring AI / RAG / Agent
-Distributed Systems
-prisdvl@dev:~$ ls ~/projects
-prisdvl-nexus/
-homework-grading-system/
-PrisTimer/
-Kakuki/
-prisdvl@dev:~$ echo "stack"
-lang   Java · TypeScript · Rust
-focus  Spring AI · RAG · Agent systems
-prisdvl@dev:~$ git remote -v
-origin  github.com/Prisdvl
-prisdvl@dev:~$ echo "identity"
-Prisdvl — Java Backend / AI Systems
-Specialties: Spring AI / RAG / Agent · Distributed Systems
-Projects: prisdvl-nexus · homework-grading-system · PrisTimer</desc>
+prisdvl  Java Backend / AI Systems  github.com/Prisdvl
+prisdvl@dev:~$ cat ~/card.yaml
+focus    Spring AI · RAG · Agent · Distributed Systems
+lang     Java · TypeScript · Rust · Python · Vue
+runtime  Spring Boot · Spring AI · FastAPI · Tauri · Django
+async    Celery · message queues · tool-calling agents
+topics   hybrid retrieval · RAG eval · production agents
+now      agent platforms · retrieval eval · Tauri tooling
+status   online · open to collab on agents / RAG
+prisdvl@dev:~$ column -t ~/projects.tsv
+repo                      stack       highlight
+prisdvl-nexus             Java/TS/Vue  RAG · hybrid retrieval · agents
+homework-grading-system   Python/Vue   OCR · Celery · DeepSeek scoring
+PrisTimer                 Rust/Vue/TS  Tauri 2 · anchor focus engine
+Kakuki                    JS/TS/Py     Django · React · MySQL app
+prisdvl@dev:~$ cat ~/skills.md
+backend  APIs · distributed services · Spring ecosystem
+ai       RAG pipelines · agent loops · retrieval eval
+data     OCR pipelines · async workers · MySQL
+client   Vue · React · Tauri desktop
+prisdvl@dev:~$ head ~/highlights
+▸ Spring AI knowledge base + tool-calling agent platform
+▸ K-12 grading pipeline: OCR → queue · LLM scoring
+▸ Rust/Tauri focus timer with liquid-glass UI</desc>
   <style>
-    .tt { font-family: JetBrains Mono, Fira Code, Ubuntu Mono, monospace; font-size: 11px; white-space: pre; }
+    .tt { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 10px; white-space: pre; }
     @keyframes scanlineScroll {
       from { transform: translateY(0); }
       to { transform: translateY(4px); }
@@ -56,295 +58,279 @@ Projects: prisdvl-nexus · homework-grading-system · PrisTimer</desc>
   </style>
   <defs>
     
-    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="1" height="3">
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="1" height="4">
       <rect width="1" height="1" fill="transparent"/>
-      <rect y="1" width="1" height="1" fill="#ffffff" fill-opacity="0.05"/>
+      <rect y="1" width="1" height="1" fill="#ffffff" fill-opacity="0.03"/>
     </pattern>
 
     <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
       <stop offset="0%" stop-color="black" stop-opacity="0"/>
       <stop offset="60%" stop-color="black" stop-opacity="0"/>
-      <stop offset="100%" stop-color="black" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.22"/>
     </radialGradient>
     
     <filter id="textGlow" x="-12%" y="-12%" width="124%" height="124%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1.82" result="halo"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.47" result="halo"/>
       <feMerge>
         <feMergeNode in="halo"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <clipPath id="terminalViewport">
-      <rect x="0" y="40" width="1000" height="390"/>
+      <rect x="0" y="40" width="1000" height="342"/>
     </clipPath>
-  <clipPath id="leftColumnClip"><rect x="0" y="-20" width="488" height="2000"/></clipPath></defs>
+  <clipPath id="leftColumnClip"><rect x="0" y="-20" width="468" height="2000"/></clipPath></defs>
 
   <g>
     
-    <rect x="0" y="0" width="1000" height="430" rx="12" ry="12" fill="#090B0E"/>
+    <rect x="0" y="0" width="1000" height="382" rx="12" ry="12" fill="#141413"/>
     
-    <rect x="0" y="0" width="1000" height="40" rx="12" ry="12" fill="#161B22"/>
-    <rect x="0" y="16" width="1000" height="16" fill="#161B22"/>
+    <rect x="0" y="0" width="1000" height="40" rx="12" ry="12" fill="#1C1B19"/>
+    <rect x="0" y="16" width="1000" height="16" fill="#1C1B19"/>
     <g id="window-controls">
-      <circle cx="10" cy="16" r="6" fill="#ff5f56" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
-      <circle cx="30" cy="16" r="6" fill="#ffbd2e" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
-      <circle cx="50" cy="16" r="6" fill="#27c93f" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="10" cy="16" r="6" fill="#C6613F" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="30" cy="16" r="6" fill="#D4A27F" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
+      <circle cx="50" cy="16" r="6" fill="#788C5D" stroke="rgba(0,0,0,0.18)" stroke-width="0.5"/>
     </g>
-    <text x="500" y="24.55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#C9D1D9" text-anchor="middle">
+    <text x="500" y="24.55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#FAF9F5" text-anchor="middle">
       prisdvl@terminal: ~
     </text>
     
-    <rect x="0" y="40" width="1000" height="390" fill="#090B0E"/>
+    <rect x="0" y="40" width="1000" height="342" fill="#141413"/>
     <g clip-path="url(#terminalViewport)">
-      <g id="scrollContainer" transform="translate(8, 48)" filter="url(#textGlow)"><g id="leftColumn" clip-path="url(#leftColumnClip)">
+      <g id="scrollContainer" transform="translate(8, 46)" filter="url(#textGlow)"><g id="leftColumn" clip-path="url(#leftColumnClip)">
         
         
     <g transform="translate(0, 0)">
-      <defs><clipPath id="cmdrev-0"><rect x="99" y="-11" width="42" height="22"><animate attributeName="width" values="0;7;14;21;28;35;42" keyTimes="0.0000;0.1667;0.3333;0.5000;0.6667;0.8333;1.0000" calcMode="discrete" begin="0ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 0ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="42" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-0)">whoami</text>
+      <defs><clipPath id="cmdrev-0"><rect x="90" y="-10" width="36" height="20"><animate attributeName="width" values="0;6;12;18;24;30;36" keyTimes="0.0000;0.1667;0.3333;0.5000;0.6667;0.8333;1.0000" calcMode="discrete" begin="0ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 0ms" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#D97757" textLength="36" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-0)">whoami</text>
       
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
+    <rect x="90" y="-8" width="6" height="10" fill="#D97757" opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="0ms" dur="10ms" fill="freeze"/>
       <animate attributeName="opacity" to="0" begin="1200ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134" keyTimes="0.0000;0.1667;0.3333;0.5000;0.6667;0.8333;1.0000" calcMode="discrete" begin="0ms" dur="1200ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120" keyTimes="0.0000;0.1667;0.3333;0.5000;0.6667;0.8333;1.0000" calcMode="discrete" begin="0ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 12.3)" class="fade-in" style="animation-delay: 1420ms">
-      <text class="tt"><tspan fill="#7EE787">prisdvl</tspan></text>
+    <g transform="translate(0, 10.8)" class="fade-in" style="animation-delay: 1290ms">
+      <text class="tt"><tspan fill="#C6613F" font-weight="bold">prisdvl</tspan><tspan fill="#FAF9F5">  Java Backend / AI Systems  </tspan><tspan fill="#6A9BCC">github.com/Prisdvl</tspan></text>
     </g>
 
-    <g transform="translate(0, 24.6)">
-      <defs><clipPath id="cmdrev-2"><rect x="99" y="-11" width="21" height="22"><set attributeName="width" to="0" begin="0s" end="2755ms"/><animate attributeName="width" values="0;7;14;21" keyTimes="0.0000;0.3333;0.6667;1.0000" calcMode="discrete" begin="2755ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 2755ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="21" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-2)">pwd</text>
+    <g transform="translate(0, 21.6)">
+      <defs><clipPath id="cmdrev-2"><rect x="90" y="-10" width="90" height="20"><set attributeName="width" to="0" begin="0s" end="2438ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="2438ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 2438ms" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-2)">cat ~/card.yaml</text>
       
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="2755ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="3955ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113" keyTimes="0.0000;0.3333;0.6667;1.0000" calcMode="discrete" begin="2755ms" dur="1200ms" fill="freeze"/>
+    <rect x="90" y="-8" width="6" height="10" fill="#D97757" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2438ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="3638ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="2438ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 37)" class="fade-in" style="animation-delay: 4175ms">
-      <text class="tt" fill="#C9D1D9">/home/prisdvl</text>
+    <g transform="translate(0, 32.4)" class="fade-in" style="animation-delay: 3728ms">
+      <text class="tt"><tspan fill="#87867F">focus</tspan><tspan fill="#FAF9F5">    </tspan><tspan fill="#D4A27F">Spring AI</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#D4A27F">RAG</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#D4A27F">Agent</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#D4A27F">Distributed Systems</tspan></text>
     </g>
 
-    <g transform="translate(0, 49.3)">
-      <defs><clipPath id="cmdrev-4"><rect x="99" y="-11" width="77" height="22"><set attributeName="width" to="0" begin="0s" end="5510ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77" keyTimes="0.0000;0.0909;0.1818;0.2727;0.3636;0.4545;0.5455;0.6364;0.7273;0.8182;0.9091;1.0000" calcMode="discrete" begin="5510ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 5510ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="77" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-4)">cat ~/.role</text>
+    <g transform="translate(0, 43.2)" class="fade-in" style="animation-delay: 3756ms">
+      <text class="tt"><tspan fill="#87867F">lang</tspan><tspan fill="#FAF9F5">     </tspan><tspan fill="#6A9BCC">Java</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#6A9BCC">TypeScript</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#6A9BCC">Rust</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#6A9BCC">Python</tspan><tspan fill="#FAF9F5"> · </tspan><tspan fill="#6A9BCC">Vue</tspan></text>
+    </g>
+
+    <g transform="translate(0, 54)" class="fade-in" style="animation-delay: 3784ms">
+      <text class="tt"><tspan fill="#87867F">runtime</tspan><tspan fill="#FAF9F5">  Spring Boot · Spring AI · FastAPI · Tauri · Django</tspan></text>
+    </g>
+
+    <g transform="translate(0, 64.8)" class="fade-in" style="animation-delay: 3812ms">
+      <text class="tt"><tspan fill="#87867F">async</tspan><tspan fill="#FAF9F5">    Celery · message queues · tool-calling agents</tspan></text>
+    </g>
+
+    <g transform="translate(0, 75.6)" class="fade-in" style="animation-delay: 3840ms">
+      <text class="tt"><tspan fill="#87867F">topics</tspan><tspan fill="#FAF9F5">   hybrid retrieval · RAG eval · production agents</tspan></text>
+    </g>
+
+    <g transform="translate(0, 86.4)" class="fade-in" style="animation-delay: 3868ms">
+      <text class="tt"><tspan fill="#87867F">now</tspan><tspan fill="#FAF9F5">      agent platforms · retrieval eval · Tauri tooling</tspan></text>
+    </g>
+
+    <g transform="translate(0, 97.2)" class="fade-in" style="animation-delay: 3896ms">
+      <text class="tt"><tspan fill="#87867F">status</tspan><tspan fill="#FAF9F5">   </tspan><tspan fill="#788C5D">online</tspan><tspan fill="#FAF9F5"> · open to collab on agents / RAG</tspan></text>
+    </g>
+
+    <g transform="translate(0, 108)">
+      <defs><clipPath id="cmdrev-10"><rect x="90" y="-10" width="144" height="20"><set attributeName="width" to="0" begin="0s" end="5044ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90;96;102;108;114;120;126;132;138;144" keyTimes="0.0000;0.0417;0.0833;0.1250;0.1667;0.2083;0.2500;0.2917;0.3333;0.3750;0.4167;0.4583;0.5000;0.5417;0.5833;0.6250;0.6667;0.7083;0.7500;0.7917;0.8333;0.8750;0.9167;0.9583;1.0000" calcMode="discrete" begin="5044ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 5044ms" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#D97757" textLength="144" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-10)">column -t ~/projects.tsv</text>
       
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="5510ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="6710ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169" keyTimes="0.0000;0.0909;0.1818;0.2727;0.3636;0.4545;0.5455;0.6364;0.7273;0.8182;0.9091;1.0000" calcMode="discrete" begin="5510ms" dur="1200ms" fill="freeze"/>
+    <rect x="90" y="-8" width="6" height="10" fill="#D97757" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="5044ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="6244ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174;180;186;192;198;204;210;216;222;228" keyTimes="0.0000;0.0417;0.0833;0.1250;0.1667;0.2083;0.2500;0.2917;0.3333;0.3750;0.4167;0.4583;0.5000;0.5417;0.5833;0.6250;0.6667;0.7083;0.7500;0.7917;0.8333;0.8750;0.9167;0.9583;1.0000" calcMode="discrete" begin="5044ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 61.6)" class="fade-in" style="animation-delay: 6930ms">
-      <text class="tt" fill="#C9D1D9">Java Backend / AI Systems</text>
+    <g transform="translate(0, 118.8)" class="fade-in" style="animation-delay: 6334ms">
+      <text class="tt"><tspan fill="#87867F">repo</tspan><tspan fill="#FAF9F5">                      </tspan><tspan fill="#87867F">stack</tspan><tspan fill="#FAF9F5">       </tspan><tspan fill="#87867F">highlight</tspan></text>
     </g>
 
-    <g transform="translate(0, 73.9)">
-      <defs><clipPath id="cmdrev-6"><rect x="99" y="-11" width="133" height="22"><set attributeName="width" to="0" begin="0s" end="8265ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84;91;98;105;112;119;126;133" keyTimes="0.0000;0.0526;0.1053;0.1579;0.2105;0.2632;0.3158;0.3684;0.4211;0.4737;0.5263;0.5789;0.6316;0.6842;0.7368;0.7895;0.8421;0.8947;0.9474;1.0000" calcMode="discrete" begin="8265ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 8265ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="133" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-6)">cat specialties.txt</text>
+    <g transform="translate(0, 129.6)" class="fade-in" style="animation-delay: 6362ms">
+      <text class="tt"><tspan fill="#D4A27F">prisdvl-nexus</tspan><tspan fill="#FAF9F5">             Java/TS/Vue  RAG · hybrid retrieval · agents</tspan></text>
+    </g>
+
+    <g transform="translate(0, 140.4)" class="fade-in" style="animation-delay: 6390ms">
+      <text class="tt"><tspan fill="#D4A27F">homework-grading-system</tspan><tspan fill="#FAF9F5">   Python/Vue   OCR · Celery · DeepSeek scoring</tspan></text>
+    </g>
+
+    <g transform="translate(0, 151.2)" class="fade-in" style="animation-delay: 6418ms">
+      <text class="tt"><tspan fill="#D4A27F">PrisTimer</tspan><tspan fill="#FAF9F5">                 Rust/Vue/TS  Tauri 2 · anchor focus engine</tspan></text>
+    </g>
+
+    <g transform="translate(0, 162)" class="fade-in" style="animation-delay: 6446ms">
+      <text class="tt"><tspan fill="#D4A27F">Kakuki</tspan><tspan fill="#FAF9F5">                    JS/TS/Py     Django · React · MySQL app</tspan></text>
+    </g>
+
+    <g transform="translate(0, 172.8)">
+      <defs><clipPath id="cmdrev-16"><rect x="90" y="-10" width="90" height="20"><set attributeName="width" to="0" begin="0s" end="7594ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="7594ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 7594ms" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-16)">cat ~/skills.md</text>
       
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="8265ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="9465ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176;183;190;197;204;211;218;225" keyTimes="0.0000;0.0526;0.1053;0.1579;0.2105;0.2632;0.3158;0.3684;0.4211;0.4737;0.5263;0.5789;0.6316;0.6842;0.7368;0.7895;0.8421;0.8947;0.9474;1.0000" calcMode="discrete" begin="8265ms" dur="1200ms" fill="freeze"/>
+    <rect x="90" y="-8" width="6" height="10" fill="#D97757" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="7594ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="8794ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="7594ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 86.2)" class="fade-in" style="animation-delay: 9685ms">
-      <text class="tt"><tspan fill="#4dd0e1">Spring AI</tspan><tspan fill="#C9D1D9"> / </tspan><tspan fill="#4dd0e1">RAG</tspan><tspan fill="#C9D1D9"> / </tspan><tspan fill="#4dd0e1">Agent</tspan></text>
+    <g transform="translate(0, 183.6)" class="fade-in" style="animation-delay: 8884ms">
+      <text class="tt"><tspan fill="#C46686">backend</tspan><tspan fill="#FAF9F5">  APIs · distributed services · Spring ecosystem</tspan></text>
     </g>
 
-    <g transform="translate(0, 98.6)" class="fade-in" style="animation-delay: 9740ms">
-      <text class="tt"><tspan fill="#4dd0e1">Distributed Systems</tspan></text>
+    <g transform="translate(0, 194.4)" class="fade-in" style="animation-delay: 8912ms">
+      <text class="tt"><tspan fill="#C46686">ai</tspan><tspan fill="#FAF9F5">       RAG pipelines · agent loops · retrieval eval</tspan></text>
     </g>
 
-    <g transform="translate(0, 110.9)">
-      <defs><clipPath id="cmdrev-9"><rect x="99" y="-11" width="91" height="22"><set attributeName="width" to="0" begin="0s" end="11075ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84;91" keyTimes="0.0000;0.0769;0.1538;0.2308;0.3077;0.3846;0.4615;0.5385;0.6154;0.6923;0.7692;0.8462;0.9231;1.0000" calcMode="discrete" begin="11075ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 11075ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="91" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-9)">ls ~/projects</text>
+    <g transform="translate(0, 205.2)" class="fade-in" style="animation-delay: 8940ms">
+      <text class="tt"><tspan fill="#C46686">data</tspan><tspan fill="#FAF9F5">     OCR pipelines · async workers · MySQL</tspan></text>
+    </g>
+
+    <g transform="translate(0, 216)" class="fade-in" style="animation-delay: 8968ms">
+      <text class="tt"><tspan fill="#C46686">client</tspan><tspan fill="#FAF9F5">   Vue · React · Tauri desktop</tspan></text>
+    </g>
+
+    <g transform="translate(0, 226.8)">
+      <defs><clipPath id="cmdrev-21"><rect x="90" y="-10" width="102" height="20"><set attributeName="width" to="0" begin="0s" end="10116ms"/><animate attributeName="width" values="0;6;12;18;24;30;36;42;48;54;60;66;72;78;84;90;96;102" keyTimes="0.0000;0.0588;0.1176;0.1765;0.2353;0.2941;0.3529;0.4118;0.4706;0.5294;0.5882;0.6471;0.7059;0.7647;0.8235;0.8824;0.9412;1.0000" calcMode="discrete" begin="10116ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
+      <text class="tt fade-in" style="animation-delay: 10116ms" fill="#D97757" textLength="90" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
+      <text class="tt" x="90" fill="#D97757" textLength="102" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-21)">head ~/highlights</text>
       
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="11075ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="12275ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176;183" keyTimes="0.0000;0.0769;0.1538;0.2308;0.3077;0.3846;0.4615;0.5385;0.6154;0.6923;0.7692;0.8462;0.9231;1.0000" calcMode="discrete" begin="11075ms" dur="1200ms" fill="freeze"/>
+    <rect x="90" y="-8" width="6" height="10" fill="#D97757" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="10116ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="opacity" to="0" begin="11316ms" dur="10ms" fill="freeze"/>
+      <animate attributeName="x" values="90;90;96;102;108;114;120;126;132;138;144;150;156;162;168;174;180;186" keyTimes="0.0000;0.0588;0.1176;0.1765;0.2353;0.2941;0.3529;0.4118;0.4706;0.5294;0.5882;0.6471;0.7059;0.7647;0.8235;0.8824;0.9412;1.0000" calcMode="discrete" begin="10116ms" dur="1200ms" fill="freeze"/>
     </rect>
     </g>
 
-    <g transform="translate(0, 123.2)" class="fade-in" style="animation-delay: 12495ms">
-      <text class="tt"><tspan fill="#f3c969">prisdvl-nexus</tspan><tspan fill="#C9D1D9">/</tspan></text>
+    <g transform="translate(0, 237.6)" class="fade-in" style="animation-delay: 11406ms">
+      <text class="tt"><tspan fill="#C6613F">▸</tspan><tspan fill="#FAF9F5"> Spring AI knowledge base + tool-calling agent platform</tspan></text>
     </g>
 
-    <g transform="translate(0, 135.5)" class="fade-in" style="animation-delay: 12550ms">
-      <text class="tt"><tspan fill="#f3c969">homework-grading-system</tspan><tspan fill="#C9D1D9">/</tspan></text>
+    <g transform="translate(0, 248.4)" class="fade-in" style="animation-delay: 11434ms">
+      <text class="tt"><tspan fill="#C6613F">▸</tspan><tspan fill="#FAF9F5"> K-12 grading pipeline: OCR → queue · LLM scoring</tspan></text>
     </g>
 
-    <g transform="translate(0, 147.8)" class="fade-in" style="animation-delay: 12605ms">
-      <text class="tt"><tspan fill="#f3c969">PrisTimer</tspan><tspan fill="#C9D1D9">/</tspan></text>
+    <g transform="translate(0, 259.2)" class="fade-in" style="animation-delay: 11462ms">
+      <text class="tt"><tspan fill="#C6613F">▸</tspan><tspan fill="#FAF9F5"> Rust/Tauri focus timer with liquid-glass UI</tspan></text>
     </g>
-
-    <g transform="translate(0, 160.2)" class="fade-in" style="animation-delay: 12660ms">
-      <text class="tt"><tspan fill="#f3c969">Kakuki</tspan><tspan fill="#C9D1D9">/</tspan></text>
-    </g>
-
-    <g transform="translate(0, 172.5)">
-      <defs><clipPath id="cmdrev-14"><rect x="99" y="-11" width="84" height="22"><set attributeName="width" to="0" begin="0s" end="13995ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84" keyTimes="0.0000;0.0833;0.1667;0.2500;0.3333;0.4167;0.5000;0.5833;0.6667;0.7500;0.8333;0.9167;1.0000" calcMode="discrete" begin="13995ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 13995ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="84" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-14)">echo "stack"</text>
-      
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="13995ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="15195ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176" keyTimes="0.0000;0.0833;0.1667;0.2500;0.3333;0.4167;0.5000;0.5833;0.6667;0.7500;0.8333;0.9167;1.0000" calcMode="discrete" begin="13995ms" dur="1200ms" fill="freeze"/>
-    </rect>
-    </g>
-
-    <g transform="translate(0, 184.8)" class="fade-in" style="animation-delay: 15415ms">
-      <text class="tt"><tspan fill="#8B949E">lang</tspan><tspan fill="#C9D1D9">   </tspan><tspan fill="#9ed0ff">Java</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#9ed0ff">TypeScript</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#9ed0ff">Rust</tspan></text>
-    </g>
-
-    <g transform="translate(0, 197.1)" class="fade-in" style="animation-delay: 15470ms">
-      <text class="tt"><tspan fill="#8B949E">focus</tspan><tspan fill="#C9D1D9">  </tspan><tspan fill="#d46aff">Spring AI</tspan><tspan fill="#C9D1D9"> · RAG · Agent systems</tspan></text>
-    </g>
-
-    <g transform="translate(0, 209.4)">
-      <defs><clipPath id="cmdrev-17"><rect x="99" y="-11" width="91" height="22"><set attributeName="width" to="0" begin="0s" end="16805ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84;91" keyTimes="0.0000;0.0769;0.1538;0.2308;0.3077;0.3846;0.4615;0.5385;0.6154;0.6923;0.7692;0.8462;0.9231;1.0000" calcMode="discrete" begin="16805ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 16805ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="91" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-17)">git remote -v</text>
-      
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="16805ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="18005ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176;183" keyTimes="0.0000;0.0769;0.1538;0.2308;0.3077;0.3846;0.4615;0.5385;0.6154;0.6923;0.7692;0.8462;0.9231;1.0000" calcMode="discrete" begin="16805ms" dur="1200ms" fill="freeze"/>
-    </rect>
-    </g>
-
-    <g transform="translate(0, 221.8)" class="fade-in" style="animation-delay: 18225ms">
-      <text class="tt"><tspan fill="#8B949E">origin</tspan><tspan fill="#C9D1D9">  </tspan><tspan fill="#4ea1ff">github.com/Prisdvl</tspan></text>
-    </g>
-
-    <g transform="translate(0, 234.1)">
-      <defs><clipPath id="cmdrev-19"><rect x="99" y="-11" width="105" height="22"><set attributeName="width" to="0" begin="0s" end="19560ms"/><animate attributeName="width" values="0;7;14;21;28;35;42;49;56;63;70;77;84;91;98;105" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="19560ms" dur="1200ms" fill="freeze"/></rect></clipPath></defs>
-      <text class="tt fade-in" style="animation-delay: 19560ms" fill="#7EE787" textLength="99" lengthAdjust="spacingAndGlyphs">prisdvl@dev:~$ </text>
-      <text class="tt" x="99" fill="#7EE787" textLength="105" lengthAdjust="spacingAndGlyphs" clip-path="url(#cmdrev-19)">echo "identity"</text>
-      
-    <rect x="99" y="-9" width="7" height="11" fill="#7EE787" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" begin="19560ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="opacity" to="0" begin="20760ms" dur="10ms" fill="freeze"/>
-      <animate attributeName="x" values="99;99;106;113;120;127;134;141;148;155;162;169;176;183;190;197" keyTimes="0.0000;0.0667;0.1333;0.2000;0.2667;0.3333;0.4000;0.4667;0.5333;0.6000;0.6667;0.7333;0.8000;0.8667;0.9333;1.0000" calcMode="discrete" begin="19560ms" dur="1200ms" fill="freeze"/>
-    </rect>
-    </g>
-
-    <g transform="translate(0, 246.4)" class="fade-in" style="animation-delay: 20980ms">
-      <text class="tt"><tspan fill="#7EE787" font-weight="bold">Prisdvl</tspan><tspan fill="#C9D1D9"> — Java Backend / AI Systems</tspan></text>
-    </g>
-
-    <g transform="translate(0, 258.7)" class="fade-in" style="animation-delay: 21035ms">
-      <text class="tt"><tspan fill="#8B949E">Specialties:</tspan><tspan fill="#C9D1D9"> </tspan><tspan fill="#4dd0e1">Spring AI / RAG / Agent</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#4dd0e1">Distributed Systems</tspan></text>
-    </g>
-
-    <g transform="translate(0, 271)" class="fade-in" style="animation-delay: 21090ms">
-      <text class="tt"><tspan fill="#d46aff">Projects:</tspan><tspan fill="#C9D1D9"> </tspan><tspan fill="#f3c969">prisdvl-nexus</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#f3c969">homework-grading-system</tspan><tspan fill="#C9D1D9"> · </tspan><tspan fill="#f3c969">PrisTimer</tspan></text>
-    </g>
-      </g><g id="portraitPanel" transform="translate(500, 0)">
+      </g><g id="portraitPanel" transform="translate(480, 0)">
     <g transform="translate(0, 0)" class="fade-in" style="animation-delay: 350ms">
-      <text class="tt"><tspan fill="#C9D1D9">                               </tspan><tspan fill="#4dd0e1">o&amp;%BB%Wh</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#C9D1D9">      </tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">h#MM</tspan></text>
+      <text class="tt"><tspan fill="#FAF9F5">                               </tspan><tspan fill="#D97757">o&amp;%BB%Wh</tspan><tspan fill="#D4A27F">q</tspan><tspan fill="#FAF9F5">      </tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">h#MM</tspan></text>
     </g>
-    <g transform="translate(0, 12.3)" class="fade-in" style="animation-delay: 395ms">
-      <text class="tt"><tspan fill="#C9D1D9">                           </tspan><tspan fill="#4dd0e1">Mh</tspan><tspan fill="#9ed0ff">0CQLLLLL</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#bff6ff">cXvvc</tspan><tspan fill="#4dd0e1">%8</tspan><tspan fill="#ffffff">_</tspan><tspan fill="#bff6ff">tt///</tspan><tspan fill="#ffffff">}]</tspan><tspan fill="#bff6ff">Y</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#4ea1ff">8</tspan></text>
+    <g transform="translate(0, 10.8)" class="fade-in" style="animation-delay: 395ms">
+      <text class="tt"><tspan fill="#FAF9F5">                           </tspan><tspan fill="#D97757">Mh</tspan><tspan fill="#D4A27F">0CQLLLLL</tspan><tspan fill="#D97757">8</tspan><tspan fill="#E3DACC">cXvvc</tspan><tspan fill="#D97757">%8</tspan><tspan fill="#FAF9F5">_</tspan><tspan fill="#E3DACC">tt///</tspan><tspan fill="#FAF9F5">}]</tspan><tspan fill="#E3DACC">Y</tspan><tspan fill="#D97757">8</tspan><tspan fill="#C6613F">8</tspan></text>
     </g>
-    <g transform="translate(0, 24.6)" class="fade-in" style="animation-delay: 440ms">
-      <text class="tt"><tspan fill="#C9D1D9">                       </tspan><tspan fill="#9ed0ff">W@</tspan><tspan fill="#ffffff">X}</tspan><tspan fill="#9ed0ff">B</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#9ed0ff">dO</tspan><tspan fill="#bff6ff">XczcY</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#4dd0e1">&amp;</tspan><tspan fill="#ffffff">!</tspan><tspan fill="#9ed0ff">wJUU</tspan><tspan fill="#bff6ff">z</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#ffffff">l</tspan><tspan fill="#bff6ff">xxrxxxxrft</tspan><tspan fill="#ffffff">}</tspan><tspan fill="#9ed0ff">f</tspan><tspan fill="#4ea1ff">8#</tspan></text>
+    <g transform="translate(0, 21.6)" class="fade-in" style="animation-delay: 440ms">
+      <text class="tt"><tspan fill="#FAF9F5">                       </tspan><tspan fill="#D4A27F">W@</tspan><tspan fill="#FAF9F5">X}</tspan><tspan fill="#D4A27F">B</tspan><tspan fill="#D97757">8</tspan><tspan fill="#D4A27F">dO</tspan><tspan fill="#E3DACC">XczcY</tspan><tspan fill="#D4A27F">J</tspan><tspan fill="#D97757">&amp;</tspan><tspan fill="#FAF9F5">!</tspan><tspan fill="#D4A27F">wJUU</tspan><tspan fill="#E3DACC">z</tspan><tspan fill="#D97757">8</tspan><tspan fill="#FAF9F5">l</tspan><tspan fill="#E3DACC">xxrxxxxrft</tspan><tspan fill="#FAF9F5">}</tspan><tspan fill="#D4A27F">f</tspan><tspan fill="#C6613F">8#</tspan></text>
     </g>
-    <g transform="translate(0, 37)" class="fade-in" style="animation-delay: 485ms">
-      <text class="tt"><tspan fill="#C9D1D9">                   </tspan><tspan fill="#9ed0ff">*&amp;@%</tspan><tspan fill="#ffffff">&gt;[?[{{</tspan><tspan fill="#9ed0ff">0</tspan><tspan fill="#4dd0e1">B#</tspan><tspan fill="#9ed0ff">w</tspan><tspan fill="#bff6ff">zvvv</tspan><tspan fill="#9ed0ff">U</tspan><tspan fill="#ffffff">?</tspan><tspan fill="#bff6ff">z</tspan><tspan fill="#9ed0ff">mQ</tspan><tspan fill="#bff6ff">YX</tspan><tspan fill="#9ed0ff">Z</tspan><tspan fill="#bff6ff">f\rrrftjtttf</tspan><tspan fill="#9ed0ff">cnx</tspan><tspan fill="#4ea1ff">@M</tspan></text>
+    <g transform="translate(0, 32.4)" class="fade-in" style="animation-delay: 485ms">
+      <text class="tt"><tspan fill="#FAF9F5">                   </tspan><tspan fill="#D4A27F">*&amp;@%</tspan><tspan fill="#FAF9F5">&gt;[?[{{</tspan><tspan fill="#D4A27F">0</tspan><tspan fill="#D97757">B#</tspan><tspan fill="#D4A27F">w</tspan><tspan fill="#E3DACC">zvvv</tspan><tspan fill="#D4A27F">U</tspan><tspan fill="#FAF9F5">?</tspan><tspan fill="#E3DACC">z</tspan><tspan fill="#D4A27F">mQ</tspan><tspan fill="#E3DACC">YX</tspan><tspan fill="#D4A27F">Z</tspan><tspan fill="#E3DACC">f\rrrftjtttf</tspan><tspan fill="#D4A27F">cnx</tspan><tspan fill="#C6613F">@M</tspan></text>
     </g>
-    <g transform="translate(0, 49.3)" class="fade-in" style="animation-delay: 530ms">
-      <text class="tt"><tspan fill="#C9D1D9">              </tspan><tspan fill="#9ed0ff">a&amp;</tspan><tspan fill="#bff6ff">b0L</tspan><tspan fill="#ffffff">u</tspan><tspan fill="#9ed0ff">%$</tspan><tspan fill="#ffffff">I\1{}}}}}1</tspan><tspan fill="#bff6ff">n</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">&amp;h</tspan><tspan fill="#9ed0ff">mC</tspan><tspan fill="#bff6ff">X</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">v</tspan><tspan fill="#9ed0ff">wwmOO</tspan><tspan fill="#ffffff">1</tspan><tspan fill="#bff6ff">frttttttv</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#4ea1ff">o</tspan><tspan fill="#9ed0ff">jcX</tspan><tspan fill="#4ea1ff">hB#</tspan></text>
+    <g transform="translate(0, 43.2)" class="fade-in" style="animation-delay: 530ms">
+      <text class="tt"><tspan fill="#FAF9F5">              </tspan><tspan fill="#D4A27F">a&amp;</tspan><tspan fill="#E3DACC">b0L</tspan><tspan fill="#FAF9F5">u</tspan><tspan fill="#D4A27F">%$</tspan><tspan fill="#FAF9F5">I\1{}}}}}1</tspan><tspan fill="#E3DACC">n</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">&amp;h</tspan><tspan fill="#D4A27F">mC</tspan><tspan fill="#E3DACC">X</tspan><tspan fill="#FAF9F5">|</tspan><tspan fill="#E3DACC">v</tspan><tspan fill="#D4A27F">wwmOO</tspan><tspan fill="#FAF9F5">1</tspan><tspan fill="#E3DACC">frttttttv</tspan><tspan fill="#D97757">k</tspan><tspan fill="#C6613F">o</tspan><tspan fill="#D4A27F">jcX</tspan><tspan fill="#C6613F">hB#</tspan></text>
     </g>
-    <g transform="translate(0, 61.6)" class="fade-in" style="animation-delay: 575ms">
-      <text class="tt"><tspan fill="#C9D1D9">            </tspan><tspan fill="#9ed0ff">o</tspan><tspan fill="#bff6ff">pQ00ZmJ</tspan><tspan fill="#9ed0ff">a$</tspan><tspan fill="#ffffff">lj</tspan><tspan fill="#bff6ff">jrrfr</tspan><tspan fill="#ffffff">1{{}}}[(</tspan><tspan fill="#bff6ff">z</tspan><tspan fill="#4dd0e1">$$M</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#9ed0ff">qqwZJ</tspan><tspan fill="#4dd0e1">a</tspan><tspan fill="#bff6ff">trjtt</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#4dd0e1">8</tspan><tspan fill="#ffffff">,</tspan><tspan fill="#4dd0e1">pU</tspan><tspan fill="#9ed0ff">YXXX</tspan><tspan fill="#4dd0e1">J</tspan><tspan fill="#4ea1ff">@</tspan></text>
+    <g transform="translate(0, 54)" class="fade-in" style="animation-delay: 575ms">
+      <text class="tt"><tspan fill="#FAF9F5">            </tspan><tspan fill="#D4A27F">o</tspan><tspan fill="#E3DACC">pQ00ZmJ</tspan><tspan fill="#D4A27F">a$</tspan><tspan fill="#FAF9F5">lj</tspan><tspan fill="#E3DACC">jrrfr</tspan><tspan fill="#FAF9F5">1{{}}}[(</tspan><tspan fill="#E3DACC">z</tspan><tspan fill="#D97757">$$M</tspan><tspan fill="#FAF9F5">|</tspan><tspan fill="#D4A27F">qqwZJ</tspan><tspan fill="#D97757">a</tspan><tspan fill="#E3DACC">trjtt</tspan><tspan fill="#D4A27F">J</tspan><tspan fill="#D97757">8</tspan><tspan fill="#FAF9F5">,</tspan><tspan fill="#D97757">pU</tspan><tspan fill="#D4A27F">YXXX</tspan><tspan fill="#D97757">J</tspan><tspan fill="#C6613F">@</tspan></text>
     </g>
-    <g transform="translate(0, 73.9)" class="fade-in" style="animation-delay: 620ms">
-      <text class="tt"><tspan fill="#C9D1D9">         </tspan><tspan fill="#9ed0ff">#%*</tspan><tspan fill="#bff6ff">mZZZmwwm</tspan><tspan fill="#ffffff">u</tspan><tspan fill="#bff6ff">m</tspan><tspan fill="#9ed0ff">W</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">ffxrftf</tspan><tspan fill="#ffffff">}}{}]{[]</tspan><tspan fill="#4dd0e1">%$$$$$$$$$</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#bff6ff">nu</tspan><tspan fill="#4dd0e1">&amp;</tspan><tspan fill="#ffffff">i</tspan><tspan fill="#4dd0e1">kZOOOLLQQ</tspan><tspan fill="#4ea1ff">@@*</tspan></text>
+    <g transform="translate(0, 64.8)" class="fade-in" style="animation-delay: 620ms">
+      <text class="tt"><tspan fill="#FAF9F5">         </tspan><tspan fill="#D4A27F">#%*</tspan><tspan fill="#E3DACC">mZZZmwwm</tspan><tspan fill="#FAF9F5">u</tspan><tspan fill="#E3DACC">m</tspan><tspan fill="#D4A27F">W</tspan><tspan fill="#FAF9F5">|</tspan><tspan fill="#E3DACC">ffxrftf</tspan><tspan fill="#FAF9F5">}}{}]{[]</tspan><tspan fill="#D97757">%$$$$$$$$$</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#E3DACC">nu</tspan><tspan fill="#D97757">&amp;</tspan><tspan fill="#FAF9F5">i</tspan><tspan fill="#D97757">kZOOOLLQQ</tspan><tspan fill="#C6613F">@@*</tspan></text>
     </g>
-    <g transform="translate(0, 86.2)" class="fade-in" style="animation-delay: 665ms">
-      <text class="tt"><tspan fill="#C9D1D9">       </tspan><tspan fill="#9ed0ff">M**kB</tspan><tspan fill="#ffffff">(</tspan><tspan fill="#bff6ff">OwmwmQQQ</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#ffffff">)</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">#</tspan><tspan fill="#bff6ff">jffrjx\</tspan><tspan fill="#ffffff">1)}][</tspan><tspan fill="#4dd0e1">&amp;$</tspan><tspan fill="#9ed0ff">Q</tspan><tspan fill="#bff6ff">jt/tft/</tspan><tspan fill="#ffffff">|-i</tspan><tspan fill="#4dd0e1">h$</tspan><tspan fill="#bff6ff">n</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#4dd0e1">mwwZOQL</tspan><tspan fill="#4ea1ff">&amp;</tspan><tspan fill="#bff6ff">)</tspan><tspan fill="#9ed0ff">cv</tspan><tspan fill="#4dd0e1">d</tspan><tspan fill="#4ea1ff">8</tspan></text>
+    <g transform="translate(0, 75.6)" class="fade-in" style="animation-delay: 665ms">
+      <text class="tt"><tspan fill="#FAF9F5">       </tspan><tspan fill="#D4A27F">M**kB</tspan><tspan fill="#FAF9F5">(</tspan><tspan fill="#E3DACC">OwmwmQQQ</tspan><tspan fill="#D4A27F">C</tspan><tspan fill="#FAF9F5">)</tspan><tspan fill="#D4A27F">p</tspan><tspan fill="#D97757">#</tspan><tspan fill="#E3DACC">jffrjx\</tspan><tspan fill="#FAF9F5">1)}][</tspan><tspan fill="#D97757">&amp;$</tspan><tspan fill="#D4A27F">Q</tspan><tspan fill="#E3DACC">jt/tft/</tspan><tspan fill="#FAF9F5">|-i</tspan><tspan fill="#D97757">h$</tspan><tspan fill="#E3DACC">n</tspan><tspan fill="#D97757">k</tspan><tspan fill="#D4A27F">q</tspan><tspan fill="#D97757">mwwZOQL</tspan><tspan fill="#C6613F">&amp;</tspan><tspan fill="#E3DACC">)</tspan><tspan fill="#D4A27F">cv</tspan><tspan fill="#D97757">d</tspan><tspan fill="#C6613F">8</tspan></text>
     </g>
-    <g transform="translate(0, 98.6)" class="fade-in" style="animation-delay: 710ms">
-      <text class="tt"><tspan fill="#C9D1D9">      </tspan><tspan fill="#9ed0ff">8o**a</tspan><tspan fill="#bff6ff">b</tspan><tspan fill="#9ed0ff">%</tspan><tspan fill="#ffffff">{</tspan><tspan fill="#bff6ff">mZmOCC</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#bff6ff">Xcvc</tspan><tspan fill="#ffffff">)</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#4dd0e1">%</tspan><tspan fill="#9ed0ff">b</tspan><tspan fill="#bff6ff">nxccvf</tspan><tspan fill="#4dd0e1">hh</tspan><tspan fill="#bff6ff">uxnnuuuuuu/\</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">\</tspan><tspan fill="#ffffff">_</tspan><tspan fill="#9ed0ff">w</tspan><tspan fill="#4dd0e1">opmppZOZ</tspan><tspan fill="#4ea1ff">a</tspan><tspan fill="#9ed0ff">/</tspan><tspan fill="#4dd0e1">QLQ0</tspan><tspan fill="#9ed0ff">f</tspan><tspan fill="#4ea1ff">Bk</tspan></text>
+    <g transform="translate(0, 86.4)" class="fade-in" style="animation-delay: 710ms">
+      <text class="tt"><tspan fill="#FAF9F5">      </tspan><tspan fill="#D4A27F">8o**a</tspan><tspan fill="#E3DACC">b</tspan><tspan fill="#D4A27F">%</tspan><tspan fill="#FAF9F5">{</tspan><tspan fill="#E3DACC">mZmOCC</tspan><tspan fill="#D4A27F">J</tspan><tspan fill="#E3DACC">Xcvc</tspan><tspan fill="#FAF9F5">)</tspan><tspan fill="#D4A27F">C</tspan><tspan fill="#D97757">%</tspan><tspan fill="#D4A27F">b</tspan><tspan fill="#E3DACC">nxccvf</tspan><tspan fill="#D97757">hh</tspan><tspan fill="#E3DACC">uxnnuuuuuu/\</tspan><tspan fill="#FAF9F5">|</tspan><tspan fill="#E3DACC">\</tspan><tspan fill="#FAF9F5">_</tspan><tspan fill="#D4A27F">w</tspan><tspan fill="#D97757">opmppZOZ</tspan><tspan fill="#C6613F">a</tspan><tspan fill="#D4A27F">/</tspan><tspan fill="#D97757">QLQ0</tspan><tspan fill="#D4A27F">f</tspan><tspan fill="#C6613F">Bk</tspan></text>
     </g>
-    <g transform="translate(0, 110.9)" class="fade-in" style="animation-delay: 755ms">
-      <text class="tt"><tspan fill="#C9D1D9">     </tspan><tspan fill="#9ed0ff">W%o***</tspan><tspan fill="#bff6ff">bZ</tspan><tspan fill="#9ed0ff">B</tspan><tspan fill="#ffffff">Yf</tspan><tspan fill="#bff6ff">wJ</tspan><tspan fill="#9ed0ff">JJJJ</tspan><tspan fill="#bff6ff">Xuccvczuu</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">$$B</tspan><tspan fill="#9ed0ff">U</tspan><tspan fill="#bff6ff">znunuuuuuuutxj\j</tspan><tspan fill="#4dd0e1">h</tspan><tspan fill="#4ea1ff">$$BW*a</tspan><tspan fill="#4dd0e1">d</tspan><tspan fill="#4ea1ff">*h</tspan><tspan fill="#9ed0ff">Y</tspan><tspan fill="#4dd0e1">ZOQ0QLq</tspan><tspan fill="#4ea1ff">B</tspan></text>
+    <g transform="translate(0, 97.2)" class="fade-in" style="animation-delay: 755ms">
+      <text class="tt"><tspan fill="#FAF9F5">     </tspan><tspan fill="#D4A27F">W%o***</tspan><tspan fill="#E3DACC">bZ</tspan><tspan fill="#D4A27F">B</tspan><tspan fill="#FAF9F5">Yf</tspan><tspan fill="#E3DACC">wJ</tspan><tspan fill="#D4A27F">JJJJ</tspan><tspan fill="#E3DACC">Xuccvczuu</tspan><tspan fill="#D4A27F">p</tspan><tspan fill="#D97757">$$B</tspan><tspan fill="#D4A27F">U</tspan><tspan fill="#E3DACC">znunuuuuuuutxj\j</tspan><tspan fill="#D97757">h</tspan><tspan fill="#C6613F">$$BW*a</tspan><tspan fill="#D97757">d</tspan><tspan fill="#C6613F">*h</tspan><tspan fill="#D4A27F">Y</tspan><tspan fill="#D97757">ZOQ0QLq</tspan><tspan fill="#C6613F">B</tspan></text>
     </g>
-    <g transform="translate(0, 123.2)" class="fade-in" style="animation-delay: 800ms">
-      <text class="tt"><tspan fill="#C9D1D9">   </tspan><tspan fill="#9ed0ff">#%B8#**o**</tspan><tspan fill="#bff6ff">dm</tspan><tspan fill="#9ed0ff">@m</tspan><tspan fill="#ffffff">(</tspan><tspan fill="#bff6ff">/</tspan><tspan fill="#9ed0ff">CUCCCC</tspan><tspan fill="#bff6ff">Yxvz</tspan><tspan fill="#9ed0ff">UUC</tspan><tspan fill="#4dd0e1">B$h</tspan><tspan fill="#9ed0ff">pqwO</tspan><tspan fill="#bff6ff">Ynxnnuuuuuv</tspan><tspan fill="#9ed0ff">0Y</tspan><tspan fill="#4ea1ff">B</tspan><tspan fill="#4dd0e1">JJ</tspan><tspan fill="#9ed0ff">unv</tspan><tspan fill="#bff6ff">_</tspan><tspan fill="#4dd0e1">0</tspan><tspan fill="#4ea1ff">$</tspan><tspan fill="#4dd0e1">QOZZOO0wp</tspan><tspan fill="#4ea1ff">k%</tspan></text>
+    <g transform="translate(0, 108)" class="fade-in" style="animation-delay: 800ms">
+      <text class="tt"><tspan fill="#FAF9F5">   </tspan><tspan fill="#D4A27F">#%B8#**o**</tspan><tspan fill="#E3DACC">dm</tspan><tspan fill="#D4A27F">@m</tspan><tspan fill="#FAF9F5">(</tspan><tspan fill="#E3DACC">/</tspan><tspan fill="#D4A27F">CUCCCC</tspan><tspan fill="#E3DACC">Yxvz</tspan><tspan fill="#D4A27F">UUC</tspan><tspan fill="#D97757">B$h</tspan><tspan fill="#D4A27F">pqwO</tspan><tspan fill="#E3DACC">Ynxnnuuuuuv</tspan><tspan fill="#D4A27F">0Y</tspan><tspan fill="#C6613F">B</tspan><tspan fill="#D97757">JJ</tspan><tspan fill="#D4A27F">unv</tspan><tspan fill="#E3DACC">_</tspan><tspan fill="#D97757">0</tspan><tspan fill="#C6613F">$</tspan><tspan fill="#D97757">QOZZOO0wp</tspan><tspan fill="#C6613F">k%</tspan></text>
     </g>
-    <g transform="translate(0, 135.5)" class="fade-in" style="animation-delay: 845ms">
-      <text class="tt"><tspan fill="#C9D1D9">  </tspan><tspan fill="#9ed0ff">W</tspan><tspan fill="#bff6ff">bwd</tspan><tspan fill="#9ed0ff">h#***o*o</tspan><tspan fill="#4dd0e1">**k</tspan><tspan fill="#bff6ff">t</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#4dd0e1">$$W%%8%@$$$$$B</tspan><tspan fill="#9ed0ff">CO0mdpd</tspan><tspan fill="#4dd0e1">*W%o</tspan><tspan fill="#9ed0ff">Z</tspan><tspan fill="#bff6ff">Xcvv</tspan><tspan fill="#4dd0e1">ZpQJ</tspan><tspan fill="#9ed0ff">XYYzzzYr</tspan><tspan fill="#4dd0e1">pOZZZZZqq</tspan><tspan fill="#4ea1ff">#B</tspan></text>
+    <g transform="translate(0, 118.8)" class="fade-in" style="animation-delay: 845ms">
+      <text class="tt"><tspan fill="#FAF9F5">  </tspan><tspan fill="#D4A27F">W</tspan><tspan fill="#E3DACC">bwd</tspan><tspan fill="#D4A27F">h#***o*o</tspan><tspan fill="#D97757">**k</tspan><tspan fill="#E3DACC">t</tspan><tspan fill="#D4A27F">L</tspan><tspan fill="#D97757">$$W%%8%@$$$$$B</tspan><tspan fill="#D4A27F">CO0mdpd</tspan><tspan fill="#D97757">*W%o</tspan><tspan fill="#D4A27F">Z</tspan><tspan fill="#E3DACC">Xcvv</tspan><tspan fill="#D97757">ZpQJ</tspan><tspan fill="#D4A27F">XYYzzzYr</tspan><tspan fill="#D97757">pOZZZZZqq</tspan><tspan fill="#C6613F">#B</tspan></text>
     </g>
-    <g transform="translate(0, 147.8)" class="fade-in" style="animation-delay: 890ms">
-      <text class="tt"><tspan fill="#C9D1D9"> </tspan><tspan fill="#9ed0ff">#</tspan><tspan fill="#bff6ff">db</tspan><tspan fill="#9ed0ff">k</tspan><tspan fill="#bff6ff">w</tspan><tspan fill="#9ed0ff">M</tspan><tspan fill="#ffffff">t</tspan><tspan fill="#9ed0ff">&amp;**o</tspan><tspan fill="#4dd0e1">oM</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#bff6ff">f</tspan><tspan fill="#4dd0e1">*$@</tspan><tspan fill="#9ed0ff">b0U</tspan><tspan fill="#bff6ff">Y</tspan><tspan fill="#9ed0ff">UL00QQ0</tspan><tspan fill="#4dd0e1">W$</tspan><tspan fill="#9ed0ff">ddwwpd0Q</tspan><tspan fill="#bff6ff">zczXj</tspan><tspan fill="#ffffff">+</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#4ea1ff">8</tspan><tspan fill="#4dd0e1">w</tspan><tspan fill="#4ea1ff">%</tspan><tspan fill="#bff6ff">-</tspan><tspan fill="#4dd0e1">dJ</tspan><tspan fill="#9ed0ff">YXYYYYYt</tspan><tspan fill="#4ea1ff">#</tspan><tspan fill="#4dd0e1">wZZOmpqq</tspan><tspan fill="#4ea1ff">$*</tspan></text>
+    <g transform="translate(0, 129.6)" class="fade-in" style="animation-delay: 890ms">
+      <text class="tt"><tspan fill="#FAF9F5"> </tspan><tspan fill="#D4A27F">#</tspan><tspan fill="#E3DACC">db</tspan><tspan fill="#D4A27F">k</tspan><tspan fill="#E3DACC">w</tspan><tspan fill="#D4A27F">M</tspan><tspan fill="#FAF9F5">t</tspan><tspan fill="#D4A27F">&amp;**o</tspan><tspan fill="#D97757">oM</tspan><tspan fill="#FAF9F5">|</tspan><tspan fill="#E3DACC">f</tspan><tspan fill="#D97757">*$@</tspan><tspan fill="#D4A27F">b0U</tspan><tspan fill="#E3DACC">Y</tspan><tspan fill="#D4A27F">UL00QQ0</tspan><tspan fill="#D97757">W$</tspan><tspan fill="#D4A27F">ddwwpd0Q</tspan><tspan fill="#E3DACC">zczXj</tspan><tspan fill="#FAF9F5">+</tspan><tspan fill="#D4A27F">L</tspan><tspan fill="#C6613F">8</tspan><tspan fill="#D97757">w</tspan><tspan fill="#C6613F">%</tspan><tspan fill="#E3DACC">-</tspan><tspan fill="#D97757">dJ</tspan><tspan fill="#D4A27F">YXYYYYYt</tspan><tspan fill="#C6613F">#</tspan><tspan fill="#D97757">wZZOmpqq</tspan><tspan fill="#C6613F">$*</tspan></text>
     </g>
-    <g transform="translate(0, 160.2)" class="fade-in" style="animation-delay: 935ms">
-      <text class="tt"><tspan fill="#9ed0ff">kohaaaa</tspan><tspan fill="#ffffff">X</tspan><tspan fill="#9ed0ff">M</tspan><tspan fill="#ffffff">f</tspan><tspan fill="#4dd0e1">kk</tspan><tspan fill="#ffffff">]</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#4dd0e1">$%</tspan><tspan fill="#9ed0ff">qqLUJOZ0L0O0</tspan><tspan fill="#4dd0e1">h</tspan><tspan fill="#9ed0ff">Zq</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#9ed0ff">ZZmdddO</tspan><tspan fill="#bff6ff">Xczzzz</tspan><tspan fill="#9ed0ff">zc</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#bff6ff">|[</tspan><tspan fill="#4ea1ff">Bk</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#9ed0ff">YXXYXXX</tspan><tspan fill="#4ea1ff">*$$</tspan><tspan fill="#4dd0e1">b</tspan><tspan fill="#bff6ff">-</tspan><tspan fill="#4dd0e1">w</tspan><tspan fill="#4ea1ff">pbb$Q</tspan></text>
+    <g transform="translate(0, 140.4)" class="fade-in" style="animation-delay: 935ms">
+      <text class="tt"><tspan fill="#D4A27F">kohaaaa</tspan><tspan fill="#FAF9F5">X</tspan><tspan fill="#D4A27F">M</tspan><tspan fill="#FAF9F5">f</tspan><tspan fill="#D97757">kk</tspan><tspan fill="#FAF9F5">]</tspan><tspan fill="#D4A27F">C</tspan><tspan fill="#D97757">$%</tspan><tspan fill="#D4A27F">qqLUJOZ0L0O0</tspan><tspan fill="#D97757">h</tspan><tspan fill="#D4A27F">Zq</tspan><tspan fill="#D97757">M</tspan><tspan fill="#D4A27F">ZZmdddO</tspan><tspan fill="#E3DACC">Xczzzz</tspan><tspan fill="#D4A27F">zc</tspan><tspan fill="#D97757">L</tspan><tspan fill="#E3DACC">|[</tspan><tspan fill="#C6613F">Bk</tspan><tspan fill="#D97757">L</tspan><tspan fill="#D4A27F">YXXYXXX</tspan><tspan fill="#C6613F">*$$</tspan><tspan fill="#D97757">b</tspan><tspan fill="#E3DACC">-</tspan><tspan fill="#D97757">w</tspan><tspan fill="#C6613F">pbb$Q</tspan></text>
     </g>
-    <g transform="translate(0, 172.5)" class="fade-in" style="animation-delay: 980ms">
-      <text class="tt"><tspan fill="#9ed0ff">Whao#aa</tspan><tspan fill="#4dd0e1">aa</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#4dd0e1">aB$a</tspan><tspan fill="#9ed0ff">mmwwwwOZ0mqwZb</tspan><tspan fill="#bff6ff">uc</tspan><tspan fill="#9ed0ff">Z</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">ZZZpdwLLC</tspan><tspan fill="#4dd0e1">CU</tspan><tspan fill="#9ed0ff">YzzzzzX</tspan><tspan fill="#4dd0e1">Q</tspan><tspan fill="#9ed0ff">n</tspan><tspan fill="#4dd0e1">w</tspan><tspan fill="#4ea1ff">a</tspan><tspan fill="#9ed0ff">vcczz</tspan><tspan fill="#4ea1ff">&amp;M</tspan><tspan fill="#4dd0e1">QC</tspan><tspan fill="#4ea1ff">qd&amp;waB</tspan></text>
+    <g transform="translate(0, 151.2)" class="fade-in" style="animation-delay: 980ms">
+      <text class="tt"><tspan fill="#D4A27F">Whao#aa</tspan><tspan fill="#D97757">aa</tspan><tspan fill="#D4A27F">L</tspan><tspan fill="#D97757">aB$a</tspan><tspan fill="#D4A27F">mmwwwwOZ0mqwZb</tspan><tspan fill="#E3DACC">uc</tspan><tspan fill="#D4A27F">Z</tspan><tspan fill="#D97757">k</tspan><tspan fill="#D4A27F">ZZZpdwLLC</tspan><tspan fill="#D97757">CU</tspan><tspan fill="#D4A27F">YzzzzzX</tspan><tspan fill="#D97757">Q</tspan><tspan fill="#D4A27F">n</tspan><tspan fill="#D97757">w</tspan><tspan fill="#C6613F">a</tspan><tspan fill="#D4A27F">vcczz</tspan><tspan fill="#C6613F">&amp;M</tspan><tspan fill="#D97757">QC</tspan><tspan fill="#C6613F">qd&amp;waB</tspan></text>
     </g>
-    <g transform="translate(0, 184.8)" class="fade-in" style="animation-delay: 1025ms">
-      <text class="tt"><tspan fill="#9ed0ff">Bko*#</tspan><tspan fill="#4dd0e1">#oa*%$o</tspan><tspan fill="#9ed0ff">bb</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">dwwwZOZZqp</tspan><tspan fill="#4dd0e1">*</tspan><tspan fill="#ffffff">{</tspan><tspan fill="#9ed0ff">O</tspan><tspan fill="#bff6ff">zcj</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#9ed0ff">ZZZmwwm</tspan><tspan fill="#4dd0e1">CLQQQL</tspan><tspan fill="#9ed0ff">zzzzYz</tspan><tspan fill="#4dd0e1">U</tspan><tspan fill="#9ed0ff">u</tspan><tspan fill="#4ea1ff">$$o</tspan><tspan fill="#9ed0ff">XY</tspan><tspan fill="#4ea1ff">*k</tspan><tspan fill="#4dd0e1">q</tspan><tspan fill="#4ea1ff">bbbddk$*</tspan></text>
+    <g transform="translate(0, 162)" class="fade-in" style="animation-delay: 1025ms">
+      <text class="tt"><tspan fill="#D4A27F">Bko*#</tspan><tspan fill="#D97757">#oa*%$o</tspan><tspan fill="#D4A27F">bb</tspan><tspan fill="#D97757">k</tspan><tspan fill="#D4A27F">dwwwZOZZqp</tspan><tspan fill="#D97757">*</tspan><tspan fill="#FAF9F5">{</tspan><tspan fill="#D4A27F">O</tspan><tspan fill="#E3DACC">zcj</tspan><tspan fill="#D97757">M</tspan><tspan fill="#D4A27F">ZZZmwwm</tspan><tspan fill="#D97757">CLQQQL</tspan><tspan fill="#D4A27F">zzzzYz</tspan><tspan fill="#D97757">U</tspan><tspan fill="#D4A27F">u</tspan><tspan fill="#C6613F">$$o</tspan><tspan fill="#D4A27F">XY</tspan><tspan fill="#C6613F">*k</tspan><tspan fill="#D97757">q</tspan><tspan fill="#C6613F">bbbddk$*</tspan></text>
     </g>
-    <g transform="translate(0, 197.1)" class="fade-in" style="animation-delay: 1070ms">
-      <text class="tt"><tspan fill="#9ed0ff">WBa</tspan><tspan fill="#4dd0e1">##**W$%@aaaahkk</tspan><tspan fill="#9ed0ff">dpqmwq</tspan><tspan fill="#4dd0e1">M</tspan><tspan fill="#ffffff">)</tspan><tspan fill="#9ed0ff">L</tspan><tspan fill="#bff6ff">X</tspan><tspan fill="#9ed0ff">OO</tspan><tspan fill="#ffffff">-</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#9ed0ff">qmZmm</tspan><tspan fill="#4dd0e1">wwwwQQQQQQQQL</tspan><tspan fill="#bff6ff">]</tspan><tspan fill="#4ea1ff">M</tspan><tspan fill="#4dd0e1">pLLZ</tspan><tspan fill="#4ea1ff">8a8kbkbbqp#&amp;</tspan></text>
+    <g transform="translate(0, 172.8)" class="fade-in" style="animation-delay: 1070ms">
+      <text class="tt"><tspan fill="#D4A27F">WBa</tspan><tspan fill="#D97757">##**W$%@aaaahkk</tspan><tspan fill="#D4A27F">dpqmwq</tspan><tspan fill="#D97757">M</tspan><tspan fill="#FAF9F5">)</tspan><tspan fill="#D4A27F">L</tspan><tspan fill="#E3DACC">X</tspan><tspan fill="#D4A27F">OO</tspan><tspan fill="#FAF9F5">-</tspan><tspan fill="#D97757">W</tspan><tspan fill="#D4A27F">qmZmm</tspan><tspan fill="#D97757">wwwwQQQQQQQQL</tspan><tspan fill="#E3DACC">]</tspan><tspan fill="#C6613F">M</tspan><tspan fill="#D97757">pLLZ</tspan><tspan fill="#C6613F">8a8kbkbbqp#&amp;</tspan></text>
     </g>
-    <g transform="translate(0, 209.4)" class="fade-in" style="animation-delay: 1115ms">
-      <text class="tt"><tspan fill="#C9D1D9"> </tspan><tspan fill="#4dd0e1">88ahoB8#a</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">&amp;aaahhkhhhh</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#ffffff">|</tspan><tspan fill="#9ed0ff">OLCQQL</tspan><tspan fill="#ffffff">_</tspan><tspan fill="#4dd0e1">@</tspan><tspan fill="#9ed0ff">ZZ</tspan><tspan fill="#4dd0e1">mmmmwwqqwZ0O</tspan><tspan fill="#9ed0ff">j</tspan><tspan fill="#bff6ff">?</tspan><tspan fill="#4ea1ff">W</tspan><tspan fill="#4dd0e1">wJZwqq</tspan><tspan fill="#4ea1ff">a$*hbbbbbp@o</tspan></text>
+    <g transform="translate(0, 183.6)" class="fade-in" style="animation-delay: 1115ms">
+      <text class="tt"><tspan fill="#FAF9F5"> </tspan><tspan fill="#D97757">88ahoB8#a</tspan><tspan fill="#D4A27F">p</tspan><tspan fill="#D97757">&amp;aaahhkhhhh</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">W</tspan><tspan fill="#FAF9F5">|</tspan><tspan fill="#D4A27F">OLCQQL</tspan><tspan fill="#FAF9F5">_</tspan><tspan fill="#D97757">@</tspan><tspan fill="#D4A27F">ZZ</tspan><tspan fill="#D97757">mmmmwwqqwZ0O</tspan><tspan fill="#D4A27F">j</tspan><tspan fill="#E3DACC">?</tspan><tspan fill="#C6613F">W</tspan><tspan fill="#D97757">wJZwqq</tspan><tspan fill="#C6613F">a$*hbbbbbp@o</tspan></text>
     </g>
-    <g transform="translate(0, 221.8)" class="fade-in" style="animation-delay: 1160ms">
-      <text class="tt"><tspan fill="#C9D1D9">  </tspan><tspan fill="#4dd0e1">8W#@*#M*</tspan><tspan fill="#9ed0ff">pm</tspan><tspan fill="#4dd0e1">Waahhhhhho@</tspan><tspan fill="#9ed0ff">C</tspan><tspan fill="#4dd0e1">h</tspan><tspan fill="#9ed0ff">pqOQLCL</tspan><tspan fill="#bff6ff">&lt;</tspan><tspan fill="#4ea1ff">@</tspan><tspan fill="#9ed0ff">X</tspan><tspan fill="#4dd0e1">C</tspan><tspan fill="#4ea1ff">kk</tspan><tspan fill="#4dd0e1">pppbw</tspan><tspan fill="#9ed0ff">r</tspan><tspan fill="#bff6ff">{</tspan><tspan fill="#4dd0e1">U</tspan><tspan fill="#4ea1ff">M*</tspan><tspan fill="#4dd0e1">Lqppq</tspan><tspan fill="#4ea1ff">qqqq@8kkbbbb$%</tspan></text>
+    <g transform="translate(0, 194.4)" class="fade-in" style="animation-delay: 1160ms">
+      <text class="tt"><tspan fill="#FAF9F5">  </tspan><tspan fill="#D97757">8W#@*#M*</tspan><tspan fill="#D4A27F">pm</tspan><tspan fill="#D97757">Waahhhhhho@</tspan><tspan fill="#D4A27F">C</tspan><tspan fill="#D97757">h</tspan><tspan fill="#D4A27F">pqOQLCL</tspan><tspan fill="#E3DACC">&lt;</tspan><tspan fill="#C6613F">@</tspan><tspan fill="#D4A27F">X</tspan><tspan fill="#D97757">C</tspan><tspan fill="#C6613F">kk</tspan><tspan fill="#D97757">pppbw</tspan><tspan fill="#D4A27F">r</tspan><tspan fill="#E3DACC">{</tspan><tspan fill="#D97757">U</tspan><tspan fill="#C6613F">M*</tspan><tspan fill="#D97757">Lqppq</tspan><tspan fill="#C6613F">qqqq@8kkbbbb$%</tspan></text>
     </g>
-    <g transform="translate(0, 234.1)" class="fade-in" style="animation-delay: 1205ms">
-      <text class="tt"><tspan fill="#C9D1D9">   </tspan><tspan fill="#4dd0e1">M@k*###**</tspan><tspan fill="#bff6ff">\</tspan><tspan fill="#4dd0e1">B#hhhhao@</tspan><tspan fill="#9ed0ff">J</tspan><tspan fill="#4dd0e1">a</tspan><tspan fill="#9ed0ff">ddpppp</tspan><tspan fill="#4dd0e1">pdbd0</tspan><tspan fill="#4ea1ff">$$$$$@&amp;o</tspan><tspan fill="#4dd0e1">b</tspan><tspan fill="#4ea1ff">k**ookpppdhoh@%kkhk*$M</tspan></text>
+    <g transform="translate(0, 205.2)" class="fade-in" style="animation-delay: 1205ms">
+      <text class="tt"><tspan fill="#FAF9F5">   </tspan><tspan fill="#D97757">M@k*###**</tspan><tspan fill="#E3DACC">\</tspan><tspan fill="#D97757">B#hhhhao@</tspan><tspan fill="#D4A27F">J</tspan><tspan fill="#D97757">a</tspan><tspan fill="#D4A27F">ddpppp</tspan><tspan fill="#D97757">pdbd0</tspan><tspan fill="#C6613F">$$$$$@&amp;o</tspan><tspan fill="#D97757">b</tspan><tspan fill="#C6613F">k**ookpppdhoh@%kkhk*$M</tspan></text>
     </g>
-    <g transform="translate(0, 246.4)" class="fade-in" style="animation-delay: 1250ms">
-      <text class="tt"><tspan fill="#C9D1D9">   </tspan><tspan fill="#4dd0e1">W#</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">ko*#*#o#</tspan><tspan fill="#bff6ff">f</tspan><tspan fill="#4dd0e1">WB#ak%h</tspan><tspan fill="#9ed0ff">Obdbd</tspan><tspan fill="#4dd0e1">ddbbbbbbd</tspan><tspan fill="#4ea1ff">W8oo****##*oaaoahaaoo$W*B@@W</tspan></text>
+    <g transform="translate(0, 216)" class="fade-in" style="animation-delay: 1250ms">
+      <text class="tt"><tspan fill="#FAF9F5">   </tspan><tspan fill="#D97757">W#</tspan><tspan fill="#D4A27F">p</tspan><tspan fill="#D97757">ko*#*#o#</tspan><tspan fill="#E3DACC">f</tspan><tspan fill="#D97757">WB#ak%h</tspan><tspan fill="#D4A27F">Obdbd</tspan><tspan fill="#D97757">ddbbbbbbd</tspan><tspan fill="#C6613F">W8oo****##*oaaoahaaoo$W*B@@W</tspan></text>
     </g>
-    <g transform="translate(0, 258.7)" class="fade-in" style="animation-delay: 1295ms">
-      <text class="tt"><tspan fill="#C9D1D9">   </tspan><tspan fill="#4dd0e1">&amp;8</tspan><tspan fill="#9ed0ff">w</tspan><tspan fill="#4dd0e1">kkha*</tspan><tspan fill="#9ed0ff">m</tspan><tspan fill="#4dd0e1">B</tspan><tspan fill="#9ed0ff">0q</tspan><tspan fill="#4dd0e1">WB%$$$</tspan><tspan fill="#9ed0ff">0</tspan><tspan fill="#4dd0e1">h</tspan><tspan fill="#4ea1ff">kkkkk</tspan><tspan fill="#4dd0e1">bbbbbbb</tspan><tspan fill="#4ea1ff">M@&amp;@M*********oaaaaak%$&amp;</tspan></text>
+    <g transform="translate(0, 226.8)" class="fade-in" style="animation-delay: 1295ms">
+      <text class="tt"><tspan fill="#FAF9F5">   </tspan><tspan fill="#D97757">&amp;8</tspan><tspan fill="#D4A27F">w</tspan><tspan fill="#D97757">kkha*</tspan><tspan fill="#D4A27F">m</tspan><tspan fill="#D97757">B</tspan><tspan fill="#D4A27F">0q</tspan><tspan fill="#D97757">WB%$$$</tspan><tspan fill="#D4A27F">0</tspan><tspan fill="#D97757">h</tspan><tspan fill="#C6613F">kkkkk</tspan><tspan fill="#D97757">bbbbbbb</tspan><tspan fill="#C6613F">M@&amp;@M*********oaaaaak%$&amp;</tspan></text>
     </g>
-    <g transform="translate(0, 271)" class="fade-in" style="animation-delay: 1340ms">
-      <text class="tt"><tspan fill="#C9D1D9">    </tspan><tspan fill="#4dd0e1">BM</tspan><tspan fill="#9ed0ff">p</tspan><tspan fill="#4dd0e1">kkk</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">a</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">b</tspan><tspan fill="#4dd0e1">hhh</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">8BQ</tspan><tspan fill="#4ea1ff">ahkkkkk</tspan><tspan fill="#4dd0e1">bbbb</tspan><tspan fill="#4ea1ff">M$&amp;ah</tspan><tspan fill="#4dd0e1">d</tspan><tspan fill="#4ea1ff">0</tspan><tspan fill="#4dd0e1">Y</tspan><tspan fill="#4ea1ff">U0b#8BBBB@@B%&amp;%Bh</tspan></text>
+    <g transform="translate(0, 237.6)" class="fade-in" style="animation-delay: 1340ms">
+      <text class="tt"><tspan fill="#FAF9F5">    </tspan><tspan fill="#D97757">BM</tspan><tspan fill="#D4A27F">p</tspan><tspan fill="#D97757">kkk</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">a</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">k</tspan><tspan fill="#D4A27F">b</tspan><tspan fill="#D97757">hhh</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">8BQ</tspan><tspan fill="#C6613F">ahkkkkk</tspan><tspan fill="#D97757">bbbb</tspan><tspan fill="#C6613F">M$&amp;ah</tspan><tspan fill="#D97757">d</tspan><tspan fill="#C6613F">0</tspan><tspan fill="#D97757">Y</tspan><tspan fill="#C6613F">U0b#8BBBB@@B%&amp;%Bh</tspan></text>
     </g>
-    <g transform="translate(0, 283.4)" class="fade-in" style="animation-delay: 1385ms">
-      <text class="tt"><tspan fill="#C9D1D9">     </tspan><tspan fill="#4dd0e1">%@</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4dd0e1">k</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#4dd0e1">W</tspan><tspan fill="#9ed0ff">wb</tspan><tspan fill="#4dd0e1">khhhh</tspan><tspan fill="#9ed0ff">d</tspan><tspan fill="#4ea1ff">@8</tspan><tspan fill="#4dd0e1">Z</tspan><tspan fill="#4ea1ff">@$$$$$$$$$$oM</tspan><tspan fill="#4dd0e1">b</tspan><tspan fill="#4ea1ff">baaoaaaaooooo*ooo8$q</tspan></text>
+    <g transform="translate(0, 248.4)" class="fade-in" style="animation-delay: 1385ms">
+      <text class="tt"><tspan fill="#FAF9F5">     </tspan><tspan fill="#D97757">%@</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#D97757">k</tspan><tspan fill="#D4A27F">q</tspan><tspan fill="#D97757">W</tspan><tspan fill="#D4A27F">wb</tspan><tspan fill="#D97757">khhhh</tspan><tspan fill="#D4A27F">d</tspan><tspan fill="#C6613F">@8</tspan><tspan fill="#D97757">Z</tspan><tspan fill="#C6613F">@$$$$$$$$$$oM</tspan><tspan fill="#D97757">b</tspan><tspan fill="#C6613F">baaoaaaaooooo*ooo8$q</tspan></text>
     </g>
-    <g transform="translate(0, 295.7)" class="fade-in" style="animation-delay: 1430ms">
-      <text class="tt"><tspan fill="#C9D1D9">      </tspan><tspan fill="#4dd0e1">#$M</tspan><tspan fill="#9ed0ff">q</tspan><tspan fill="#4dd0e1">&amp;</tspan><tspan fill="#9ed0ff">bbbbb</tspan><tspan fill="#4ea1ff">ha</tspan><tspan fill="#4dd0e1">p</tspan><tspan fill="#4ea1ff">@$8</tspan><tspan fill="#4dd0e1">p</tspan><tspan fill="#4ea1ff">*#M#a</tspan><tspan fill="#4dd0e1">0Z</tspan><tspan fill="#4ea1ff">@@obkkbhaaaaoaaooo#8@@M</tspan></text>
+    <g transform="translate(0, 259.2)" class="fade-in" style="animation-delay: 1430ms">
+      <text class="tt"><tspan fill="#FAF9F5">      </tspan><tspan fill="#D97757">#$M</tspan><tspan fill="#D4A27F">q</tspan><tspan fill="#D97757">&amp;</tspan><tspan fill="#D4A27F">bbbbb</tspan><tspan fill="#C6613F">ha</tspan><tspan fill="#D97757">p</tspan><tspan fill="#C6613F">@$8</tspan><tspan fill="#D97757">p</tspan><tspan fill="#C6613F">*#M#a</tspan><tspan fill="#D97757">0Z</tspan><tspan fill="#C6613F">@@obkkbhaaaaoaaooo#8@@M</tspan></text>
     </g>
-    <g transform="translate(0, 308)" class="fade-in" style="animation-delay: 1475ms">
-      <text class="tt"><tspan fill="#C9D1D9">        </tspan><tspan fill="#4dd0e1">o8@@</tspan><tspan fill="#9ed0ff">bp</tspan><tspan fill="#4dd0e1">bbbdb</tspan><tspan fill="#4ea1ff">%Boo*####MMkC@#qqdddddbbkb@$Bak</tspan></text>
+    <g transform="translate(0, 270)" class="fade-in" style="animation-delay: 1475ms">
+      <text class="tt"><tspan fill="#FAF9F5">        </tspan><tspan fill="#D97757">o8@@</tspan><tspan fill="#D4A27F">bp</tspan><tspan fill="#D97757">bbbdb</tspan><tspan fill="#C6613F">%Boo*####MMkC@#qqdddddbbkb@$Bak</tspan></text>
     </g>
-    <g transform="translate(0, 320.3)" class="fade-in" style="animation-delay: 1520ms">
-      <text class="tt"><tspan fill="#C9D1D9">            </tspan><tspan fill="#4ea1ff">W@@@@8a</tspan><tspan fill="#4dd0e1">L</tspan><tspan fill="#4ea1ff">W$o</tspan><tspan fill="#4dd0e1">p</tspan><tspan fill="#4ea1ff">oo*****MMLa@&amp;hwZZZw%$W</tspan></text>
+    <g transform="translate(0, 280.8)" class="fade-in" style="animation-delay: 1520ms">
+      <text class="tt"><tspan fill="#FAF9F5">            </tspan><tspan fill="#C6613F">W@@@@8a</tspan><tspan fill="#D97757">L</tspan><tspan fill="#C6613F">W$o</tspan><tspan fill="#D97757">p</tspan><tspan fill="#C6613F">oo*****MMLa@&amp;hwZZZw%$W</tspan></text>
     </g>
-    <g transform="translate(0, 332.6)" class="fade-in" style="animation-delay: 1565ms">
-      <text class="tt"><tspan fill="#C9D1D9">                      </tspan><tspan fill="#4ea1ff">*8@Bowwko#*obk*@BB%&amp;M</tspan></text>
+    <g transform="translate(0, 291.6)" class="fade-in" style="animation-delay: 1565ms">
+      <text class="tt"><tspan fill="#FAF9F5">                      </tspan><tspan fill="#C6613F">*8@Bowwko#*obk*@BB%&amp;M</tspan></text>
     </g>
-    <g transform="translate(0, 345)" class="fade-in" style="animation-delay: 1610ms">
-      <text class="tt"><tspan fill="#C9D1D9">                            </tspan><tspan fill="#4ea1ff">qaMMMbp</tspan></text>
+    <g transform="translate(0, 302.4)" class="fade-in" style="animation-delay: 1610ms">
+      <text class="tt"><tspan fill="#FAF9F5">                            </tspan><tspan fill="#C6613F">qaMMMbp</tspan></text>
     </g>
   </g></g>
     </g>
-    <rect x="0" y="40" width="1000" height="390" fill="url(#vignette)" pointer-events="none"/>
-    <rect x="0" y="40" width="1000" height="390" fill="url(#scanlines)" pointer-events="none" opacity="0.5" class="scanline-overlay"/>
+    <rect x="0" y="40" width="1000" height="342" fill="url(#vignette)" pointer-events="none"/>
+    <rect x="0" y="40" width="1000" height="342" fill="url(#scanlines)" pointer-events="none" opacity="0.5" class="scanline-overlay"/>
   </g>
 </svg>

@@ -1,19 +1,19 @@
 /**
- * Multi-tone blue/cyan shading for ASCII portrait lines.
+ * Warm Clay / Kraft shading for ASCII portrait lines (Claude palette).
  * Density + top-left lighting → [[fg:...]] markup runs.
  */
 
-/** Dark → light blue ramp (theme names accepted by svg-terminal). */
-export const TONES = ["blue", "cyan", "bright_blue", "bright_cyan", "bright_white"];
+/** Dark → light warm ramp (theme names accepted by svg-terminal). */
+export const TONES = ["orange", "yellow", "bright_yellow", "white", "bright_white"];
 
-/** Theme hex used when emitting SVG tspans (matches terminal.yml). */
+/** Theme hex used when emitting SVG tspans (matches terminal.yml / theme.mjs). */
 export const TONE_HEX = {
-  blue: "#4ea1ff",
-  cyan: "#4dd0e1",
-  bright_blue: "#9ed0ff",
-  bright_cyan: "#bff6ff",
-  bright_white: "#ffffff",
-  text: "#C9D1D9",
+  orange: "#C6613F",
+  yellow: "#D97757",
+  bright_yellow: "#D4A27F",
+  white: "#E3DACC",
+  bright_white: "#FAF9F5",
+  text: "#FAF9F5",
 };
 
 /** Visual weight high → low (dense chars are darker / deeper blue). */

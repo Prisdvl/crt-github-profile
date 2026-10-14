@@ -1,13 +1,15 @@
 import fs from "fs/promises";
 import { DOMParser } from "@xmldom/xmldom";
+import { THEME } from "./theme.mjs";
 
+/** @deprecated prefer THEME — kept for older generators */
 export const COLORS = {
-  bg: "#090B0E",
-  surface: "#161B22",
-  border: "#30363D",
-  text: "#C9D1D9",
-  muted: "#8B949E",
-  accent: "#7EE787",
+  bg: THEME.bg,
+  surface: THEME.surface,
+  border: THEME.border,
+  text: THEME.text,
+  muted: THEME.muted,
+  accent: THEME.accent,
 };
 
 export function escapeXml(s) {

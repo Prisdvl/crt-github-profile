@@ -1,35 +1,35 @@
 theme:
   name: "prisdvl-terminal"
   colors:
-    text: "#C9D1D9"
-    comment: "#8B949E"
-    background: "#090B0E"
-    titleBarBackground: "#161B22"
-    titleBarText: "#C9D1D9"
-    prompt: "#7EE787"
-    cursor: "#7EE787"
-    red: "#ff6b6b"
-    green: "#7EE787"
-    yellow: "#f3c969"
-    blue: "#4ea1ff"
-    magenta: "#d46aff"
-    cyan: "#4dd0e1"
-    white: "#ffffff"
-    orange: "#ff9f1c"
-    purple: "#8a63d2"
-    pink: "#ff79c6"
-    brightRed: "#ff8787"
-    brightGreen: "#b2ffb2"
-    brightYellow: "#fff1a8"
-    brightBlue: "#9ed0ff"
-    brightMagenta: "#f2c0ff"
-    brightCyan: "#bff6ff"
-    brightWhite: "#ffffff"
-    brightBlack: "#6b7280"
+    text: "#FAF9F5"
+    comment: "#87867F"
+    background: "#141413"
+    titleBarBackground: "#1C1B19"
+    titleBarText: "#FAF9F5"
+    prompt: "#D97757"
+    cursor: "#D97757"
+    red: "#C6613F"
+    green: "#788C5D"
+    yellow: "#D4A27F"
+    blue: "#6A9BCC"
+    magenta: "#C46686"
+    cyan: "#6A9BCC"
+    white: "#E3DACC"
+    orange: "#C6613F"
+    purple: "#C46686"
+    pink: "#C46686"
+    brightRed: "#D97757"
+    brightGreen: "#788C5D"
+    brightYellow: "#EBDBBC"
+    brightBlue: "#6A9BCC"
+    brightMagenta: "#C46686"
+    brightCyan: "#6A9BCC"
+    brightWhite: "#FAF9F5"
+    brightBlack: "#5E5D59"
   buttons:
-    close: "#ff5f56"
-    minimize: "#ffbd2e"
-    maximize: "#27c93f"
+    close: "#C6613F"
+    minimize: "#D4A27F"
+    maximize: "#788C5D"
 
 window:
   title: "prisdvl@terminal: ~"
@@ -40,11 +40,11 @@ window:
 
 terminal:
   prompt: "prisdvl@dev:~$ "
-  fontFamily: "JetBrains Mono, Fira Code, Ubuntu Mono, monospace"
-  fontSize: 11
-  lineHeight: 1.12
+  fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+  fontSize: 10
+  lineHeight: 1.08
   padding: 8
-  paddingTop: 8
+  paddingTop: 6
 
 effects:
   scanlines: true
@@ -53,11 +53,11 @@ effects:
   shadow: false
 
 animation:
-  defaultTypingDuration: 900
-  outputLineStagger: 55
-  commandOutputPause: 220
-  outputEndPause: 280
-  defaultSequencePause: 320
+  defaultTypingDuration: 620
+  outputLineStagger: 28
+  commandOutputPause: 90
+  outputEndPause: 120
+  defaultSequencePause: 150
 
 blocks:
   # BEGIN ASCII ART
@@ -69,53 +69,43 @@ blocks:
     config:
       command: whoami
       lines:
-        - "[[fg:green]]prisdvl[[/fg]]"
+        - "[[fg:orange]][[bold]]prisdvl[[/bold]][[/fg]]  Java Backend / AI Systems  [[fg:blue]]github.com/Prisdvl[[/fg]]"
 
   - block: custom
     config:
-      command: pwd
+      command: cat ~/card.yaml
       lines:
-        - "/home/prisdvl"
+        - "[[fg:comment]]focus[[/fg]]    [[fg:yellow]]Spring AI[[/fg]] · [[fg:yellow]]RAG[[/fg]] · [[fg:yellow]]Agent[[/fg]] · [[fg:yellow]]Distributed Systems[[/fg]]"
+        - "[[fg:comment]]lang[[/fg]]     [[fg:blue]]Java[[/fg]] · [[fg:blue]]TypeScript[[/fg]] · [[fg:blue]]Rust[[/fg]] · [[fg:blue]]Python[[/fg]] · [[fg:blue]]Vue[[/fg]]"
+        - "[[fg:comment]]runtime[[/fg]]  Spring Boot · Spring AI · FastAPI · Tauri · Django"
+        - "[[fg:comment]]async[[/fg]]    Celery · message queues · tool-calling agents"
+        - "[[fg:comment]]topics[[/fg]]   hybrid retrieval · RAG eval · production agents"
+        - "[[fg:comment]]now[[/fg]]      agent platforms · retrieval eval · Tauri tooling"
+        - "[[fg:comment]]status[[/fg]]   [[fg:green]]online[[/fg]] · open to collab on agents / RAG"
 
   - block: custom
     config:
-      command: cat ~/.role
+      command: column -t ~/projects.tsv
       lines:
-        - "Java Backend / AI Systems"
+        - "[[fg:comment]]repo[[/fg]]                      [[fg:comment]]stack[[/fg]]       [[fg:comment]]highlight[[/fg]]"
+        - "[[fg:yellow]]prisdvl-nexus[[/fg]]             Java/TS/Vue  RAG · hybrid retrieval · agents"
+        - "[[fg:yellow]]homework-grading-system[[/fg]]   Python/Vue   OCR · Celery · DeepSeek scoring"
+        - "[[fg:yellow]]PrisTimer[[/fg]]                 Rust/Vue/TS  Tauri 2 · anchor focus engine"
+        - "[[fg:yellow]]Kakuki[[/fg]]                    JS/TS/Py     Django · React · MySQL app"
 
   - block: custom
     config:
-      command: cat specialties.txt
+      command: cat ~/skills.md
       lines:
-        - "[[fg:cyan]]Spring AI[[/fg]] / [[fg:cyan]]RAG[[/fg]] / [[fg:cyan]]Agent[[/fg]]"
-        - "[[fg:cyan]]Distributed Systems[[/fg]]"
+        - "[[fg:magenta]]backend[[/fg]]  APIs · distributed services · Spring ecosystem"
+        - "[[fg:magenta]]ai[[/fg]]       RAG pipelines · agent loops · retrieval eval"
+        - "[[fg:magenta]]data[[/fg]]     OCR pipelines · async workers · MySQL"
+        - "[[fg:magenta]]client[[/fg]]   Vue · React · Tauri desktop"
 
   - block: custom
     config:
-      command: ls ~/projects
+      command: head ~/highlights
       lines:
-        - "[[fg:yellow]]prisdvl-nexus[[/fg]]/"
-        - "[[fg:yellow]]homework-grading-system[[/fg]]/"
-        - "[[fg:yellow]]PrisTimer[[/fg]]/"
-        - "[[fg:yellow]]Kakuki[[/fg]]/"
-
-  - block: custom
-    config:
-      command: echo "stack"
-      lines:
-        - "[[fg:comment]]lang[[/fg]]   [[fg:bright_blue]]Java[[/fg]] · [[fg:bright_blue]]TypeScript[[/fg]] · [[fg:bright_blue]]Rust[[/fg]]"
-        - "[[fg:comment]]focus[[/fg]]  [[fg:magenta]]Spring AI[[/fg]] · RAG · Agent systems"
-
-  - block: custom
-    config:
-      command: git remote -v
-      lines:
-        - "[[fg:comment]]origin[[/fg]]  [[fg:blue]]github.com/Prisdvl[[/fg]]"
-
-  - block: custom
-    config:
-      command: echo "identity"
-      lines:
-        - "[[fg:green]][[bold]]Prisdvl[[/bold]][[/fg]] — Java Backend / AI Systems"
-        - "[[fg:comment]]Specialties:[[/fg]] [[fg:cyan]]Spring AI / RAG / Agent[[/fg]] · [[fg:cyan]]Distributed Systems[[/fg]]"
-        - "[[fg:magenta]]Projects:[[/fg]] [[fg:yellow]]prisdvl-nexus[[/fg]] · [[fg:yellow]]homework-grading-system[[/fg]] · [[fg:yellow]]PrisTimer[[/fg]]"
+        - "[[fg:orange]]▸[[/fg]] Spring AI knowledge base + tool-calling agent platform"
+        - "[[fg:orange]]▸[[/fg]] K-12 grading pipeline: OCR → queue · LLM scoring"
+        - "[[fg:orange]]▸[[/fg]] Rust/Tauri focus timer with liquid-glass UI"

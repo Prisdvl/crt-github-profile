@@ -1,15 +1,20 @@
 #!/usr/bin/env node
 /**
- * Generate a terminal-style GitHub contribution heatmap SVG.
- * Data source: public HTML at https://github.com/users/<user>/contributions
- * (no token required). Optional GITHUB_TOKEN / GH_TOKEN only for higher rate limits.
+ * Generate a Claude-styled terminal contribution heatmap SVG.
+ * Data: public HTML at https://github.com/users/<user>/contributions
  *
  * Usage:
  *   node scripts/generate-contribution.mjs [--user Prisdvl] [--out assets/contribution.svg] [--placeholder]
  */
 import path from "path";
 import { fileURLToPath } from "url";
-import { COLORS, escapeXml, writeSvgAtomic, fetchText } from "./lib/svg-util.mjs";
+import { escapeXml, writeSvgAtomic, fetchText } from "./lib/svg-util.mjs";
+import {
+  THEME,
+  HEATMAP_LEVELS,
+  FONT_MONO,
+  terminalFrame,
+} from "./lib/theme.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -39,7 +44,6 @@ export function parseContributionHtml(html) {
     const level = Math.max(0, Math.min(4, Number(levelRaw)));
     days.push({ date, level });
   }
-  // Prefer exact counts from tooltips when present
   const tipMap = new Map();
   const tipRe =
     /<tool-tip[^>]*for="(contribution-day-component-[^"]+)"[^>]*>([\s\S]*?)<\/tool-tip>/gi;
@@ -60,21 +64,10 @@ export function parseContributionHtml(html) {
     }
   }
   days.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
-  // Deduplicate by date (keep last)
   const byDate = new Map();
   for (const d of days) byDate.set(d.date, d);
   return [...byDate.values()].sort((a, b) => (a.date < b.date ? -1 : 1));
 }
-
-const LEVEL_FILL = [
-  COLORS.surface, // 0
-  "#0e4429",
-  "#1a6b3c",
-  "#2ea043",
-  COLORS.accent, // 4
-];
-
-const ASCII_CHARS = ["·", "░", "▒", "▓", "█"];
 
 function weekIndex(dateStr, firstSunday) {
   const d = new Date(dateStr + "T12:00:00Z");
@@ -83,29 +76,30 @@ function weekIndex(dateStr, firstSunday) {
 }
 
 function dow(dateStr) {
-  // 0 = Sunday
   return new Date(dateStr + "T12:00:00Z").getUTCDay();
 }
 
 function buildPlaceholderSvg(user) {
-  const width = 720;
-  const height = 160;
-  return `<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="Contribution placeholder">
-  <title>Contribution activity (placeholder)</title>
-  <desc>PLACEHOLDER: live contribution data was unavailable. Not real activity counts.</desc>
-  <rect width="100%" height="100%" fill="${COLORS.bg}"/>
-  <rect x="1" y="1" width="${width - 2}" height="${height - 2}" fill="none" stroke="${COLORS.border}" stroke-width="1"/>
-  <text x="20" y="36" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="13" fill="${COLORS.accent}">$ contrib --user ${escapeXml(user)}</text>
-  <text x="20" y="64" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="12" fill="${COLORS.muted}">[PLACEHOLDER] live calendar unavailable</text>
-  <text x="20" y="92" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="12" fill="${COLORS.text}">re-run: npm run generate:contribution</text>
-  <text x="20" y="120" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="12" fill="${COLORS.muted}">source: github.com/users/…/contributions</text>
-</svg>
-`;
+  const { text, muted, accent } = THEME;
+  const body = [
+    `<text x="0" y="0" font-family="${FONT_MONO}" font-size="13" fill="${accent}">prisdvl@dev:~$ contrib --user ${escapeXml(user)}</text>`,
+    `<text x="0" y="28" font-family="${FONT_MONO}" font-size="12" fill="${muted}">[placeholder] live calendar unavailable</text>`,
+    `<text x="0" y="52" font-family="${FONT_MONO}" font-size="12" fill="${text}">re-run: npm run generate:contribution</text>`,
+  ].join("\n    ");
+  return terminalFrame({
+    width: 1000,
+    height: 140,
+    title: "prisdvl@activity: ~",
+    ariaLabel: "Contribution placeholder",
+    desc: "PLACEHOLDER: live contribution data was unavailable.",
+    body,
+  });
 }
 
 function buildHeatmapSvg(user, days) {
   if (!days.length) return buildPlaceholderSvg(user);
+
+  const { muted, accent, cloud } = THEME;
 
   const first = days[0].date;
   const firstDate = new Date(first + "T12:00:00Z");
@@ -116,28 +110,34 @@ function buildHeatmapSvg(user, days) {
   const last = days[days.length - 1].date;
   const weeks = weekIndex(last, firstSunday) + 1;
 
-  const cell = 11;
+  const cell = 12;
   const gap = 3;
-  const left = 36;
-  const top = 48;
-  const legendH = 28;
-  const width = left + weeks * (cell + gap) + 16;
-  const height = top + 7 * (cell + gap) + legendH + 16;
+  const left = 28;
+  const top = 44;
+  const gridH = 7 * (cell + gap);
+  const legendY = top + gridH + 18;
+  const contentW = left + weeks * (cell + gap);
+  const width = 1000;
+  const height = 36 + 14 + legendY + 28;
 
   const activeDays = days.filter((d) => d.level > 0).length;
   const withCount = days.filter((d) => typeof d.count === "number");
   const totalKnown = withCount.reduce((s, d) => s + d.count, 0);
   const countNote =
     withCount.length === days.length
-      ? `${totalKnown} contributions (last year)`
-      : `${activeDays} active days (level-based; exact totals partial)`;
+      ? `${totalKnown} contributions · last year`
+      : `${activeDays} active days · last year`;
+
+  // Center grid horizontally inside 1000 frame body (width - 32 padding)
+  const bodyInner = width - 32;
+  const gridOffsetX = Math.max(0, Math.floor((bodyInner - contentW) / 2));
 
   const dowLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
   const labelEls = dowLabels
     .map((lab, i) => {
       if (!lab) return "";
-      const y = top + i * (cell + gap) + cell - 1;
-      return `<text x="8" y="${y}" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="9" fill="${COLORS.muted}">${lab}</text>`;
+      const y = top + i * (cell + gap) + cell - 2;
+      return `<text x="${gridOffsetX}" y="${y}" font-family="${FONT_MONO}" font-size="9" fill="${muted}">${lab}</text>`;
     })
     .join("");
 
@@ -145,47 +145,40 @@ function buildHeatmapSvg(user, days) {
     .map((d) => {
       const w = weekIndex(d.date, firstSunday);
       const r = dow(d.date);
-      const x = left + w * (cell + gap);
+      const x = gridOffsetX + left + w * (cell + gap);
       const y = top + r * (cell + gap);
-      const fill = LEVEL_FILL[d.level] || LEVEL_FILL[0];
+      const fill = HEATMAP_LEVELS[d.level] || HEATMAP_LEVELS[0];
       const title =
         typeof d.count === "number"
           ? `${d.count} on ${d.date}`
           : `level ${d.level} on ${d.date}`;
       return `<rect x="${x}" y="${y}" width="${cell}" height="${cell}" rx="2" fill="${fill}"><title>${escapeXml(title)}</title></rect>`;
     })
-    .join("\n  ");
+    .join("\n    ");
 
-  // Compact ASCII strip under legend (one char per week max intensity)
-  const weekMax = Array.from({ length: weeks }, () => 0);
-  for (const d of days) {
-    const w = weekIndex(d.date, firstSunday);
-    weekMax[w] = Math.max(weekMax[w], d.level);
-  }
-  const ascii = weekMax.map((lv) => ASCII_CHARS[lv] || "·").join("");
-  const asciiLine = ascii.length > 90 ? ascii.slice(-90) : ascii;
-
-  const legend = LEVEL_FILL.map((fill, i) => {
-    const x = left + i * (cell + gap + 2);
-    return `<rect x="${x}" y="${height - 22}" width="${cell}" height="${cell}" rx="2" fill="${fill}"/>`;
+  const legend = HEATMAP_LEVELS.map((fill, i) => {
+    const x = gridOffsetX + left + i * (cell + gap + 2);
+    return `<rect x="${x}" y="${legendY}" width="${cell}" height="${cell}" rx="2" fill="${fill}"/>`;
   }).join("");
 
-  return `<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="GitHub contribution activity for ${escapeXml(user)}">
-  <title>${escapeXml(user)} contribution activity</title>
-  <desc>Terminal-styled contribution heatmap from public GitHub calendar data. ${escapeXml(countNote)}</desc>
-  <rect width="100%" height="100%" fill="${COLORS.bg}"/>
-  <rect x="1" y="1" width="${width - 2}" height="${height - 2}" fill="none" stroke="${COLORS.border}" stroke-width="1"/>
-  <text x="16" y="24" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="13" fill="${COLORS.accent}">$ contrib --user ${escapeXml(user)}</text>
-  <text x="16" y="40" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="11" fill="${COLORS.muted}">${escapeXml(countNote)}</text>
-  ${labelEls}
-  ${cells}
-  <text x="16" y="${height - 28}" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="10" fill="${COLORS.muted}">less</text>
-  ${legend}
-  <text x="${left + 5 * (cell + gap + 2) + 8}" y="${height - 12}" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="10" fill="${COLORS.muted}">more</text>
-  <text x="16" y="${height - 4}" font-family="JetBrains Mono, Fira Code, ui-monospace, monospace" font-size="9" fill="${COLORS.border}" xml:space="preserve">${escapeXml(asciiLine)}</text>
-</svg>
-`;
+  const body = `
+    <text x="0" y="0" font-family="${FONT_MONO}" font-size="13" fill="${accent}">prisdvl@dev:~$ contrib --user ${escapeXml(user)}</text>
+    <text x="0" y="22" font-family="${FONT_MONO}" font-size="11" fill="${cloud}">${escapeXml(countNote)}</text>
+    ${labelEls}
+    ${cells}
+    <text x="${gridOffsetX + left - 28}" y="${legendY + 10}" font-family="${FONT_MONO}" font-size="10" fill="${muted}">less</text>
+    ${legend}
+    <text x="${gridOffsetX + left + 5 * (cell + gap + 2) + 8}" y="${legendY + 10}" font-family="${FONT_MONO}" font-size="10" fill="${muted}">more</text>
+  `;
+
+  return terminalFrame({
+    width,
+    height,
+    title: "prisdvl@activity: ~",
+    ariaLabel: `GitHub contribution activity for ${escapeXml(user)}`,
+    desc: `Contribution heatmap for ${escapeXml(user)}. ${escapeXml(countNote)}`,
+    body,
+  });
 }
 
 async function fetchDays(user) {
@@ -217,7 +210,7 @@ async function main() {
       console.log(`Parsed ${days.length} days for ${args.user}`);
     } catch (err) {
       console.error("Contribution fetch/parse failed:", err.message || err);
-      console.error("Writing marked PLACEHOLDER SVG (previous file kept only if write fails).");
+      console.error("Writing marked PLACEHOLDER SVG.");
       svg = buildPlaceholderSvg(args.user);
       mode = "placeholder-fallback";
     }
