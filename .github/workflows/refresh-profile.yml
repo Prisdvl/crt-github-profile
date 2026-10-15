@@ -16,7 +16,6 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    # Avoid infinite loops from bot commits
     if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     steps:
       - name: Checkout
@@ -33,72 +32,51 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate into staging directory
+      - name: Validate profile configuration
+        run: npm run validate:config
+
+      - name: Generate profile assets
         env:
-          # Optional: set repository secret GITHUB_TOKEN is automatic; prefer GH_TOKEN only if needed.
-          # Do not echo tokens. Public contributions HTML works without auth.
+          # Public contribution HTML works without auth; the token improves
+          # rate limits for activity requests. Never echo the token.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run generate
+
+      - name: Validate generated SVG assets
         run: |
-          set -euo pipefail
-          STAGE=".tmp-ci-assets"
-          rm -rf "$STAGE"
-          mkdir -p "$STAGE"
-
-          # CRT terminal: inject → generate → split compose → enhance
-          node scripts/inject-ascii-into-terminal.mjs
-          npm exec --yes -- svg-terminal generate --config terminal.yml --output "$STAGE/terminal.svg"
-          npm exec --yes -- svg-terminal generate --config terminal.yml --output "$STAGE/terminal-static.svg" --static
-          node scripts/compose-split-terminal.mjs "$STAGE/terminal.svg"
-          node scripts/compose-split-terminal.mjs "$STAGE/terminal-static.svg" --static
-          node scripts/enhance-crt.mjs "$STAGE/terminal.svg" "$STAGE/terminal-enhanced.svg" \
-            --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22
-          node scripts/enhance-crt.mjs "$STAGE/terminal-static.svg" "$STAGE/terminal-static-enhanced.svg" \
-            --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22 --static
-          node scripts/compose-unified-profile.mjs "$STAGE/terminal-enhanced.svg" --user Prisdvl
-          node scripts/compose-unified-profile.mjs "$STAGE/terminal-static-enhanced.svg" --user Prisdvl
-
-          node scripts/generate-ascii.mjs "$STAGE/ascii-portrait.svg"
-          node scripts/generate-projects.mjs --out "$STAGE/projects.svg"
-          node scripts/generate-contribution.mjs --user Prisdvl --out "$STAGE/contribution.svg"
-
-          # Structural checks
           node --input-type=module -e "
           import fs from 'fs';
           import { DOMParser } from '@xmldom/xmldom';
+          const config = JSON.parse(fs.readFileSync('profile.config.json', 'utf8'));
           const files = [
-            'terminal-enhanced.svg','terminal-static-enhanced.svg',
-            'ascii-portrait.svg','projects.svg','contribution.svg'
+            'assets/terminal-static-enhanced.svg',
+            'assets/ascii-portrait.svg',
+            'assets/projects.svg'
           ];
-          const unified = fs.readFileSync('.tmp-ci-assets/terminal-enhanced.svg','utf8');
-          if (!unified.includes('unifiedTail') || !unified.includes('#4ea1ff')) {
-            throw new Error('unified profile missing tail or blue portrait tones');
-          }
-          for (const f of files) {
-            const raw = fs.readFileSync('.tmp-ci-assets/' + f, 'utf8');
+          if (config.options?.animatedTerminal !== false) files.push('assets/terminal-enhanced.svg');
+          if (config.options?.contributionHeatmap !== false) files.push('assets/contribution.svg');
+          for (const file of files) {
+            const raw = fs.readFileSync(file, 'utf8');
             const doc = new DOMParser().parseFromString(raw, 'application/xml');
             if (!doc.documentElement || doc.getElementsByTagName('parsererror').length) {
-              throw new Error('XML parse failed: ' + f);
+              throw new Error('XML parse failed: ' + file);
             }
           }
-          const animRaw = fs.readFileSync('.tmp-ci-assets/terminal-enhanced.svg','utf8');
-          if (!animRaw.includes('portraitPanel') || !animRaw.includes('leftColumn')) {
-            throw new Error('split layout missing portraitPanel/leftColumn');
+          const staticRaw = fs.readFileSync('assets/terminal-static-enhanced.svg', 'utf8');
+          if (!staticRaw.includes('portraitPanel') || !staticRaw.includes('leftColumn')) {
+            throw new Error('static split layout missing portraitPanel/leftColumn');
           }
-          const staticRaw = fs.readFileSync('.tmp-ci-assets/terminal-static-enhanced.svg','utf8');
           if (staticRaw.includes('scanline-overlay')) {
             throw new Error('static enhanced still has scanline-overlay');
           }
-          console.log('staging validation ok');
+          if (config.options?.animatedTerminal !== false) {
+            const animatedRaw = fs.readFileSync('assets/terminal-enhanced.svg', 'utf8');
+            if (!animatedRaw.includes('unifiedTail') || !animatedRaw.includes('projectsSection')) {
+              throw new Error('animated unified profile is missing generated sections');
+            }
+          }
+          console.log('generated SVG validation ok');
           "
-
-          mkdir -p assets
-          for f in terminal.svg terminal-static.svg terminal-enhanced.svg terminal-static-enhanced.svg \
-                   ascii-portrait.svg projects.svg contribution.svg; do
-            cp "$STAGE/$f" "assets/$f"
-          done
-          if [ -f assets/contribution-days.json ]; then
-            git add assets/contribution-days.json || true
-          fi
 
       - name: Commit if changed
         run: |

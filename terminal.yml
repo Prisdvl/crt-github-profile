@@ -1,20 +1,20 @@
 theme:
-  name: "prisdvl-terminal"
+  name: "crt-terminal"
   colors:
-    text: "#ececec"
-    comment: "#8e8e8e"
-    background: "#212121"
-    titleBarBackground: "#2a2a2a"
-    titleBarText: "#ececec"
-    prompt: "#10A37F"
-    cursor: "#10A37F"
+    text: "{{themeText}}"
+    comment: "{{themeMuted}}"
+    background: "{{themeBackground}}"
+    titleBarBackground: "{{themeSurface}}"
+    titleBarText: "{{themeText}}"
+    prompt: "{{themeAccent}}"
+    cursor: "{{themeAccent}}"
     red: "#ef4444"
-    green: "#10A37F"
+    green: "{{themeAccent}}"
     yellow: "#E3B341"
     blue: "#8AB4F8"
     magenta: "#AB68FF"
     cyan: "#4dd0e1"
-    white: "#ececec"
+    white: "{{themeText}}"
     orange: "#E3B341"
     purple: "#AB68FF"
     pink: "#AB68FF"
@@ -32,14 +32,14 @@ theme:
     maximize: "#28C840"
 
 window:
-  title: "prisdvl@terminal: ~"
+  title: "{{username}}@terminal: ~"
   width: 1000
   autoHeight: true
   maxHeight: 1400
   style: "macos"
 
 terminal:
-  prompt: "prisdvl@dev:~$ "
+  prompt: "{{username}}@dev:~$ "
   fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
   fontSize: 10
   lineHeight: 1.08
@@ -69,64 +69,48 @@ blocks:
     config:
       command: cat ~/motd
       lines:
-        - "[[fg:bright_cyan]][[bold]]Welcome to Prisd's terminal[[/bold]][[/fg]]"
-        - "[[fg:comment]]Java Backend / AI Systems · agents · RAG · distributed systems[[/fg]]"
+        - "[[fg:bright_cyan]][[bold]]Welcome to {{displayName}}'s terminal[[/bold]][[/fg]]"
+        - "[[fg:comment]]{{headline}}[[/fg]]"
 
   - block: custom
     config:
       command: whoami
       lines:
-        - "[[fg:green]][[bold]]prisdvl[[/bold]][[/fg]]  ·  [[fg:blue]]github.com/Prisdvl[[/fg]]"
+        - "[[fg:green]][[bold]]{{username}}[[/bold]][[/fg]]  ·  [[fg:blue]]github.com/{{username}}[[/fg]]"
 
   - block: custom
     config:
       command: date
       lines:
-        - "[[fg:comment]]tz[[/fg]]      Asia/Shanghai"
-        - "[[fg:comment]]uptime[[/fg]]  building agents & RAG backends"
+        - "[[fg:comment]]tz[[/fg]]      {{timezone}}"
+        - "[[fg:comment]]uptime[[/fg]]  {{bio}}"
 
   - block: custom
     config:
       command: cat ~/stack.bars
       lines:
-        - "[[fg:blue]]Java[[/fg]]          [[fg:cyan]]████████[[/fg]][[fg:comment]]░░[[/fg]]  [[fg:comment]]80%[[/fg]]"
-        - "[[fg:blue]]Spring Boot[[/fg]]   [[fg:cyan]]████████[[/fg]][[fg:comment]]░░[[/fg]]  [[fg:comment]]80%[[/fg]]"
-        - "[[fg:blue]]MySQL[[/fg]]         [[fg:cyan]]███████[[/fg]][[fg:comment]]░░░[[/fg]]  [[fg:comment]]70%[[/fg]]"
-        - "[[fg:blue]]Redis[[/fg]]         [[fg:cyan]]███████[[/fg]][[fg:comment]]░░░[[/fg]]  [[fg:comment]]70%[[/fg]]"
-        - "[[fg:blue]]Spring Cloud[[/fg]]  [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
-        - "[[fg:blue]]RabbitMQ[[/fg]]      [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
-        - "[[fg:blue]]Docker[[/fg]]        [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
-        - "[[fg:blue]]Spring AI[[/fg]]     [[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
-        - "[[fg:blue]]RAG / AI Agent[[/fg]][[fg:cyan]]██████[[/fg]][[fg:comment]]░░░░[[/fg]]  [[fg:comment]]60%[[/fg]]"
-        - "[[fg:blue]]TypeScript[[/fg]]    [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]  [[fg:comment]]50%[[/fg]]"
-        - "[[fg:blue]]React[[/fg]]         [[fg:cyan]]█████[[/fg]][[fg:comment]]░░░░░[[/fg]]  [[fg:comment]]50%[[/fg]]"
-        - "[[fg:blue]]Python[[/fg]]        [[fg:cyan]]███[[/fg]][[fg:comment]]░░░░░░░[[/fg]]  [[fg:comment]]30%[[/fg]]"
+        {{skillsBars}}
 
   - block: custom
     config:
       command: cat ~/card.yaml
       lines:
         - "[[fg:comment]]── identity ──────────────────────────────[[/fg]]"
-        - "[[fg:comment]]focus[[/fg]]    [[fg:yellow]]Spring AI[[/fg]] · [[fg:yellow]]RAG[[/fg]] · [[fg:yellow]]Agent[[/fg]] · [[fg:yellow]]Distributed Systems[[/fg]]"
-        - "[[fg:comment]]runtime[[/fg]]  Spring Boot · Spring AI · FastAPI · Tauri · Django"
-        - "[[fg:comment]]async[[/fg]]    Celery · message queues · tool-calling agents"
-        - "[[fg:comment]]topics[[/fg]]   hybrid retrieval · RAG eval · production agents"
-        - "[[fg:comment]]now[[/fg]]      agent platforms · retrieval eval · Tauri tooling"
-        - "[[fg:comment]]status[[/fg]]   [[fg:green]]online[[/fg]] · open to collab on agents / RAG"
+        - "{{terminalFocusLine}}"
+        - "[[fg:comment]]runtime[[/fg]]  {{terminalRuntime}}"
+        - "[[fg:comment]]async[[/fg]]    {{terminalAsync}}"
+        - "[[fg:comment]]topics[[/fg]]   {{terminalTopics}}"
+        - "[[fg:comment]]now[[/fg]]      {{terminalNow}}"
+        - "[[fg:comment]]status[[/fg]]   [[fg:green]]{{terminalStatus}}[[/fg]]"
 
   - block: custom
     config:
       command: cat ~/skills.md
       lines:
-        - "[[fg:magenta]]backend[[/fg]]  APIs · distributed services · Spring ecosystem"
-        - "[[fg:magenta]]ai[[/fg]]       RAG pipelines · agent loops · retrieval eval"
-        - "[[fg:magenta]]data[[/fg]]     OCR pipelines · async workers · MySQL"
-        - "[[fg:magenta]]client[[/fg]]   Vue · React · Tauri desktop"
+        {{interestLines}}
 
   - block: custom
     config:
       command: head ~/highlights
       lines:
-        - "[[fg:blue]]▸[[/fg]] Spring AI knowledge base + tool-calling agent platform"
-        - "[[fg:blue]]▸[[/fg]] K-12 grading pipeline: OCR → queue · LLM scoring"
-        - "[[fg:blue]]▸[[/fg]] Rust/Tauri focus timer with liquid-glass UI"
+        {{highlightLines}}

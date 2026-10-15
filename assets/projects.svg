@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="224" viewBox="0 0 1000 224" role="img" aria-label="Selected projects for Prisdvl">
-  <title>prisdvl@projects: ~</title>
+  <title>Prisdvl@projects: ~</title>
   <desc>Terminal-styled project list for Prisdvl.</desc>
-  <rect width="1000" height="224" rx="12" ry="12" fill="#212121"/>
-  <rect x="0" y="0" width="1000" height="36" rx="12" ry="12" fill="#2f2f2f"/>
-  <rect x="0" y="24" width="1000" height="12" fill="#2f2f2f"/>
-  <circle cx="18" cy="18" r="5.5" fill="#FF5F57"/>
-  <circle cx="36" cy="18" r="5.5" fill="#FEBC2E"/>
-  <circle cx="54" cy="18" r="5.5" fill="#28C840"/>
-  <text x="500" y="22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#ececec">prisdvl@projects: ~</text>
-  <rect x="0" y="36" width="1000" height="188" fill="#212121"/>
-  <rect x="0.5" y="0.5" width="999" height="223" rx="12" ry="12" fill="none" stroke="#444444" stroke-width="1"/>
-  <g transform="translate(16, 50)">
-<text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">column -t ~/projects.tsv</tspan></text>
+  <defs>
+    <mask id="windowMask" maskUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="1000" height="224" rx="14" ry="14" fill="#ffffff"/>
+    </mask>
+  </defs>
+  <g id="windowRoot" mask="url(#windowMask)">
+    <rect width="1000" height="224" rx="14" ry="14" fill="#212121"/>
+    <rect x="0" y="0" width="1000" height="36" fill="#2a2a2a"/>
+    <rect x="0" y="24" width="1000" height="12" fill="#2a2a2a"/>
+    <circle cx="18" cy="18" r="5.5" fill="#FF5F57"/>
+    <circle cx="36" cy="18" r="5.5" fill="#FEBC2E"/>
+    <circle cx="54" cy="18" r="5.5" fill="#28C840"/>
+    <text x="500" y="22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" fill="#ececec">Prisdvl@projects: ~</text>
+    <rect x="0" y="36" width="1000" height="174" fill="#212121"/>
+    <g transform="translate(16, 50)">
+<text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#10A37F">Prisdvl@dev:~$ </tspan><tspan fill="#ececec">column -t ~/projects.tsv</tspan></text>
     <text x="0" y="18" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#8e8e8e">repo                        </tspan><tspan fill="#8e8e8e">stack         </tspan><tspan fill="#8e8e8e">about</tspan></text>
     <text x="0" y="36" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#E3B341">prisdvl-nexus               </tspan><tspan fill="#8AB4F8">Java/TS/Vue   </tspan><tspan fill="#ececec">KB · Spring AI agents · RAG · hybrid retrieval</tspan></text>
     <text x="0" y="54" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#E3B341">homework-grading-system     </tspan><tspan fill="#8AB4F8">Python/Vue    </tspan><tspan fill="#ececec">K-12 grading · OCR · Celery · DeepSeek</tspan></text>
     <text x="0" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#E3B341">PrisTimer                   </tspan><tspan fill="#8AB4F8">Rust/Vue/TS   </tspan><tspan fill="#ececec">Tauri 2 focus timer · anchor engine</tspan></text>
     <text x="0" y="90" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#E3B341">Kakuki                      </tspan><tspan fill="#8AB4F8">JS/TS/Python  </tspan><tspan fill="#ececec">Django · React · MySQL application</tspan></text>
     <text x="0" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#8e8e8e"></tspan></text>
-    <text x="0" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#10A37F">prisdvl@dev:~$ </tspan><tspan fill="#ececec">echo $STATUS</tspan></text>
-    <text x="0" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#10A37F">online</tspan><tspan fill="#8e8e8e">  ·  open to collab on agents / RAG  ·  </tspan><tspan fill="#8AB4F8">github.com/Prisdvl</tspan></text>
+    <text x="0" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#10A37F">Prisdvl@dev:~$ </tspan><tspan fill="#ececec">echo $STATUS</tspan></text>
+    <text x="0" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace" font-size="12" xml:space="preserve"><tspan fill="#10A37F">online · open to collab on agents / RAG</tspan><tspan fill="#8e8e8e">  ·  </tspan><tspan fill="#8AB4F8">github.com/Prisdvl</tspan></text>
+    </g>
+    <rect x="0.5" y="0.5" width="999" height="223" rx="14" ry="14" fill="none" stroke="#3f3f3f" stroke-width="1"/>
   </g>
 </svg>

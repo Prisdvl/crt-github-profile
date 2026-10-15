@@ -1,31 +1,8 @@
 /**
  * Full-width terminal section markup (no window chrome) for the unified profile.
  */
-import { THEME, HEATMAP_LEVELS, FONT_MONO } from "./theme.mjs";
+import { THEME, getHeatmapLevels, FONT_MONO } from "./theme.mjs";
 import { escapeXml } from "./svg-util.mjs";
-
-const PROJECTS = [
-  {
-    name: "prisdvl-nexus",
-    stack: "Java/TS/Vue",
-    about: "KB · Spring AI agents · RAG · hybrid retrieval",
-  },
-  {
-    name: "homework-grading-system",
-    stack: "Python/Vue",
-    about: "K-12 grading · OCR · Celery · DeepSeek",
-  },
-  {
-    name: "PrisTimer",
-    stack: "Rust/Vue/TS",
-    about: "Tauri 2 focus timer · anchor engine",
-  },
-  {
-    name: "Kakuki",
-    stack: "JS/TS/Python",
-    about: "Django · React · MySQL application",
-  },
-];
 
 const FORTUNES = [
   "Build agents that earn their keep.",
@@ -49,13 +26,25 @@ function dow(dateStr) {
 }
 
 function sectionLabel(label) {
-  const core = `── ${label} `;
-  return core + "─".repeat(Math.max(4, 48 - core.length));
+  const core = `\u2500\u2500 ${label} `;
+  return core + "\u2500".repeat(Math.max(4, 48 - core.length));
 }
 
-/** @returns {{ markup: string, height: number }} */
-export function buildProjectsSection() {
-  const { text, muted, accent, kraft, sky, olive } = THEME;
+/**
+ * @param {{
+ *   user: string,
+ *   projects: Array<{name:string,stack:string,description:string,url?:string}>,
+ *   theme?: object,
+ *   availability?: string
+ * }} options
+ * @returns {{ markup: string, height: number }}
+ */
+export function buildProjectsSection(options = {}) {
+  const user = options.user || "developer";
+  const projects = options.projects || [];
+  const theme = options.theme || THEME;
+  const availability = options.availability || "online";
+  const { text, muted, accent, kraft, sky, olive } = theme;
   const rows = [];
   let y = 0;
 
@@ -71,7 +60,7 @@ export function buildProjectsSection() {
 
   line([[muted, sectionLabel("projects")]], 14);
   line([
-    [accent, "prisdvl@dev:~$ "],
+    [accent, `${user}@dev:~$ `],
     [text, "column -t ~/projects.tsv"],
   ]);
   line([
@@ -79,22 +68,22 @@ export function buildProjectsSection() {
     [muted, pad("stack", 14)],
     [muted, "about"],
   ]);
-  for (const p of PROJECTS) {
+  for (const project of projects) {
     line([
-      [kraft, pad(p.name, 28)],
-      [sky, pad(p.stack, 14)],
-      [text, p.about],
+      [kraft, pad(project.name, 28)],
+      [sky, pad(project.stack, 14)],
+      [text, project.description],
     ]);
   }
   line([[muted, ""]], 8);
   line([
-    [accent, "prisdvl@dev:~$ "],
+    [accent, `${user}@dev:~$ `],
     [text, "echo $STATUS"],
   ]);
   line([
-    [olive, "online"],
-    [muted, "  ·  open to collab on agents / RAG  ·  "],
-    [sky, "github.com/Prisdvl"],
+    [olive || accent, availability],
+    [muted, "  \u00b7  "],
+    [sky, `github.com/${user}`],
   ]);
 
   return { markup: rows.join("\n"), height: y + 8 };
@@ -103,11 +92,13 @@ export function buildProjectsSection() {
 /**
  * @param {string} user
  * @param {Array<{date:string,level:number,count?:number}>} days
- * @param {{ latestCommit?: string|null }} [opts]
+ * @param {{ latestCommit?: string|null, theme?: object }} [opts]
  * @returns {{ markup: string, height: number }}
  */
 export function buildActivitySection(user, days, opts = {}) {
-  const { text, muted, accent, cloud, kraft } = THEME;
+  const theme = opts.theme || THEME;
+  const heatmapLevels = getHeatmapLevels(theme);
+  const { text, muted, accent, cloud, kraft } = theme;
   const rows = [];
   let y = 0;
 
@@ -123,7 +114,7 @@ export function buildActivitySection(user, days, opts = {}) {
 
   line([[muted, sectionLabel("activity")]], 14);
   line([
-    [accent, "prisdvl@dev:~$ "],
+    [accent, `${user}@dev:~$ `],
     [text, `contrib --user ${user}`],
   ]);
 
@@ -151,8 +142,8 @@ export function buildActivitySection(user, days, opts = {}) {
   const totalKnown = withCount.reduce((s, d) => s + d.count, 0);
   const countNote =
     withCount.length === days.length
-      ? `${totalKnown} contributions · last year`
-      : `${activeDays} active days · last year`;
+      ? `${totalKnown} contributions \u00b7 last year`
+      : `${activeDays} active days \u00b7 last year`;
 
   rows.push(
     `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" fill="${cloud}">${escapeXml(countNote)}</text>`
@@ -176,7 +167,7 @@ export function buildActivitySection(user, days, opts = {}) {
     const r = dow(d.date);
     const x = gridOffsetX + left + w * (cell + gap);
     const cy = top + r * (cell + gap);
-    const fill = HEATMAP_LEVELS[d.level] || HEATMAP_LEVELS[0];
+    const fill = heatmapLevels[d.level] || heatmapLevels[0];
     const title =
       typeof d.count === "number"
         ? `${d.count} on ${d.date}`
@@ -190,7 +181,7 @@ export function buildActivitySection(user, days, opts = {}) {
   rows.push(
     `<text class="tt" x="${gridOffsetX + left - 28}" y="${legendY + 9}" font-family="${FONT_MONO}" font-size="10" fill="${muted}">less</text>`
   );
-  HEATMAP_LEVELS.forEach((fill, i) => {
+  heatmapLevels.forEach((fill, i) => {
     const x = gridOffsetX + left + i * (cell + gap + 2);
     rows.push(
       `<rect x="${x}" y="${legendY}" width="${cell}" height="${cell}" rx="2" fill="${fill}"/>`
@@ -205,7 +196,7 @@ export function buildActivitySection(user, days, opts = {}) {
   line([[muted, sectionLabel("session")]], 14);
   if (opts.latestCommit) {
     line([
-      [accent, "prisdvl@dev:~$ "],
+      [accent, `${user}@dev:~$ `],
       [text, "git log -1 --oneline"],
     ]);
     line([[cloud, opts.latestCommit]]);
@@ -213,13 +204,13 @@ export function buildActivitySection(user, days, opts = {}) {
 
   const fortune = FORTUNES[Math.floor(Date.now() / 86400000) % FORTUNES.length];
   line([
-    [accent, "prisdvl@dev:~$ "],
+    [accent, `${user}@dev:~$ `],
     [text, "fortune"],
   ]);
   line([[kraft, `"${fortune}"`]]);
 
   rows.push(
-    `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" xml:space="preserve"><tspan fill="${accent}">prisdvl@dev:~$ </tspan><tspan class="cursor-blink" fill="${text}">█</tspan></text>`
+    `<text class="tt" x="0" y="${y}" font-family="${FONT_MONO}" font-size="10" xml:space="preserve"><tspan fill="${accent}">${escapeXml(user)}@dev:~$ </tspan><tspan class="cursor-blink" fill="${text}">\u2588</tspan></text>`
   );
   y += 18;
 

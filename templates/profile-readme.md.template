@@ -1,0 +1,21 @@
+# {{displayName}}
+
+{{githubProfileLine}}
+
+{{bio}}
+
+{{headlineLine}}{{availabilityLine}}
+
+{{terminalBlock}}
+
+{{skillsBlock}}
+
+## Selected Projects
+
+{{projectsBlock}}
+
+{{contributionBlock}}
+
+---
+
+{{generatedNote}}

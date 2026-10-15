@@ -12,7 +12,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { DOMParser, XMLSerializer } from "@xmldom/xmldom";
 import { markupToTspans } from "./lib/ascii-colorize.mjs";
-import { assertParseableSvg, writeSvgAtomic } from "./lib/svg-util.mjs";
+import { assertParseableSvg, escapeXml, writeSvgAtomic } from "./lib/svg-util.mjs";
+import { loadProfileConfig } from "./lib/profile-config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -80,7 +81,7 @@ function setSvgHeight(doc, newH) {
   }
 }
 
-function buildPortraitFragment(lines, { isStatic }) {
+function buildPortraitFragment(lines, { isStatic, config }) {
   const parts = [
     `<g id="portraitPanel" transform="translate(${RIGHT_X}, 0)">`,
   ];
@@ -88,27 +89,49 @@ function buildPortraitFragment(lines, { isStatic }) {
     const y = Number((i * LINE_PX).toFixed(1));
     const delay = PORTRAIT_FADE_START_MS + i * PORTRAIT_LINE_STAGGER_MS;
     const fadeClass = isStatic ? "" : ` class="fade-in" style="animation-delay: ${delay}ms"`;
-    const tspans = markupToTspans(lines[i] || "");
+    const tspans = markupToTspans(lines[i] || "", {
+      defaultFill: config.theme.text,
+    });
     parts.push(
       `    <g transform="translate(0, ${y})"${fadeClass}>`,
       `      <text class="tt">${tspans}</text>`,
       `    </g>`
     );
   }
-  // Wordmark + spark under the blue/white portrait
+  // Wordmark + spark under the blue/white portrait. The palette intentionally
+  // stays in the portrait's blue/cyan family while the wordmark comes from config.
   const captionY = Number((lines.length * LINE_PX + 18).toFixed(1));
   const fadeCap = isStatic
     ? ""
     : ` class="fade-in" style="animation-delay: ${PORTRAIT_FADE_START_MS + lines.length * PORTRAIT_LINE_STAGGER_MS}ms"`;
   parts.push(
     `    <g transform="translate(36, ${captionY})"${fadeCap}>`,
-    `      <text class="tt" font-size="16" font-weight="bold"><tspan fill="#9ed0ff">P</tspan><tspan fill="#4dd0e1">r</tspan><tspan fill="#4ea1ff">i</tspan><tspan fill="#9ed0ff">s</tspan><tspan fill="#bff6ff">d</tspan></text>`,
+    `      <text class="tt" font-size="16" font-weight="bold">${buildWordmark(config.displayName)}</text>`,
     `      <text class="tt" y="14" fill="#8e8e8e">· welcome ·</text>`,
     `      <text class="tt" y="28" fill="#4ea1ff">✦ ··· ✦ ··· ✦</text>`,
     `    </g>`
   );
   parts.push(`  </g>`);
   return parts.join("\n");
+}
+
+const PORTRAIT_WORDMARK_COLORS = [
+  "#9ed0ff",
+  "#4dd0e1",
+  "#4ea1ff",
+  "#9ed0ff",
+  "#bff6ff",
+];
+
+function buildWordmark(displayName) {
+  const letters = [...String(displayName)].slice(0, 5);
+  if (!letters.length) return "";
+  return letters
+    .map(
+      (letter, index) =>
+        `<tspan fill="${PORTRAIT_WORDMARK_COLORS[index % PORTRAIT_WORDMARK_COLORS.length]}">${escapeXml(letter)}</tspan>`
+    )
+    .join("");
 }
 
 function parseFragment(xml) {
@@ -124,6 +147,9 @@ function parseFragment(xml) {
   if (argv.length < 1) usage("missing svg path");
   const svgPath = path.resolve(argv[0]);
   const isStatic = argv.includes("--static");
+  const configIndex = argv.indexOf("--config");
+  const configPath = configIndex >= 0 ? argv[configIndex + 1] : undefined;
+  const config = await loadProfileConfig({ root, configPath });
 
   const markupRaw = await fs.readFile(markupPath, "utf8");
   const { lines } = JSON.parse(markupRaw);
@@ -155,7 +181,7 @@ function parseFragment(xml) {
   }
   if (!scroll) throw new Error("scrollContainer / content group not found");
 
-  // Extra space for Prisd wordmark caption under the art
+  // Extra space for the wordmark caption under the art.
   const portraitH = lines.length * LINE_PX + PAD_TOP + 56;
   const neededH = Math.ceil(CONTENT_ORIGIN_Y + portraitH);
   const curH = Number(doc.documentElement.getAttribute("height") || "0");
@@ -197,15 +223,14 @@ function parseFragment(xml) {
     scroll.appendChild(leftCol);
   }
 
-  const frag = parseFragment(buildPortraitFragment(lines, { isStatic }));
+  const frag = parseFragment(buildPortraitFragment(lines, { isStatic, config }));
   // Import node into target doc
   const imported = doc.importNode(frag, true);
   scroll.appendChild(imported);
 
   // Refresh aria-label / title / desc lightly
   const svg = doc.documentElement;
-  const label =
-    'Animated terminal: typing identity commands on the left, ASCII portrait on the right';
+  const label = `${config.displayName} terminal: identity commands on the left, ASCII portrait on the right`;
   svg.setAttribute("aria-label", label);
   const titles = doc.getElementsByTagName("title");
   if (titles[0]) titles[0].textContent = label;

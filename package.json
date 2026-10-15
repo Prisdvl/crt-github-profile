@@ -1,26 +1,33 @@
 ﻿{
-  "name": "prisdvl-github-profile-crt",
+  "name": "crt-github-profile",
   "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Local CRT-style GitHub profile assets for Prisdvl (svg-terminal + postprocess + activity SVGs)",
+  "description": "Config-driven CRT-style GitHub profile SVG generator",
   "scripts": {
+    "test": "node --test",
+    "generate": "node scripts/generate.mjs",
+    "validate:config": "node scripts/validate-config.mjs",
     "inject:ascii": "node scripts/inject-ascii-into-terminal.mjs",
-    "generate:terminal": "npm run inject:ascii && npm exec --yes -- svg-terminal generate --config terminal.yml --output assets/terminal.svg",
-    "generate:terminal:static": "npm exec --yes -- svg-terminal generate --config terminal.yml --output assets/terminal-static.svg --static",
+    "generate:terminal": "npm run inject:ascii && node scripts/prepare-terminal-config.mjs --out .tmp/terminal.generated.yml && svg-terminal generate --config .tmp/terminal.generated.yml --output assets/terminal.svg",
+    "generate:terminal:static": "npm run inject:ascii && node scripts/prepare-terminal-config.mjs --out .tmp/terminal.generated.yml && svg-terminal generate --config .tmp/terminal.generated.yml --output assets/terminal-static.svg --static",
     "compose:split": "node scripts/compose-split-terminal.mjs assets/terminal.svg && node scripts/compose-split-terminal.mjs assets/terminal-static.svg --static",
     "postprocess:anim": "node scripts/enhance-crt.mjs assets/terminal.svg assets/terminal-enhanced.svg --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22",
     "postprocess:static": "node scripts/enhance-crt.mjs assets/terminal-static.svg assets/terminal-static-enhanced.svg --linespace 4 --line-opacity 0.03 --glow 1.05 --vignette 0.22 --static",
-    "compose:unified": "node scripts/compose-unified-profile.mjs assets/terminal-enhanced.svg --user Prisdvl && node scripts/compose-unified-profile.mjs assets/terminal-static-enhanced.svg --user Prisdvl",
+    "compose:unified": "node scripts/compose-unified-profile.mjs assets/terminal-enhanced.svg && node scripts/compose-unified-profile.mjs assets/terminal-static-enhanced.svg",
     "generate:ascii": "node scripts/generate-ascii.mjs assets/ascii-portrait.svg",
     "generate:projects": "node scripts/generate-projects.mjs --out assets/projects.svg",
-    "generate:contribution": "node scripts/generate-contribution.mjs --user Prisdvl --out assets/contribution.svg",
+    "generate:contribution": "node scripts/generate-contribution.mjs --out assets/contribution.svg",
+    "generate:readme": "node scripts/generate-profile-readme.mjs --out dist/PROFILE-README.md",
     "build:crt": "npm run generate:terminal && npm run generate:terminal:static && npm run compose:split && npm run postprocess:anim && npm run postprocess:static && npm run compose:unified",
     "build:profile": "npm run generate:ascii && npm run generate:projects && npm run generate:contribution",
-    "build:all": "npm run build:crt && npm run build:profile"
+    "build:all": "npm run build:crt && npm run build:profile && npm run generate:readme"
   },
   "dependencies": {
     "@xmldom/xmldom": "0.9.8"
+  },
+  "devDependencies": {
+    "svg-terminal": "1.3.1"
   },
   "engines": {
     "node": ">=22.0.0"

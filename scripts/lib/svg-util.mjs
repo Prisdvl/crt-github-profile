@@ -1,4 +1,5 @@
 import fs from "fs/promises";
+import path from "path";
 import { DOMParser } from "@xmldom/xmldom";
 import { THEME } from "./theme.mjs";
 
@@ -35,6 +36,7 @@ export function assertParseableSvg(xml) {
 /** Atomic write: tmp -> validate -> rename. Keeps previous output on failure. */
 export async function writeSvgAtomic(outPath, xml) {
   assertParseableSvg(xml);
+  await fs.mkdir(path.dirname(outPath), { recursive: true });
   const tmp = `${outPath}.tmp`;
   await fs.writeFile(tmp, xml, "utf8");
   try {
@@ -53,7 +55,7 @@ export async function writeSvgAtomic(outPath, xml) {
 
 export async function fetchText(url, { token, headers = {} } = {}) {
   const h = {
-    "User-Agent": "prisdvl-github-profile-crt",
+    "User-Agent": "crt-github-profile-generator",
     Accept: "text/html,application/json",
     ...headers,
   };

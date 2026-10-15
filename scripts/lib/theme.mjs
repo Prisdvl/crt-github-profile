@@ -33,6 +33,84 @@ export const HEATMAP_LEVELS = [
   "#9ed0ff",
 ];
 
+export const DEFAULT_THEME = THEME;
+
+function expandHex(color) {
+  const value = String(color).replace("#", "");
+  if (value.length === 3 || value.length === 4) {
+    return value
+      .slice(0, 3)
+      .split("")
+      .map((ch) => ch + ch)
+      .join("");
+  }
+  return value.slice(0, 6);
+}
+
+function mixHex(from, to, amount) {
+  const a = expandHex(from);
+  const b = expandHex(to);
+  const channel = (offset) => {
+    const av = parseInt(a.slice(offset, offset + 2), 16);
+    const bv = parseInt(b.slice(offset, offset + 2), 16);
+    return Math.round(av + (bv - av) * amount)
+      .toString(16)
+      .padStart(2, "0");
+  };
+  return `#${channel(0)}${channel(2)}${channel(4)}`;
+}
+
+function deriveHeatmap(bg, accent) {
+  return [
+    bg,
+    mixHex(bg, accent, 0.28),
+    mixHex(bg, accent, 0.52),
+    mixHex(bg, accent, 0.76),
+    mixHex(accent, "#ffffff", 0.26),
+  ];
+}
+
+/**
+ * Merge the small, user-facing theme object into the full rendering palette.
+ * Default values keep the original CRT visual language intact.
+ */
+export function normalizeTheme(overrides = {}) {
+  const theme = {
+    ...THEME,
+    heatmap: [...HEATMAP_LEVELS],
+  };
+  if (overrides.background !== undefined) theme.bg = overrides.background;
+  if (overrides.surface !== undefined) {
+    theme.surface = overrides.surface;
+    theme.titleBar = overrides.surface;
+  }
+  if (overrides.text !== undefined) {
+    theme.text = overrides.text;
+    theme.manilla = overrides.text;
+    theme.ivory = overrides.text;
+    theme.white = overrides.text;
+  }
+  if (overrides.muted !== undefined) theme.muted = overrides.muted;
+  if (overrides.accent !== undefined) {
+    theme.accent = overrides.accent;
+    theme.olive = overrides.accent;
+    theme.prompt = overrides.accent;
+    theme.cursor = overrides.accent;
+  }
+  if (Array.isArray(overrides.heatmap) && overrides.heatmap.length === 5) {
+    theme.heatmap = [...overrides.heatmap];
+  } else if (overrides.accent && overrides.accent !== THEME.accent) {
+    theme.heatmap = deriveHeatmap(theme.bg, theme.accent);
+  }
+  return theme;
+}
+
+export function getHeatmapLevels(theme = THEME) {
+  return Array.isArray(theme.heatmap) && theme.heatmap.length === 5
+    ? theme.heatmap
+    : HEATMAP_LEVELS;
+}
+
 export const FONT_MONO =
   "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace";
 
@@ -46,7 +124,7 @@ const TITLE_BAR = 40;
  * - shorten square body/overlay fills so they don't paint over bottom radii
  * - draw a final rounded stroke so the frame reads as one window
  */
-export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS } = {}) {
+export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS, theme = THEME } = {}) {
   const svg = doc.documentElement;
   const w = Number(svg.getAttribute("width") || 1000);
   const h = Number(svg.getAttribute("height") || 0);
@@ -151,7 +229,7 @@ export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS } = {}) {
       r.setAttribute("rx", String(radius));
       r.setAttribute("ry", String(radius));
       r.setAttribute("height", String(h));
-      if (!fill.startsWith("url(")) r.setAttribute("fill", THEME.bg);
+      if (!fill.startsWith("url(")) r.setAttribute("fill", theme.bg);
       continue;
     }
 
@@ -159,7 +237,7 @@ export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS } = {}) {
     if (x === "0" && y === "0" && width === String(w) && height > 0 && height <= TITLE_BAR + 2) {
       r.removeAttribute("rx");
       r.removeAttribute("ry");
-      r.setAttribute("fill", THEME.surface);
+      r.setAttribute("fill", theme.surface);
       continue;
     }
 
@@ -171,7 +249,7 @@ export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS } = {}) {
       height > 0 &&
       height <= 20
     ) {
-      r.setAttribute("fill", THEME.surface);
+      r.setAttribute("fill", theme.surface);
       continue;
     }
 
@@ -181,7 +259,7 @@ export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS } = {}) {
       r.removeAttribute("rx");
       r.removeAttribute("ry");
       if (!fill.startsWith("url(") && fill !== "none") {
-        r.setAttribute("fill", THEME.bg);
+        r.setAttribute("fill", theme.bg);
       }
     }
   }
@@ -214,7 +292,7 @@ export function applyRoundedWindowClip(doc, { radius = WINDOW_RADIUS } = {}) {
   stroke.setAttribute("rx", String(radius));
   stroke.setAttribute("ry", String(radius));
   stroke.setAttribute("fill", "none");
-  stroke.setAttribute("stroke", THEME.border);
+  stroke.setAttribute("stroke", theme.border);
   stroke.setAttribute("stroke-width", "1");
   stroke.setAttribute("pointer-events", "none");
   root.appendChild(stroke);
@@ -231,8 +309,9 @@ export function terminalFrame({
   desc,
   body,
   titleBarH = 36,
+  theme = THEME,
 }) {
-  const { bg, surface, border, text, buttonClose, buttonMin, buttonMax } = THEME;
+  const { bg, surface, border, text, buttonClose, buttonMin, buttonMax } = theme;
   const r = WINDOW_RADIUS;
   const bodyH = Math.max(0, height - titleBarH - r);
   return `<?xml version="1.0" encoding="utf-8"?>

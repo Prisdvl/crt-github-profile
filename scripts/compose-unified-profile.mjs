@@ -4,7 +4,7 @@
  * producing one continuous terminal window (single chrome, complete bottom).
  *
  * Usage:
- *   node scripts/compose-unified-profile.mjs <terminal.svg> [--user Prisdvl]
+ *   node scripts/compose-unified-profile.mjs <terminal.svg> [--config profile.config.json]
  */
 import fs from "fs/promises";
 import path from "path";
@@ -17,6 +17,7 @@ import {
   buildActivitySection,
 } from "./lib/profile-sections.mjs";
 import { parseContributionHtml } from "./generate-contribution.mjs";
+import { loadProfileConfig } from "./lib/profile-config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -121,7 +122,11 @@ async function loadContributionDays(user) {
   }
   try {
     const cached = JSON.parse(await fs.readFile(cachePath, "utf8"));
-    if (Array.isArray(cached.days) && cached.days.length) {
+    if (
+      cached.user?.toLowerCase() === user.toLowerCase() &&
+      Array.isArray(cached.days) &&
+      cached.days.length
+    ) {
       console.log(`Using cached contribution days (${cached.days.length})`);
       return cached.days;
     }
@@ -160,7 +165,7 @@ async function loadLatestCommit(user) {
   }
   try {
     const cached = JSON.parse(await fs.readFile(cachePath, "utf8"));
-    if (cached.line) {
+    if (cached.user?.toLowerCase() === user.toLowerCase() && cached.line) {
       console.log("Using cached latest commit");
       return cached.line;
     }
@@ -190,23 +195,37 @@ function injectCursorBlinkCss(doc) {
 (async function main() {
   const argv = process.argv.slice(2);
   if (!argv[0]) {
-    console.error("Usage: node scripts/compose-unified-profile.mjs <terminal.svg> [--user Prisdvl]");
+    console.error(
+      "Usage: node scripts/compose-unified-profile.mjs <terminal.svg> [--config profile.config.json] [--user <github-user>] [--no-activity]"
+    );
     process.exit(2);
   }
   const svgPath = path.resolve(argv[0]);
-  let user = "Prisdvl";
+  let configPath;
   const ui = argv.indexOf("--user");
-  if (ui >= 0) user = argv[ui + 1] || user;
+  const ci = argv.indexOf("--config");
+  if (ci >= 0) configPath = argv[ci + 1];
+  const noActivity = argv.includes("--no-activity");
+  const config = await loadProfileConfig({ root, configPath });
+  const user = ui >= 0 ? argv[ui + 1] || config.username : config.username;
 
   const markupRaw = await fs.readFile(markupPath, "utf8");
   const { lines } = JSON.parse(markupRaw);
-  // Portrait art + Prisd caption underneath
+  // Portrait art plus the wordmark caption underneath.
   const portraitH = (lines?.length || 29) * LINE_PX + 56;
 
-  const days = await loadContributionDays(user);
-  const latestCommit = await loadLatestCommit(user);
-  const projects = buildProjectsSection();
-  const activity = buildActivitySection(user, days, { latestCommit });
+  const includeActivity = config.options.contributionHeatmap && !noActivity;
+  const days = includeActivity ? await loadContributionDays(user) : [];
+  const latestCommit = includeActivity ? await loadLatestCommit(user) : null;
+  const projects = buildProjectsSection({
+    user,
+    projects: config.projects,
+    theme: config.theme,
+    availability: config.availability,
+  });
+  const activity = includeActivity
+    ? buildActivitySection(user, days, { latestCommit, theme: config.theme })
+    : null;
 
   const raw = await fs.readFile(svgPath, "utf8");
   const doc = assertParseableSvg(raw);
@@ -218,7 +237,8 @@ function injectCursorBlinkCss(doc) {
 
   const gap = 10;
   // Extra bottom pad so content clears the rounded corners
-  const tailInnerH = projects.height + gap + activity.height + 28;
+  const tailInnerH =
+    projects.height + (activity ? gap + activity.height : 0) + 28;
   const neededH = Math.ceil(splitBottom + tailInnerH);
 
   const existing = findById(doc, "g", "unifiedTail");
@@ -242,10 +262,13 @@ function injectCursorBlinkCss(doc) {
   const localX = 16 - originX;
   const localY = Math.ceil(splitBottom - originY);
 
+  const activityXml = activity
+    ? `<g id="activitySection" transform="translate(0, ${projects.height + gap})">${activity.markup}</g>`
+    : "";
   const tailXml = `
     <g id="unifiedTail" transform="translate(${localX}, ${localY})">
       <g id="projectsSection">${projects.markup}</g>
-      <g id="activitySection" transform="translate(0, ${projects.height + gap})">${activity.markup}</g>
+      ${activityXml}
     </g>
   `;
 
@@ -270,20 +293,20 @@ function injectCursorBlinkCss(doc) {
   const svg = doc.documentElement;
   svg.setAttribute(
     "aria-label",
-    "Prisdvl terminal profile: identity, projects, and contribution activity"
+    `${config.displayName} terminal profile: identity, projects, and contribution activity`
   );
   const titles = doc.getElementsByTagName("title");
-  if (titles[0]) titles[0].textContent = "prisdvl@terminal: ~";
+  if (titles[0]) titles[0].textContent = `${config.username}@terminal: ~`;
 
   injectCursorBlinkCss(doc);
   // Square body/vignette rects otherwise paint over bottom rx of the shell.
-  applyRoundedWindowClip(doc);
+  applyRoundedWindowClip(doc, { theme: config.theme });
 
   let xml = new XMLSerializer().serializeToString(doc);
   if (!xml.startsWith("<?xml")) xml = '<?xml version="1.0" encoding="utf-8"?>\n' + xml;
   await writeSvgAtomic(svgPath, xml);
   console.log(
-    `Unified profile → ${path.relative(root, svgPath)} (h=${doc.documentElement.getAttribute("height")}, days=${days.length})`
+    `Unified profile \u2192 ${path.relative(root, svgPath)} (h=${doc.documentElement.getAttribute("height")}, days=${days.length}, activity=${includeActivity})`
   );
 })().catch((err) => {
   console.error("ERROR:", err.message || err);

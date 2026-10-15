@@ -1,31 +1,37 @@
 #!/usr/bin/env node
 /**
- * Generate a Claude-styled terminal contribution heatmap SVG.
+ * Generate a terminal contribution heatmap from profile.config.json.
  * Data: public HTML at https://github.com/users/<user>/contributions
  *
  * Usage:
- *   node scripts/generate-contribution.mjs [--user Prisdvl] [--out assets/contribution.svg] [--placeholder]
+ *   node scripts/generate-contribution.mjs [--out assets/contribution.svg] [--config profile.config.json] [--user <github-user>] [--placeholder]
  */
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { escapeXml, writeSvgAtomic, fetchText } from "./lib/svg-util.mjs";
 import {
-  THEME,
-  HEATMAP_LEVELS,
+  getHeatmapLevels,
   FONT_MONO,
   terminalFrame,
 } from "./lib/theme.mjs";
+import { loadProfileConfig } from "./lib/profile-config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 
 function parseArgs(argv) {
-  const out = { user: "Prisdvl", out: "assets/contribution.svg", placeholder: false };
+  const out = {
+    user: undefined,
+    out: "assets/contribution.svg",
+    placeholder: false,
+    config: undefined,
+  };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--user") out.user = argv[++i];
     else if (a === "--out") out.out = argv[++i];
+    else if (a === "--config") out.config = argv[++i];
     else if (a === "--placeholder") out.placeholder = true;
     else throw new Error(`Unknown arg: ${a}`);
   }
@@ -80,27 +86,31 @@ function dow(dateStr) {
   return new Date(dateStr + "T12:00:00Z").getUTCDay();
 }
 
-function buildPlaceholderSvg(user) {
-  const { text, muted, accent } = THEME;
+function buildPlaceholderSvg(user, theme) {
+  const { text, muted, accent } = theme;
+  const prompt = `${user}@dev:~$ `;
   const body = [
-    `<text x="0" y="0" font-family="${FONT_MONO}" font-size="13" fill="${accent}">prisdvl@dev:~$ contrib --user ${escapeXml(user)}</text>`,
+    `<text x="0" y="0" font-family="${FONT_MONO}" font-size="13" fill="${accent}">${escapeXml(prompt)}contrib --user ${escapeXml(user)}</text>`,
     `<text x="0" y="28" font-family="${FONT_MONO}" font-size="12" fill="${muted}">[placeholder] live calendar unavailable</text>`,
     `<text x="0" y="52" font-family="${FONT_MONO}" font-size="12" fill="${text}">re-run: npm run generate:contribution</text>`,
   ].join("\n    ");
   return terminalFrame({
     width: 1000,
     height: 140,
-    title: "prisdvl@activity: ~",
+    title: `${user}@activity: ~`,
     ariaLabel: "Contribution placeholder",
     desc: "PLACEHOLDER: live contribution data was unavailable.",
     body,
+    theme,
   });
 }
 
-function buildHeatmapSvg(user, days) {
-  if (!days.length) return buildPlaceholderSvg(user);
+function buildHeatmapSvg(user, days, theme) {
+  if (!days.length) return buildPlaceholderSvg(user, theme);
 
-  const { muted, accent, cloud } = THEME;
+  const { muted, accent, cloud } = theme;
+  const heatmapLevels = getHeatmapLevels(theme);
+  const prompt = `${user}@dev:~$ `;
 
   const first = days[0].date;
   const firstDate = new Date(first + "T12:00:00Z");
@@ -126,10 +136,9 @@ function buildHeatmapSvg(user, days) {
   const totalKnown = withCount.reduce((s, d) => s + d.count, 0);
   const countNote =
     withCount.length === days.length
-      ? `${totalKnown} contributions · last year`
-      : `${activeDays} active days · last year`;
+      ? `${totalKnown} contributions \u00b7 last year`
+      : `${activeDays} active days \u00b7 last year`;
 
-  // Center grid horizontally inside 1000 frame body (width - 32 padding)
   const bodyInner = width - 32;
   const gridOffsetX = Math.max(0, Math.floor((bodyInner - contentW) / 2));
 
@@ -148,7 +157,7 @@ function buildHeatmapSvg(user, days) {
       const r = dow(d.date);
       const x = gridOffsetX + left + w * (cell + gap);
       const y = top + r * (cell + gap);
-      const fill = HEATMAP_LEVELS[d.level] || HEATMAP_LEVELS[0];
+      const fill = heatmapLevels[d.level] || heatmapLevels[0];
       const title =
         typeof d.count === "number"
           ? `${d.count} on ${d.date}`
@@ -157,13 +166,15 @@ function buildHeatmapSvg(user, days) {
     })
     .join("\n    ");
 
-  const legend = HEATMAP_LEVELS.map((fill, i) => {
-    const x = gridOffsetX + left + i * (cell + gap + 2);
-    return `<rect x="${x}" y="${legendY}" width="${cell}" height="${cell}" rx="2" fill="${fill}"/>`;
-  }).join("");
+  const legend = heatmapLevels
+    .map((fill, i) => {
+      const x = gridOffsetX + left + i * (cell + gap + 2);
+      return `<rect x="${x}" y="${legendY}" width="${cell}" height="${cell}" rx="2" fill="${fill}"/>`;
+    })
+    .join("");
 
   const body = `
-    <text x="0" y="0" font-family="${FONT_MONO}" font-size="13" fill="${accent}">prisdvl@dev:~$ contrib --user ${escapeXml(user)}</text>
+    <text x="0" y="0" font-family="${FONT_MONO}" font-size="13" fill="${accent}">${escapeXml(prompt)}contrib --user ${escapeXml(user)}</text>
     <text x="0" y="22" font-family="${FONT_MONO}" font-size="11" fill="${cloud}">${escapeXml(countNote)}</text>
     ${labelEls}
     ${cells}
@@ -175,10 +186,11 @@ function buildHeatmapSvg(user, days) {
   return terminalFrame({
     width,
     height,
-    title: "prisdvl@activity: ~",
+    title: `${user}@activity: ~`,
     ariaLabel: `GitHub contribution activity for ${escapeXml(user)}`,
     desc: `Contribution heatmap for ${escapeXml(user)}. ${escapeXml(countNote)}`,
     body,
+    theme,
   });
 }
 
@@ -199,7 +211,13 @@ async function loadCachedDays(user) {
   const cachePath = path.resolve(root, "assets", "contribution-days.json");
   try {
     const cached = JSON.parse(await fs.readFile(cachePath, "utf8"));
-    if (Array.isArray(cached.days) && cached.days.length) return cached.days;
+    if (
+      cached.user?.toLowerCase() === user.toLowerCase() &&
+      Array.isArray(cached.days) &&
+      cached.days.length
+    ) {
+      return cached.days;
+    }
   } catch {
     /* ignore */
   }
@@ -218,29 +236,37 @@ async function saveCachedDays(user, days) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  const config = await loadProfileConfig({ root, configPath: args.config });
+  const user = args.user || config.username;
+  const theme = config.theme;
   const outPath = path.resolve(root, args.out);
+
+  if (!config.options.contributionHeatmap && !args.placeholder) {
+    console.log("Contribution heatmap disabled in profile.config.json; skipping.");
+    return;
+  }
 
   let svg;
   let mode = "live";
   if (args.placeholder) {
-    svg = buildPlaceholderSvg(args.user);
+    svg = buildPlaceholderSvg(user, theme);
     mode = "placeholder-forced";
   } else {
     try {
-      const days = await fetchDays(args.user);
-      await saveCachedDays(args.user, days);
-      svg = buildHeatmapSvg(args.user, days);
-      console.log(`Parsed ${days.length} days for ${args.user}`);
+      const days = await fetchDays(user);
+      await saveCachedDays(user, days);
+      svg = buildHeatmapSvg(user, days, theme);
+      console.log(`Parsed ${days.length} days for ${user}`);
     } catch (err) {
       console.error("Contribution fetch/parse failed:", err.message || err);
-      const cached = await loadCachedDays(args.user);
+      const cached = await loadCachedDays(user);
       if (cached) {
-        svg = buildHeatmapSvg(args.user, cached);
+        svg = buildHeatmapSvg(user, cached, theme);
         mode = "cache-fallback";
         console.log(`Using cached contribution days (${cached.length})`);
       } else {
         console.error("Writing marked PLACEHOLDER SVG.");
-        svg = buildPlaceholderSvg(args.user);
+        svg = buildPlaceholderSvg(user, theme);
         mode = "placeholder-fallback";
       }
     }

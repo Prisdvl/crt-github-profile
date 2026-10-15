@@ -1,0 +1,131 @@
+{
+  "username": "Prisdvl",
+  "displayName": "Prisdvl",
+  "headline": "Java Backend / AI Systems \u00b7 agents \u00b7 RAG \u00b7 distributed systems",
+  "timezone": "Asia/Shanghai",
+  "bio": "building agents & RAG backends",
+  "availability": "online \u00b7 open to collab on agents / RAG",
+  "theme": {
+    "background": "#212121",
+    "surface": "#2a2a2a",
+    "text": "#ececec",
+    "muted": "#8e8e8e",
+    "accent": "#10A37F"
+  },
+  "skills": [
+    {
+      "name": "Java",
+      "level": 80
+    },
+    {
+      "name": "Spring Boot",
+      "level": 80
+    },
+    {
+      "name": "MySQL",
+      "level": 70
+    },
+    {
+      "name": "Redis",
+      "level": 70
+    },
+    {
+      "name": "Spring Cloud",
+      "level": 60
+    },
+    {
+      "name": "RabbitMQ",
+      "level": 60
+    },
+    {
+      "name": "Docker",
+      "level": 60
+    },
+    {
+      "name": "Spring AI",
+      "level": 60
+    },
+    {
+      "name": "RAG / AI Agent",
+      "level": 60
+    },
+    {
+      "name": "TypeScript",
+      "level": 50
+    },
+    {
+      "name": "React",
+      "level": 50
+    },
+    {
+      "name": "Python",
+      "level": 30
+    }
+  ],
+  "projects": [
+    {
+      "name": "prisdvl-nexus",
+      "stack": "Java/TS/Vue",
+      "description": "KB \u00b7 Spring AI agents \u00b7 RAG \u00b7 hybrid retrieval",
+      "url": "https://github.com/Prisdvl/prisdvl-nexus"
+    },
+    {
+      "name": "homework-grading-system",
+      "stack": "Python/Vue",
+      "description": "K-12 grading \u00b7 OCR \u00b7 Celery \u00b7 DeepSeek",
+      "url": "https://github.com/Prisdvl/homework-grading-system"
+    },
+    {
+      "name": "PrisTimer",
+      "stack": "Rust/Vue/TS",
+      "description": "Tauri 2 focus timer \u00b7 anchor engine",
+      "url": "https://github.com/Prisdvl/PrisTimer"
+    },
+    {
+      "name": "Kakuki",
+      "stack": "JS/TS/Python",
+      "description": "Django \u00b7 React \u00b7 MySQL application",
+      "url": "https://github.com/Prisdvl/Kakuki"
+    }
+  ],
+  "terminal": {
+    "focus": [
+      "Spring AI",
+      "RAG",
+      "Agent",
+      "Distributed Systems"
+    ],
+    "runtime": "Spring Boot \u00b7 Spring AI \u00b7 FastAPI \u00b7 Tauri \u00b7 Django",
+    "async": "Celery \u00b7 message queues \u00b7 tool-calling agents",
+    "topics": "hybrid retrieval \u00b7 RAG eval \u00b7 production agents",
+    "now": "agent platforms \u00b7 retrieval eval \u00b7 Tauri tooling",
+    "status": "online \u00b7 open to collab on agents / RAG",
+    "interests": [
+      {
+        "label": "backend",
+        "detail": "APIs \u00b7 distributed services \u00b7 Spring ecosystem"
+      },
+      {
+        "label": "ai",
+        "detail": "RAG pipelines \u00b7 agent loops \u00b7 retrieval eval"
+      },
+      {
+        "label": "data",
+        "detail": "OCR pipelines \u00b7 async workers \u00b7 MySQL"
+      },
+      {
+        "label": "client",
+        "detail": "Vue \u00b7 React \u00b7 Tauri desktop"
+      }
+    ],
+    "highlights": [
+      "Spring AI knowledge base + tool-calling agent platform",
+      "K-12 grading pipeline: OCR \u2192 queue \u00b7 LLM scoring",
+      "Rust/Tauri focus timer with liquid-glass UI"
+    ]
+  },
+  "options": {
+    "animatedTerminal": true,
+    "contributionHeatmap": true
+  }
+}
