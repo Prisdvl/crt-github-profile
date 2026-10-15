@@ -16,9 +16,9 @@ This repository is both a working profile example and a reusable generator. Edit
 
 ## Start
 
-- [Use this template](https://github.com/Prisdvl/Prisdvl/generate) to create a new independent repository.
-- [Fork this repository](https://github.com/Prisdvl/Prisdvl/fork) to create your own linked copy.
-- [Star this repository](https://github.com/Prisdvl/Prisdvl/stargazers) if it is useful.
+- [Use this template](https://github.com/Prisdvl/crt-github-profile/generate) to create a new independent repository.
+- [Fork this repository](https://github.com/Prisdvl/crt-github-profile/fork) to create your own linked copy.
+- [Star this repository](https://github.com/Prisdvl/crt-github-profile/stargazers) if it is useful.
 
 ## Features
 
@@ -85,6 +85,7 @@ npm run validate:config
 | `terminal` | Optional focus, runtime, interests, status, and highlight lines. |
 | `options.animatedTerminal` | Generate and reference the animated terminal output. |
 | `options.contributionHeatmap` | Generate and reference the contribution heatmap. |
+| `options.readmeStyle` | `full` (default) or `svg-only` to emit only the configured terminal SVG in the Profile README. |
 
 Missing `username`, malformed colors, invalid URLs, out-of-range skill levels, invalid timezones, and empty project lists are rejected with field-specific errors. `terminal.yml` is the visual layout template; `npm run generate` resolves it from `profile.config.json` into `.tmp/terminal.generated.yml`, so normal customization does not require JavaScript edits.
 
@@ -116,7 +117,7 @@ The first `npm install` requires npm registry access. After installation, termin
 
 ## Contributing
 
-Issues and pull requests are welcome in the [repository](https://github.com/Prisdvl/Prisdvl/issues). If you change generation behavior, run `npm run validate:config` and `npm run generate` before opening a pull request.
+Issues and pull requests are welcome in the [repository](https://github.com/Prisdvl/crt-github-profile/issues). If you change generation behavior, run `npm run validate:config` and `npm run generate` before opening a pull request.
 
 ## License
 

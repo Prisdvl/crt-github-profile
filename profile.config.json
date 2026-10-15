@@ -126,6 +126,7 @@
   },
   "options": {
     "animatedTerminal": true,
-    "contributionHeatmap": true
+    "contributionHeatmap": true,
+    "readmeStyle": "svg-only"
   }
 }

@@ -272,3 +272,30 @@ test("contribution generator emits a clearly marked placeholder when forced", as
   assert.match(raw, /PLACEHOLDER: live contribution data was unavailable/);
   assert.match(raw, /octocat@activity/);
 });
+
+test("svg-only Profile README emits only the configured terminal image", async (t) => {
+  const fixture = await makeFixture();
+  t.after(() => fs.rm(fixture.dir, { recursive: true, force: true }));
+  fixture.config.options = {
+    animatedTerminal: true,
+    contributionHeatmap: false,
+    readmeStyle: "svg-only",
+  };
+  await fs.writeFile(
+    fixture.configPath,
+    JSON.stringify(fixture.config, null, 2) + "\n",
+    "utf8"
+  );
+  const out = path.join(fixture.dir, "PROFILE-README.md");
+  runNode("generate-profile-readme.mjs", [
+    "--config",
+    fixture.configPath,
+    "--out",
+    out,
+  ]);
+  const raw = await fs.readFile(out, "utf8");
+  assert.match(raw, /assets\/terminal-enhanced\.svg/);
+  assert.doesNotMatch(raw, /assets\/terminal-static-enhanced\.svg/);
+  assert.doesNotMatch(raw, /## Skills|smoke-alpha|octo-api|Independent smoke test biography/);
+  assert.equal((raw.match(/<img\b/g) || []).length, 1);
+});

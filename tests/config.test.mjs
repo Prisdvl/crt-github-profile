@@ -84,4 +84,12 @@ test("invalid username, colors, skills, URLs, timezones, and empty projects are 
     () => validateProfileConfig({ ...base, projects: [] }),
     /projects: must contain at least one project/
   );
+  assert.throws(
+    () =>
+      validateProfileConfig({
+        ...base,
+        options: { readmeStyle: "minimal" },
+      }),
+    /options\.readmeStyle: must be either "full" or "svg-only"/
+  );
 });

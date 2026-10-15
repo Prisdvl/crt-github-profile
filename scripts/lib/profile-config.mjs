@@ -172,11 +172,18 @@ function validateTerminal(raw, field = "terminal") {
 }
 
 function validateOptions(raw, field = "options") {
-  if (raw === undefined) return { animatedTerminal: true, contributionHeatmap: true };
+  if (raw === undefined) {
+    return {
+      animatedTerminal: true,
+      contributionHeatmap: true,
+      readmeStyle: "full",
+    };
+  }
   requireObject(raw, field);
   const options = {
     animatedTerminal: true,
     contributionHeatmap: true,
+    readmeStyle: "full",
   };
   if (raw.animatedTerminal !== undefined) {
     options.animatedTerminal = requireBoolean(
@@ -189,6 +196,16 @@ function validateOptions(raw, field = "options") {
       raw.contributionHeatmap,
       `${field}.contributionHeatmap`
     );
+  }
+  if (raw.readmeStyle !== undefined) {
+    const readmeStyle = requireString(raw.readmeStyle, `${field}.readmeStyle`);
+    if (!["full", "svg-only"].includes(readmeStyle)) {
+      fail(
+        `${field}.readmeStyle`,
+        'must be either "full" or "svg-only"'
+      );
+    }
+    options.readmeStyle = readmeStyle;
   }
   return options;
 }

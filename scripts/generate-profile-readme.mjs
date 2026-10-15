@@ -64,6 +64,18 @@ function buildTerminalBlock(config) {
 </p>`;
 }
 
+function buildSvgOnlyBlock(config) {
+  const asset = config.options.animatedTerminal
+    ? "assets/terminal-enhanced.svg"
+    : "assets/terminal-static-enhanced.svg";
+  const alt = escapeHtml(
+    `${config.displayName} terminal profile${config.headline ? `: ${config.headline}` : ""}`
+  );
+  return `<p align="center">
+  <img src="${asset}" alt="${alt}" width="1000">
+</p>`;
+}
+
 function buildSkillsBlock(config) {
   if (!config.skills.length) return "";
   const rows = config.skills.map(
@@ -94,6 +106,9 @@ function buildContributionBlock(config, placeholder) {
 }
 
 function renderTemplate(template, config, { contributionPlaceholder = false } = {}) {
+  if (config.options.readmeStyle === "svg-only") {
+    return `${buildSvgOnlyBlock(config)}\n`;
+  }
   const headlineLine = config.headline
     ? `**${escapeMarkdownInline(config.headline)}**`
     : "";
@@ -132,7 +147,10 @@ async function main() {
     fs.readFile(templatePath, "utf8"),
   ]);
   let contributionPlaceholder = false;
-  if (config.options.contributionHeatmap) {
+  if (
+    config.options.contributionHeatmap &&
+    config.options.readmeStyle !== "svg-only"
+  ) {
     try {
       const contributionSvg = await fs.readFile(
         path.resolve(root, "assets", "contribution.svg"),
