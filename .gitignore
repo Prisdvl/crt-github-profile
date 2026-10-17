@@ -5,6 +5,5 @@ node_modules/
 .tmp-ci-assets/
 dist/
 *.tmp
-preview-crt.html
 .DS_Store
 assets/ascii-art.markup.json

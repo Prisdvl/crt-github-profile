@@ -17,24 +17,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const templatePath = path.join(root, "terminal.yml");
 
+// Neutral fallbacks only: a template user who omits the `terminal` block must
+// never see another person's content. List-type fields render the existing
+// "not configured" placeholders when empty.
 const DEFAULT_TERMINAL = {
-  focus: ["Spring AI", "RAG", "Agent", "Distributed Systems"],
-  runtime: "Spring Boot \u00b7 Spring AI \u00b7 FastAPI \u00b7 Tauri \u00b7 Django",
-  async: "Celery \u00b7 message queues \u00b7 tool-calling agents",
-  topics: "hybrid retrieval \u00b7 RAG eval \u00b7 production agents",
-  now: "agent platforms \u00b7 retrieval eval \u00b7 Tauri tooling",
-  status: "online \u00b7 open to collab on agents / RAG",
-  interests: [
-    { label: "backend", detail: "APIs \u00b7 distributed services \u00b7 Spring ecosystem" },
-    { label: "ai", detail: "RAG pipelines \u00b7 agent loops \u00b7 retrieval eval" },
-    { label: "data", detail: "OCR pipelines \u00b7 async workers \u00b7 MySQL" },
-    { label: "client", detail: "Vue \u00b7 React \u00b7 Tauri desktop" },
-  ],
-  highlights: [
-    "Spring AI knowledge base + tool-calling agent platform",
-    "K-12 grading pipeline: OCR \u2192 queue \u00b7 LLM scoring",
-    "Rust/Tauri focus timer with liquid-glass UI",
-  ],
+  focus: [],
+  runtime: "not configured",
+  async: "not configured",
+  topics: "not configured",
+  now: "not configured",
+  status: "online",
+  interests: [],
+  highlights: [],
 };
 
 function parseArgs(argv) {
@@ -83,7 +77,7 @@ function buildSkillsBarLines(skills) {
 
 function buildInterestLines(interests) {
   if (!interests.length) {
-    return `        - "[[fg:comment]]no skills configured[[/fg]]"`;
+    return `        - "[[fg:comment]]define terminal.interests in profile.config.json[[/fg]]"`;
   }
   return interests
     .map((item) => {

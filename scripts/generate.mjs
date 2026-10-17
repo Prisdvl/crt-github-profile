@@ -190,12 +190,22 @@ async function main() {
     "generate Profile README"
   );
 
+  // Exact files the generated Profile README references, derived from the same
+  // options generate-profile-readme.mjs uses, so the copy step is unambiguous.
+  const publishAssets = [];
+  if (config.options.animatedTerminal) publishAssets.push("assets/terminal-enhanced.svg");
+  if (config.options.readmeStyle === "full" || !config.options.animatedTerminal)
+    publishAssets.push("assets/terminal-static-enhanced.svg");
+  if (config.options.readmeStyle === "full" && config.options.contributionHeatmap)
+    publishAssets.push("assets/contribution.svg");
+
   console.log(
     `\n[generate] Complete. Profile README: ${path.join(root, "dist", "PROFILE-README.md")}`
   );
   console.log(
-    "[generate] Copy dist/PROFILE-README.md and the referenced assets/ files into your <username>/<username> repository."
+    "[generate] Publish: copy dist/PROFILE-README.md as README.md into your <username>/<username> repository,"
   );
+  console.log(`[generate] together with: ${publishAssets.join(", ")}`);
 }
 
 main().catch((err) => {

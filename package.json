@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Config-driven CRT-style GitHub profile SVG generator",
+  "description": "Generate retro CRT-style GitHub profile READMEs with customizable SVG terminals, ASCII art, and contribution heatmaps.",
   "scripts": {
     "test": "node --test",
     "generate": "node scripts/generate.mjs",
