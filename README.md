@@ -1,5 +1,7 @@
 # CRT GitHub Profile
 
+**English** | [简体中文](README.zh-CN.md)
+
 > A configurable, locally generated CRT-style GitHub profile with reusable SVG output.
 
 <p align="center">
